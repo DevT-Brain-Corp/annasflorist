@@ -1,0 +1,82 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+/* navbar */
+nav{
+  height: 90px;
+}
+
+.navbar-fixed {
+  position: absolute;
+  z-index:999999999;
+}
+
+.navnav{
+  background-color: transparent;
+  transition: background-color 1s ease 0s;
+  -webkit-box-shadow:none !important;
+  box-shadow:none !important;
+}
+
+.navbar-fixed .scrolled {
+  background-color: #000000 !important;
+  transition: background-color 200ms linear;
+}
+
+.solid {
+  background-color: #146511 !important;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+
+.navnav .nav-wrapper .brand-logo{
+  margin-top: -30px;
+}
+
+.iconsearch{
+  margin-top: 11px;
+  font-family: 'Righteous';
+  color: #000000;
+}
+
+#topbarsearch label{
+  font-family: 'Righteous';
+}
+/* end navbar */
+
+/* deskripsi */
+.deskripsi .gambar,
+.deskripsi .caption{
+  margin-top: 204px;
+}
+
+.deskripsi img{
+  height: 643px;
+  width: auto;
+
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.deskripsi .caption .caption1{
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+
+  color: #123812;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.deskripsi .caption .caption2{
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-indent: 2px;
+
+  color: #000000;
+
+}
+/* end deskripsi */

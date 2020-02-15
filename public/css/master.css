@@ -1,0 +1,522 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+.fontrighteous{
+  font-family: 'Righteous';
+}
+
+.fontsaira{
+  font-family: 'Saira';
+}
+
+.fontmali{
+  font-family: 'Mali';
+}
+
+.fontredhat{
+  font-family: 'Red Hat Text';
+}
+
+/* navbar */
+nav{
+  height: 90px;
+}
+
+.navbar-fixed {
+  position: absolute;
+  z-index:999999999;
+}
+
+.navnav{
+  background-color: transparent;
+  transition: background-color 1s ease 0s;
+  -webkit-box-shadow:none !important;
+  box-shadow:none !important;
+}
+
+.navbar-fixed .scrolled {
+  background-color: #000000 !important;
+  transition: background-color 200ms linear;
+}
+
+.solid {
+  background-color: #146511 !important;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+
+.navnav .nav-wrapper .brand-logo{
+  margin-top: -30px;
+}
+
+.iconsearch{
+  margin-top: 11px;
+}
+
+/* Modal */
+.modal{
+  top: 100px !important;
+  width: 40% !important;
+}
+
+.modal .btnn button{
+  background: rgba(67, 210, 31, 0.74) !important;
+  border-radius: 20px !important;
+  font-family: 'Rambla';
+  color: #000000;
+  font-size: 20px;
+}
+
+.modal .sandi{
+  font-family: 'Rambla';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+
+  color: #123812;
+}
+
+.modal .member{
+  font-family: 'Rambla';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+
+  color: #000000;
+}
+
+.modal .memberdaftar{
+  font-family: 'Rambla';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  text-decoration-line: underline;
+
+  color: #375436;
+}
+/* End Modal */
+/* end navbar */
+
+/* Kotak 1 */
+.kotak1{
+  width: auto;
+  height: auto;
+  background: linear-gradient(270deg, #123812 4.03%, rgba(18, 56, 18, 0.971095) 11.26%, rgba(18, 56, 18, 0.915584) 23.96%, rgba(18, 56, 18, 0.866449) 37.37%, rgba(19, 78, 18, 0.824989) 54.48%, rgba(19, 88, 18, 0.805827) 68.06%, rgba(20, 101, 18, 0.805827) 79.7%, rgba(21, 123, 18, 0.805827) 91.34%);
+}
+
+.cactus .row{
+  padding-top: 100px;
+}
+
+.annasspesialis{
+  margin-top: 180px;
+}
+
+.annas{
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 85px;
+  line-height: 134px;
+  letter-spacing: 0.05em;
+  text-indent: 2px;
+}
+
+.spesialis{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 38px;
+  text-align: center;
+  text-indent: 2px;
+  color: rgba(254, 250, 250, 0.62);
+}
+
+.kotakdalamkaktus{
+  position: absolute;
+  width: 755px;
+  height: 500px;
+  top: 100px;
+  margin-top: 200px;
+  background: linear-gradient(270deg, rgba(152, 203, 152, 0.67) 5.1%, rgba(120, 186, 120, 0.458523) 39.08%, rgba(90, 170, 90, 0.257447) 61.95%, rgba(71, 161, 71, 0.135619) 81.46%, rgba(51, 150, 51, 0) 100%);
+  border-radius: 0px 400px 0px 0px;
+
+}
+
+.kotakdalamkaktus img{
+  height: 700px;
+  transform: translate(50px,-150px);
+}
+
+.shopnow{
+  background: #C4C4C4;
+  border-radius: 100px;
+  width: 181px;
+  margin: 0 auto;
+}
+
+.shopnow a{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  text-indent: 2px;
+  color: #000000;
+}
+
+.shopnow .lingkaranshopnow{
+  background: #E0E414;
+  border-radius: 100px;
+}
+
+.sosmed{
+  margin-top: 90px;
+  position: relative;
+  height: 109px;
+}
+
+.sosmed .sosmed1{
+  background: #6DBD3B;
+  height: 105px;
+}
+
+.sosmed .sosmed1 .btnn img{
+  height: 30px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.sosmed .sosmed2{
+  z-index: 10;
+  background: #154B0C;
+  height: 105px;
+}
+
+.sosmed .sosmed2 h5{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #FDF7F7;
+  margin-bottom: 2px;
+}
+
+.sosmed .sosmed3{
+  background: #E0E414;
+  border-radius: 0px 300px 0px 0px;
+}
+
+.sosmed .sosmed3 img{
+  height: 170px;
+  margin-top: -70px;
+}
+/* End kotak 1 */
+
+/* Kotak 2 */
+.kotak2{
+  width: auto;
+  height: auto;
+  background: linear-gradient(180deg, #123812 11.75%, rgba(31, 67, 30, 0.946374) 24.62%, rgba(51, 83, 50, 0.863499) 41.17%, rgba(94, 120, 94, 0.679029) 59.11%, rgba(152, 168, 151, 0.436306) 77.5%, rgba(255, 255, 255, 0) 100%), rgba(196, 243, 196, 0.32);
+}
+
+.items{
+  margin-top: 100px;
+}
+
+.items img{
+  height: 163px;
+}
+
+.card .card-content span{
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+}
+/* End Kotak 2 */
+
+/* Sales */
+.sales .salesword{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 79px;
+  text-indent: 2px;
+  color: #011F00;
+}
+
+.sales .lihatsemua{
+  text-align: right;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 57px;
+  text-indent: 2px;
+  color: #011F00;
+}
+
+.sales .card .card-image img{
+  height: 200px;
+}
+
+.sales .card .card-content h5{
+  font-family: 'Saira';
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+  color: #011F00;
+
+  font-size: 2vw;
+}
+
+.sales .card .card-content p{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 31px;
+  color: #123812;
+}
+
+.sales .card .card-content .btnn{
+  background: #eeeeee;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+
+.sales .card .card-content .btnn::before{
+  background: #4caf50;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.sales .card .card-content .btnn:hover{
+  background: #4caf50;
+  color: #ffffff;
+}
+/* End Sales */
+
+/* Workshop */
+.workshop .workshopword{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 79px;
+  text-indent: 2px;
+  color: #011F00;
+}
+
+.workshop .lihatsemua{
+  text-align: right;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 57px;
+  text-indent: 2px;
+  color: #011F00;
+}
+
+.outer{
+  display: table; margin: 0 auto;
+}
+
+.inner{
+  width:100%;
+}
+/* End Workshop */
+
+/* Dekorasi */
+.dekorasi .dekorasiword{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 79px;
+  text-indent: 2px;
+  color: #011F00;
+}
+
+.dekorasi .lihatsemua{
+  text-align: right;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 57px;
+  text-indent: 2px;
+  color: #011F00;
+}
+
+.dekorasi .rincian{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  /* line-height: 57px; */
+  text-align: justify;
+  text-indent: 2px;
+
+  color: #011F00;
+}
+
+.dekorasi .selengkapnya{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 57px;
+  text-align: right;
+  text-indent: 2px;
+
+  color: #011F00;
+  transition: .1s;
+}
+
+.dekorasi .selengkapnya:hover{
+  transition: .1s;
+  color: #6DBD3B;
+}
+/* End Dekorasi */
+
+/* Profil */
+.profil .profilword{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 76px;
+  color: #011F00;
+}
+
+.profil .profilimg{
+  vertical-align: middle;
+  height: 100%;
+  display: inline-block;
+}
+
+.profil .profilimg img{
+  height: auto;
+  width:100%;
+  vertical-align: middle;
+}
+
+.profil .profiltext{
+  font-family: 'Saira';
+  font-size: 30px;
+  text-align: justify;
+  text-indent: 2px;
+
+  color: #011F00;
+}
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show more';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Show less';
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: .25em;
+}
+/* End Profil */
+
+/* Maps */
+#mapid {
+  height: 500px;
+}
+/* End Maps */
+
+/* About */
+.about{
+  margin-top: 50px;
+}
+
+.about .about1 h5,
+.about .about2 h5
+{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 38px;
+
+  color: #011F00;
+}
+
+.about .about1 p,
+.about .about2 p
+{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 38px;
+
+  color: #011F00;
+}
+
+.about .about2 img{
+  height: 42px;
+}
+
+.about .about3 img{
+  height: 100%;
+  width: 100%;
+}
+
+.about .about3 p{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: justify;
+
+  color: #011F00;
+}
+
+.about .footer{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 47px;
+  text-align: center;
+
+  color: #011F00;
+}
+/* End About */
