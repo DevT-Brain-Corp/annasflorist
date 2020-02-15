@@ -16,5 +16,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+// Override login route from Auth::routes();
+Route::get('/login', function () {
+	return redirect('/');
+})->name('login');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth', 'admin'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
+	Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+});
