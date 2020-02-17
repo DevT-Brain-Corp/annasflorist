@@ -8,10 +8,10 @@ use App\Http\Controllers\Controller;
 class DashboardController extends Controller
 {
     /**
-     * Dashboard 
+     * Dashboard
      */
     public function index()
     {
-    	return 'Hello '. auth()->user()->name;
+    	return view('admin.dashboard.index');
     }
 }
