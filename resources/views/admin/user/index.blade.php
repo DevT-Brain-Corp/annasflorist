@@ -52,7 +52,7 @@
                                                 <td>{{$user->email}}</td>
                                                 <td>{{$user->created_at}}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-primary">Edit</a>
+                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-primary">Edit</a>
                                                     <a>
                                                         <form action="{{ route('user.destroy', $user->id)}}" method="POST">
                                                             @csrf

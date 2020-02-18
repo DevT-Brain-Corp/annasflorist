@@ -48,7 +48,7 @@
                                                 <td>{{$category->category_name}}</td>
                                                 <td>{{$category->created_at}}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-primary">Edit</a>
+                                                    <a href="{{ route('category.edit', $category->id) }}" class="btn btn-primary">Edit</a>
                                                     <a>
                                                         <form action="{{ route('category.destroy', $category->id)}}" method="POST">
                                                             @csrf

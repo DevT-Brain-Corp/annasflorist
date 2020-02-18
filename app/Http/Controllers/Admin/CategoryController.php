@@ -65,7 +65,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -77,7 +79,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'category_name' => 'required|max:255',
+        ]);
+        Category::whereId($id)->update($validatedData);
+
+        return redirect('/admin/category')->with('success', 'Category is successfully updated');
     }
 
     /**

@@ -68,7 +68,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        return view('admin.user.edit', compact('user'));
     }
 
     /**
@@ -80,7 +82,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'phone_number' => 'required|phone:id|min:11|max:18',
+            'password' => 'required|string|min:8'
+        ]);
+        User::whereId($id)->update($validatedData);
+
+        return redirect('/admin/user')->with('success', 'User is successfully updated');
     }
 
     /**
