@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('admin.order.index');
+        $orders = Order::all();
+
+        return view('admin.order.index', compact('orders'));
     }
 
     /**
@@ -35,7 +38,12 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'order_name' => 'required|max:255',
+        ]);
+        $order = Order::create($validatedData);
+
+        return redirect('/admin/order')->with('success', 'Order is successfully saved');
     }
 
     /**
@@ -57,7 +65,9 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Order::findOrFail($id);
+
+        return view('admin.order.edit', compact('order'));
     }
 
     /**
@@ -69,7 +79,13 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'order_name' => 'required|max:255',
+        ]);
+        Order::whereId($id)->update($validatedData);
+
+        return redirect('/admin/order')->with('success', 'Order is successfully updated');
+
     }
 
     /**
@@ -80,6 +96,9 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $order->delete();
+
+        return redirect()->back()->with('success', 'Order is successfully deleted');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.product.index');
+        $products = Product::all();
+
+        return view('admin.product.index', compact('products'));
     }
 
     /**
@@ -35,7 +38,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'product_name' => 'required|max:255',
+        ]);
+        $product = Product::create($validatedData);
+
+        return redirect('/admin/product')->with('success', 'Product is successfully saved');
     }
 
     /**
@@ -57,7 +65,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        return view('admin.product.edit', compact('product'));
     }
 
     /**
@@ -69,7 +79,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'product_name' => 'required|max:255',
+        ]);
+        Product::whereId($id)->update($validatedData);
+
+        return redirect('/admin/product')->with('success', 'Product is successfully updated');
     }
 
     /**
@@ -80,6 +95,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect()->back()->with('success', 'Product is successfully deleted');
     }
 }

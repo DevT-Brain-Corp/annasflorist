@@ -22,14 +22,43 @@
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive">
+                                @if(session()->get('success'))
+                                    <div class="alert alert-success alert-dismissible show fade">
+                                        <div class="alert-body">
+                                            <button class="close" data-dismiss="alert">
+                                                <span>&times;</span>
+                                            </button>
+                                            {{ session()->get('success') }}
+                                        </div>
+                                    </div>
+                                @endif
                                 <table class="table table-striped table-md">
                                     <thead>
                                     <tr>
-
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Created At</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-
+                                    @foreach($products as $product)
+                                        <tr>
+                                            <td>{{$product->id}}</td>
+                                            <td>{{$product->product_name}}</td>
+                                            <td>{{$product->created_at}}</td>
+                                            <td>
+                                                <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Edit</a>
+                                                <a>
+                                                    <form action="{{ route('product.destroy', $product->id)}}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                                    </form>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
