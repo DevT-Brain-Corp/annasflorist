@@ -1,0 +1,241 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+/* navbar */
+nav{
+  height: 90px;
+}
+
+.navbar-fixed {
+  position: absolute;
+  z-index:100;
+}
+
+.navnav{
+  background-color: transparent;
+  transition: background-color 1s ease 0s;
+  -webkit-box-shadow:none !important;
+  box-shadow:none !important;
+}
+
+.navbar-fixed .scrolled {
+  background-color: #000000 !important;
+  transition: background-color 200ms linear;
+}
+
+.solid {
+  background-color: #c3fbc2 !important;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+
+.navnav .nav-wrapper .brand-logo{
+  margin-top: -30px;
+}
+
+.iconsearch{
+  margin-top: 11px;
+  font-family: 'Righteous';
+  color: #000000;
+}
+
+#topbarsearch label{
+  font-family: 'Righteous';
+}
+/* end navbar */
+
+/* Spacing */
+.spacing{
+  height: 200px;
+}
+/* End Spacing */
+
+/* Cart */
+.cart .height{
+  height: 127px;
+}
+
+.cart .cart2 .btnn{
+  border-color: transparent !important;
+  background-color: #CC6666 !important;
+  color: #FFFFFF !important;
+  border-radius: 10%;
+  transition: 1s all ease;
+}
+
+.cart .cart2 .btnn:hover{
+  cursor: pointer;
+  background-color: #d14747 !important;
+  transition: 1s all ease;
+}
+
+.cart .cart2 img{
+  border-radius: 20px;
+}
+
+.cart .judul{
+  font-family: 'Saira';
+  font-size: 24px;
+  color: #123812;
+}
+
+.cart .harga{
+  font-family: 'Saira';
+  font-size: 24px;
+  color: #000000;
+}
+/* inputnumber */
+.inputnumber form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.inputnumber form input{
+  color: #000000;
+  font-style: normal;
+  font-family: 'Mukta Vaani';
+  font-size: 30px;
+}
+
+.inputnumber .value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.inputnumber .value-button:hover {
+  cursor: pointer;
+}
+
+.inputnumber form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+.inputnumber form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+.inputnumber form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+.inputnumber input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* end inputnumber */
+.harga .cart-quantity-input{
+
+}
+/* End Cart */
+
+/* Total */
+.total{
+  font-family: 'Saira';
+  font-size: 28px;
+  color: #000000;
+}
+
+.total .belisekarang{
+  background: rgba(21, 123, 18, 0.805827);
+}
+
+@media only screen and (max-width: 1376px){
+  .total .belisekarang2 p{
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1367px){
+  .total .belisekarang{
+    margin-top: 28px !important;
+    background: rgba(21, 123, 18, 0.805827);
+  }
+}
+
+.total .belisekarang a{
+  color: #FFFFFF;
+}
+/* End Total */
+
+/* Catalog */
+.sales .lihatsemua{
+  font-family: 'Mukta Vaani';
+  text-align: right;
+  font-size: 36px;
+  text-indent: 2px;
+  color: #123812;
+}
+
+.sales .card .card-image img{
+  height: 200px;
+}
+
+.sales .card .card-content h5{
+  font-family: 'Mukta Vaani';
+  font-weight: 500;
+  font-style: normal;
+  color: #123812;
+
+  font-size: 20px;
+}
+
+.sales .card .card-content p{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 31px;
+  color: #123812;
+}
+
+.sales .card .card-content .btnn{
+  background: #eeeeee;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+
+.sales .card .card-content .btnn::before{
+  background: #4caf50;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.sales .card .card-content .btnn:hover{
+  background: #4caf50;
+  color: #ffffff;
+}
+/* End Catalog */

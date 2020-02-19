@@ -34,3 +34,14 @@ Route::group(['middleware' => ['auth', 'admin'], 'namespace' => 'Admin', 'prefix
 Route::name('js.')->group(function() {
     Route::get('dynamic.js', 'JsController@dynamic')->name('dynamic');
 });
+
+
+// Debugging
+Route::get('/detail', 'FrontController@show')->name('detail');
+Route::get('/cart', 'FrontController@cart')->name('cart');
+Route::get('/testing', 'FrontController@testing')->name('testing');
+Route::get('/buynow', 'FrontController@buynow')->name('buynow');
+Route::get('/buynowbyatm', 'FrontController@buynowbyatm')->name('buynowbyatm');
+Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');
+Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
+// End Debugging
