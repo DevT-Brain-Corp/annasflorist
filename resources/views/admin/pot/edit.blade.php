@@ -1,20 +1,20 @@
 @extends('layouts.admin-master')
 
 @section('title')
-    Edit Product
+    Edit Pot
 @endsection
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Product</h1>
+            <h1>Pot</h1>
         </div>
 
         <div class="section-body">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Edit Product</h4>
+                        <h4>Edit Pot</h4>
                     </div>
                     <div class="card-body">
                         @if ($errors->any())
@@ -26,25 +26,19 @@
                                 </ul>
                             </div><br />
                         @endif
-                        <form action="{{ route('product.update', $product->id) }}" method="POST">
+                        <form action="{{ route('pot.update', $pot->id) }}" method="POST" enctype="multipart/form-data">
                             <div class="form-group row mb-4">
                                 @csrf
                                 @method('PATCH')
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pot Image</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control" name="product_name" value="{{$product->product_name}}">
+                                    <input type="file" class="form-control" name="pot_image" value="{{$pot->pot_image}}">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pot Name</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="number" class="form-control" name="price" value="{{$product->price}}">
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Stock</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <input type="number" class="form-control" name="stock" value="{{$product->stock}}">
+                                    <input type="text" class="form-control" name="pot_name" value="{{$pot->pot_name}}">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
@@ -60,4 +54,3 @@
         </div>
     </section>
 @endsection
-

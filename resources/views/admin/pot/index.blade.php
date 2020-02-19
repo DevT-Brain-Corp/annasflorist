@@ -1,15 +1,15 @@
 @extends('layouts.admin-master')
 
 @section('title')
-    Product
+    Pot
 @endsection
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Products</h1>
+            <h1>Pots</h1>
             <div class="section-header-button">
-                <a class="btn btn-primary" href={{ route('product.create') }}>Add Product</a>
+                <a class="btn btn-primary" href={{ route('pot.create') }}>Add Pot</a>
             </div>
         </div>
 
@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Products Table</h4>
+                            <h4>Pots Table</h4>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive">
@@ -36,23 +36,21 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Stock</th>
+                                        <th>Pot Image</th>
+                                        <th>Pot Name</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($products as $product)
+                                    @foreach($pots as $pot)
                                         <tr>
-                                            <td>{{$product->id}}</td>
-                                            <td>{{$product->product_name}}</td>
-                                            <td>{{$product->price}}</td>
-                                            <td>{{$product->stock}}</td>
+                                            <td>{{$pot->id}}</td>
+                                            <td><img width="150px" src="{{ url('/storage/'. $pot->pot_image) }}"></td>
+                                            <td>{{$pot->pot_name}}</td>
                                             <td>
-                                                <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Edit</a>
+                                                <a href="{{ route('pot.edit', $pot->id) }}" class="btn btn-primary">Edit</a>
                                                 <a>
-                                                    <form action="{{ route('product.destroy', $product->id)}}" method="POST">
+                                                    <form action="{{ route('pot.destroy', $pot->id)}}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="btn btn-danger" type="submit">Delete</button>

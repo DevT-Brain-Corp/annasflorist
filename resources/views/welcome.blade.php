@@ -35,9 +35,9 @@
                             <li><a href="#top" class="iconsearch scroll">Home</a></li>
                             <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                             <li><a href="#kategori" class="iconsearch scroll">Kategori</a></li>
-                                @if (Auth::check())
-                                    <li><a href="#" class="iconsearch">Notifikasi</a></li>
-                                @endif
+                            @if (Auth::check())
+                                <li><a href="#" class="iconsearch">Notifikasi</a></li>
+                            @endif
                                 <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                             @guest
                                 <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>

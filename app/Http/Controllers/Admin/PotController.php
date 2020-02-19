@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Product;
+use App\Pot;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
-class ProductController extends Controller
+class PotController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $pots = Pot::all();
 
-        return view('admin.product.index', compact('products'));
+        return view('admin.pot.index', compact('pots'));
     }
 
     /**
@@ -27,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        return view('admin.pot.create');
     }
 
     /**
@@ -38,14 +39,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'product_name' => 'required|max:255',
-            'price'        => 'required',
-            'stock'        => 'required'
+        $this->validate($request, [
+            'pot_image' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'pot_name'  => 'required|max:255',
         ]);
-        $product = Product::create($validatedData);
 
-        return redirect('/admin/product')->with('success', 'Product is successfully saved');
+        $image = $request->file('pot_image');
+        $pot_image = time()."_".$image->getClientOriginalName();
+        $image_path = 'storage';
+        $image->move($image_path, $pot_image);
+
+        Pot::create([
+            'pot_image' => $pot_image,
+            'pot_name'  => $request->pot_name
+        ]);
+
+        return redirect('/admin/pot')->with('success', 'Pot is successfully saved');
     }
 
     /**
@@ -67,9 +76,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
-
-        return view('admin.product.edit', compact('product'));
+        //
     }
 
     /**
@@ -81,14 +88,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'product_name' => 'required|max:255',
-            'price'        => 'required',
-            'stock'        => 'required'
-        ]);
-        Product::whereId($id)->update($validatedData);
-
-        return redirect('/admin/product')->with('success', 'Product is successfully updated');
+        //
     }
 
     /**
@@ -99,9 +99,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::findOrFail($id);
-        $product->delete();
+        $pot = Pot::findOrFail($id);
+        $pot->delete();
 
-        return redirect()->back()->with('success', 'Product is successfully deleted');
+        return redirect()->back()->with('success', 'Pot is successfully deleted');
     }
 }

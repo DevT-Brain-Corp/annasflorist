@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'namespace' => 'Admin', 'prefix
     Route::resource('category', 'CategoryController');
     Route::resource('product', 'ProductController');
     Route::resource('order', 'OrderController');
+    Route::resource('pot', 'PotController');
 });
 
 Route::name('js.')->group(function() {

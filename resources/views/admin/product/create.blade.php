@@ -35,6 +35,18 @@
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="number" class="form-control" name="price">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Stock</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="number" class="form-control" name="stock">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                 <div class="col-sm-12 col-md-7">
                                     <button type="submit" class="btn btn-primary">Create</button>

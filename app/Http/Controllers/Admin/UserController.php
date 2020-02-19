@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -38,13 +39,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $this->validate($request, [
             'name' => 'required|string|max:255',
             'phone_number' => 'required|phone:id|min:11|max:18',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8'
         ]);
-        $user = User::create($validatedData);
+
+        User::create([
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         return redirect('/admin/user')->with('success', 'User is successfully saved');
     }
@@ -82,12 +89,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
+        $this->validate($request, [
             'name' => 'required|string|max:255',
             'phone_number' => 'required|phone:id|min:11|max:18',
             'password' => 'required|string|min:8'
         ]);
-        User::whereId($id)->update($validatedData);
+
+        User::whereId($id)->update([
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
+            'password' => Hash::make($request->password),
+        ]);
 
         return redirect('/admin/user')->with('success', 'User is successfully updated');
     }
