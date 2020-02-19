@@ -8,7 +8,7 @@ nav{
 
 .navbar-fixed {
   position: absolute;
-  z-index:999999999;
+  z-index:100;
 }
 
 .navnav{
@@ -24,7 +24,7 @@ nav{
 }
 
 .solid {
-  background-color: #146511 !important;
+  background-color: #c3fbc2 !important;
   transition: background-color 1s ease 0s;
   box-shadow: 0 0 4px grey;
 }
@@ -50,14 +50,6 @@ nav{
   margin-top: 204px;
 }
 
-.deskripsi img{
-  height: 643px;
-  width: auto;
-
-  border-radius: 30px;
-  object-fit: cover;
-}
-
 .deskripsi .caption .caption1{
   font-family: 'Mukta Vaani';
   font-style: normal;
@@ -77,6 +69,299 @@ nav{
   text-indent: 2px;
 
   color: #000000;
+  margin-top: 10px;
+}
+
+.deskripsi .caption .caption2 p{
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Testing radio button*/
+label {
+  width: 100%;
+  font-size: 24px;
+  font-family: 'Mukta Vaani';
+}
+
+.card-input-element+.card {
+  height: auto;
+  color: #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.card-input-element+.card:hover {
+  cursor: pointer;
+}
+
+.card-input-element:checked+.card {
+  border: 2px solid #32a852;
+  -webkit-transition: border .3s;
+  -o-transition: border .3s;
+  transition: border .3s;
+}
+
+.card-input-element:checked+.card::after {
+  -webkit-animation-name: fadeInCheckbox;
+  animation-name: fadeInCheckbox;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@-webkit-keyframes fadeInCheckbox {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateZ(-20deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateZ(0deg);
+  }
+}
+
+@keyframes fadeInCheckbox {
+  from {
+    opacity: 0;
+    transform: rotateZ(-20deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateZ(0deg);
+  }
+}
+/* End Testing radio button*/
+/* inputnumber */
+.inputnumber form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.inputnumber form input{
+  color: #000000;
+  font-style: normal;
+  font-family: 'Mukta Vaani';
+  font-size: 30px;
+}
+
+.inputnumber .value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.inputnumber .value-button:hover {
+  cursor: pointer;
+}
+
+.inputnumber form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+.inputnumber form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+.inputnumber form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+.inputnumber input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* end inputnumber */
+
+.masukkankeranjang{
+  display: inline-block;
+  width: 100%;
+}
+
+.masukkankeranjang .masukkan{
+  float: right;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: rgba(195, 251, 194, 0.88);
+}
+
+.masukkankeranjang .beli{
+  float: right;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: rgba(21, 123, 18, 0.805827);
+}
+
+.masukkankeranjang .masukkan a{
+  font-family: 'Mukta Vaani';
+  font-size: 28px;
+  color: #000000;
+}
+
+.masukkankeranjang .masukkan i{
+  font-size: 22px;
+}
+
+.masukkankeranjang .beli a{
+  font-family: 'Mukta Vaani';
+  font-size: 28px;
+  color: #FFFFFF;
+}
+
+.deskripsi .colorbiru:hover{
 
 }
 /* end deskripsi */
+
+/* narasi */
+.narasi p{
+  font-family: 'Mukta Vaani';
+  font-size: 24px;
+  color: #000000;
+}
+/* end narasi */
+
+/* Catalog */
+.sales .lihatsemua{
+  font-family: 'Mukta Vaani';
+  text-align: right;
+  font-size: 36px;
+  text-indent: 2px;
+  color: #123812;
+}
+
+.sales .card .card-image img{
+  height: 200px;
+}
+
+.sales .card .card-content h5{
+  font-family: 'Mukta Vaani';
+  font-weight: 500;
+  font-style: normal;
+  color: #123812;
+
+  font-size: 20px;
+}
+
+.sales .card .card-content p{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 31px;
+  color: #123812;
+}
+
+.sales .card .card-content .btnn{
+  background: #eeeeee;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+
+.sales .card .card-content .btnn::before{
+  background: #4caf50;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.sales .card .card-content .btnn:hover{
+  background: #4caf50;
+  color: #ffffff;
+}
+/* End Catalog */
+
+/* About */
+.about{
+  margin-top: 50px;
+}
+
+.about .about1 h5,
+.about .about2 h5
+{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 38px;
+
+  color: #011F00;
+}
+
+.about .about1 p,
+.about .about2 p
+{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 38px;
+
+  color: #011F00;
+}
+
+.about .about2 img{
+  height: 42px;
+}
+
+.about .about3 img{
+  height: 100%;
+  width: 100%;
+}
+
+.about .about3 p{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: justify;
+
+  color: #011F00;
+}
+
+.about .footer{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 47px;
+  text-align: center;
+
+  color: #011F00;
+}
+/* End About */

@@ -1,10 +1,10 @@
 // detectscreen
 $(document).ready(function() {
-  $(window).on('resize', function() {
+  $(window).width(function() {
     if($(this).width() > 1367) {
-      $('.detectscreen').addClass('container');
-    }else{
-      $('.detectscreen').removeClass('container');
+        $('.detectscreen').addClass('container');
+    } else {
+        $('.detectscreen').removeClass('container');
     }
   });
 });

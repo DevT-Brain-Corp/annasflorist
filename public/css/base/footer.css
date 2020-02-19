@@ -1,0 +1,59 @@
+/* About */
+.about{
+  margin-top: 50px;
+}
+
+.about .about1 h5,
+.about .about2 h5
+{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 38px;
+
+  color: #011F00;
+}
+
+.about .about1 p,
+.about .about2 p
+{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 38px;
+
+  color: #011F00;
+}
+
+.about .about2 img{
+  height: 42px;
+}
+
+.about .about3 img{
+  width: 100%;
+}
+
+.about .about3 p{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: justify;
+
+  color: #011F00;
+}
+
+.about .footer{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 47px;
+  text-align: center;
+
+  color: #011F00;
+}
+/* End About */
