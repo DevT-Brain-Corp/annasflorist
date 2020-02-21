@@ -36,8 +36,9 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Pot Image</th>
-                                        <th>Pot Name</th>
+                                        <th>Image</th>
+                                        <th>Color</th>
+                                        <th>Stock</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -46,7 +47,8 @@
                                         <tr>
                                             <td>{{$pot->id}}</td>
                                             <td><img width="150px" src="{{ url('/storage/'. $pot->pot_image) }}"></td>
-                                            <td>{{$pot->pot_name}}</td>
+                                            <td style="background-color:{{ $pot->pot_color }}"></td>
+                                            <td>{{$pot->pot_stock}}</td>
                                             <td>
                                                 <a href="{{ route('pot.edit', $pot->id) }}" class="btn btn-primary">Edit</a>
                                                 <a>

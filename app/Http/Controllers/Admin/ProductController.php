@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,14 +39,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'product_name' => 'required|max:255',
-            'price'        => 'required',
-            'stock'        => 'required'
+        $this->validate($request, [
+            'product_image'       => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'product_name'        => 'required|max:255',
+            'product_description' => 'required|max:255',
+            'product_price'       => 'required|integer',
+            'product_stock'       => 'required|integer',
         ]);
-        $product = Product::create($validatedData);
 
-        return redirect('/admin/product')->with('success', 'Product is successfully saved');
+        $image = $request->file('product_image');
+        $product_image = time()."_".$image->getClientOriginalName();
+        $image->move(public_path('storage'), $product_image);
+
+        Product::create([
+            'product_image'       => $product_image,
+            'product_name'        => $request->product_name,
+            'product_description' => $request->product_description,
+            'product_price'       => $request->product_price,
+            'product_stock'       => $request->product_stock,
+        ]);
+
+        return redirect()->route('product.index')->with('success', 'Product is successfully saved');
     }
 
     /**
@@ -81,14 +95,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'product_name' => 'required|max:255',
-            'price'        => 'required',
-            'stock'        => 'required'
+        $this->validate($request, [
+            'product_name'        => 'required|max:255',
+            'product_description' => 'required|max:255',
+            'product_price'       => 'required|integer',
+            'product_stock'       => 'required|integer',
         ]);
-        Product::whereId($id)->update($validatedData);
 
-        return redirect('/admin/product')->with('success', 'Product is successfully updated');
+        $product = array(
+            'product_name'        => $request->product_name,
+            'product_description' => $request->product_description,
+            'product_price'       => $request->product_price,
+            'product_stock'       => $request->product_stock,
+        );
+
+        Product::whereId($id)->update($product);
+
+        return redirect()->route('product.index')->with('success', 'Product is successfully updated');
     }
 
     /**

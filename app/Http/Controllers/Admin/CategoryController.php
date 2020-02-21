@@ -43,7 +43,7 @@ class CategoryController extends Controller
         ]);
         $category = Category::create($validatedData);
 
-        return redirect('/admin/category')->with('success', 'Category is successfully saved');
+        return redirect()->route('category.index')->with('success', 'Category is successfully saved');
     }
 
     /**
@@ -84,7 +84,7 @@ class CategoryController extends Controller
         ]);
         Category::whereId($id)->update($validatedData);
 
-        return redirect('/admin/category')->with('success', 'Category is successfully updated');
+        return redirect()->route('category.index')->with('success', 'Category is successfully updated');
     }
 
     /**

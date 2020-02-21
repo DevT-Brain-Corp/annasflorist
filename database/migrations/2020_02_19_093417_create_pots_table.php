@@ -16,7 +16,8 @@ class CreatePotsTable extends Migration
         Schema::create('pots', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('pot_image');
-            $table->string('pot_name');
+            $table->string('pot_color');
+            $table->integer('pot_stock');
             $table->timestamps();
         });
     }

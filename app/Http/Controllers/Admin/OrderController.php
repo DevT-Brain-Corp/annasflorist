@@ -43,7 +43,7 @@ class OrderController extends Controller
         ]);
         $order = Order::create($validatedData);
 
-        return redirect('/admin/order')->with('success', 'Order is successfully saved');
+        return redirect()->route('order.index')->with('success', 'Order is successfully saved');
     }
 
     /**
@@ -84,7 +84,7 @@ class OrderController extends Controller
         ]);
         Order::whereId($id)->update($validatedData);
 
-        return redirect('/admin/order')->with('success', 'Order is successfully updated');
+        return redirect()->route('order.index')->with('success', 'Order is successfully updated');
 
     }
 

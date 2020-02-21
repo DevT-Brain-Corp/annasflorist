@@ -37,7 +37,6 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -46,7 +45,6 @@
                                             <tr>
                                                 <td>{{$category->id}}</td>
                                                 <td>{{$category->category_name}}</td>
-                                                <td>{{$category->created_at}}</td>
                                                 <td>
                                                     <a href="{{ route('category.edit', $category->id) }}" class="btn btn-primary">Edit</a>
                                                     <a>

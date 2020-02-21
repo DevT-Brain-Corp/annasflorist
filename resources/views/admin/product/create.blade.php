@@ -26,24 +26,36 @@
                                 </ul>
                             </div><br />
                         @endif
-                        <form action="{{ route('product.store') }}" method="POST">
+                        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                             <div class="form-group row mb-4">
                                 @csrf
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Image</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="file" class="form-control" name="product_image">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
                                 <div class="col-sm-12 col-md-7">
                                     <input type="text" class="form-control" name="product_name">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="text" class="form-control" name="product_description">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="number" class="form-control" name="price">
+                                    <input type="number" class="form-control" name="product_price">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Stock</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="number" class="form-control" name="stock">
+                                    <input type="number" class="form-control" name="product_stock">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">

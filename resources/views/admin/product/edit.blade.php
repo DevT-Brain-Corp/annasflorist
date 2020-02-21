@@ -30,7 +30,14 @@
                             <div class="form-group row mb-4">
                                 @csrf
                                 @method('PATCH')
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Image</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <img src="{{ URL::to('/') }}/storage/{{ $product->product_image }}" class="img-thumbnail" width="150"/>
+                                    <input type="hidden" name="hidden_image" value="{{$product->product_image}}" />
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
                                 <div class="col-sm-12 col-md-7">
                                     <input type="text" class="form-control" name="product_name" value="{{$product->product_name}}">
                                 </div>
@@ -38,13 +45,19 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="number" class="form-control" name="price" value="{{$product->price}}">
+                                    <input type="text" class="form-control" name="product_description" value="{{$product->product_description}}">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="number" class="form-control" name="product_price" value="{{$product->product_price}}">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Stock</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="number" class="form-control" name="stock" value="{{$product->stock}}">
+                                    <input type="number" class="form-control" name="product_stock" value="{{$product->product_stock}}">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">

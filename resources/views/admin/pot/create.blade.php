@@ -29,15 +29,56 @@
                         <form action="{{ route('pot.store') }}" method="POST" enctype="multipart/form-data">
                             <div class="form-group row mb-4">
                                 @csrf
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pot Image</label>
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Image</label>
                                 <div class="col-sm-12 col-md-7">
                                     <input type="file" class="form-control" name="pot_image">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pot Name</label>
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Color</label>
+                                <div class="col-md-7 row gutters-xs">
+                                    <div class="col-auto">
+                                        <label class="colorinput">
+                                            <input name="pot_color" type="radio" value="#6777ef" class="colorinput-input" />
+                                            <span class="colorinput-color bg-primary"></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="colorinput">
+                                            <input name="pot_color" type="radio" value="#ff91fe" class="colorinput-input" />
+                                            <span class="colorinput-color bg-pink"></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="colorinput">
+                                            <input name="pot_color" type="radio" value="#fc544b" class="colorinput-input" />
+                                            <span class="colorinput-color bg-danger"></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="colorinput">
+                                            <input name="pot_color" type="radio" value="#ffa426" class="colorinput-input" />
+                                            <span class="colorinput-color bg-warning"></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="colorinput">
+                                            <input name="pot_color" type="radio" value="#3abaf4" class="colorinput-input" />
+                                            <span class="colorinput-color bg-info"></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="colorinput">
+                                            <input name="pot_color" type="radio" value="#47c363" class="colorinput-input" />
+                                            <span class="colorinput-color bg-success"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Stock</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control" name="pot_name">
+                                    <input type="number" class="form-control" name="pot_stock">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">

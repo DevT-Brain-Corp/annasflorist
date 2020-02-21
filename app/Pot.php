@@ -9,6 +9,6 @@ class Pot extends Model
     protected $table = "pots";
 
     protected $fillable = [
-        'pot_image', 'pot_name'
+        'pot_image', 'pot_color', 'pot_stock'
     ];
 }

@@ -41,20 +41,21 @@ class PotController extends Controller
     {
         $this->validate($request, [
             'pot_image' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
-            'pot_name'  => 'required|max:255',
+            'pot_color' => 'required|max:255',
+            'pot_stock' => 'required|integer',
         ]);
 
         $image = $request->file('pot_image');
         $pot_image = time()."_".$image->getClientOriginalName();
-        $image_path = 'storage';
-        $image->move($image_path, $pot_image);
+        $image->move(public_path('storage'), $pot_image);
 
         Pot::create([
             'pot_image' => $pot_image,
-            'pot_name'  => $request->pot_name
+            'pot_color' => $request->pot_color,
+            'pot_stock' => $request->pot_stock,
         ]);
 
-        return redirect('/admin/pot')->with('success', 'Pot is successfully saved');
+        return redirect()->route('pot.index')->with('success', 'Pot is successfully saved');
     }
 
     /**
@@ -76,7 +77,9 @@ class PotController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pot = Pot::findOrFail($id);
+
+        return view('admin.pot.edit', compact('pot'));
     }
 
     /**
@@ -88,7 +91,19 @@ class PotController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'pot_color' => 'required|max:255',
+            'pot_stock' => 'required|integer',
+        ]);
+
+        $pot = array(
+            'pot_color' => $request->pot_color,
+            'pot_stock' => $request->pot_stock,
+        );
+
+        Pot::whereId($id)->update($pot);
+
+        return redirect()->route('pot.index')->with('success', 'Pot is successfully updated');
     }
 
     /**
