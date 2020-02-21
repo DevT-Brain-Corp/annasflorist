@@ -1,0 +1,63 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+/* Navbar */
+.iconsearch{
+  color: #000000;
+}
+
+.solid{
+  background-color: #32a852 !important;
+}
+/* End Navbar */
+
+/* All Tab */
+.tabriwayat{
+  margin-top: 100px;
+}
+
+.tabriwayat .tabs .tab{
+  text-transform: capitalize !important;
+}
+
+.tabriwayat .tabs .indicator{
+  background-color: rgba(145, 209, 144, 0.805827);
+}
+
+.tabriwayat .tabs .tab a:focus.active{
+  background-color: #e1f2e6;
+}
+
+.tabriwayat .tabs li a{
+  font-family: 'Saira' !important;
+  color: #000000 !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+/* End All Tab */
+
+/* Stock Kosong */
+.stockkosong{
+  margin-top: 10px;
+  height: 450px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.stockkosong .col.s12{
+  width: 912.8px;
+}
+
+.stockkosong .centerdiv{
+  display: inline-block !important;
+}
+
+.stockkosong .centerdiv p{
+  font-family: 'Saira';
+  font-size: 24px;
+  text-transform: capitalize;
+
+  color: #000000;
+}
+/* End Stock Kosong */

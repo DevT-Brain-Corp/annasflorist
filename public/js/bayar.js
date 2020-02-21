@@ -32,3 +32,12 @@ $('.image-upload-wrap').bind('dragover', function () {
 		$('.image-upload-wrap').removeClass('image-dropping');
 });
 // End Upload Bukti
+
+// Select Bank
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {
+      classes: "selectbank"
+    });
+  });
+// End Select Bank

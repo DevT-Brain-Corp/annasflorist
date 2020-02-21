@@ -43,17 +43,19 @@
                                 <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
                             @else
                                 {{--Ganti Dropdown Trigger--}}
-                                <li>
-                                    <a href="{{ route('logout') }}" class="iconsearch scroll"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <i class="material-icons">person_pin</i>
-                                    </a>
+                                <li><a class='dropdown-trigger iconsearch' href='#' data-target='datalogin'><i class="material-icons">person_pin</i></a></li>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </li>
+                                <ul id='datalogin' class='dropdown-content'>
+                                  <li><a href="#">Nama</a></li>
+                                  <li class="divider" tabindex="-1"></li>
+                                  <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a></li>
+                                </ul>
+                                    <!-- <a href="{{ route('logout') }}" class="iconsearch scroll" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="material-icons">person_pin</i>
+                                    </a> -->
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             @endguest
                         </ul>
                     </div>
@@ -164,7 +166,7 @@
 
                     <div class="col s2">
                         <a class="btnn" href="https://shopee.co.id/annaramadhaniati" target="_blank">
-                            <img style="height: 40px;" src="{{ asset('img/shopee.png') }}" alt="shopee">
+                            <img src="{{ asset('img/shopee.png') }}" alt="shopee">
                         </a>
                     </div>
 

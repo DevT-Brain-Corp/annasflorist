@@ -96,6 +96,13 @@ nav{
   color: #375436;
 }
 /* End Modal */
+
+/* Dropdown Logout */
+.dropdown-content{
+  top: 70px !important;
+}
+/* End Dropdown Logout */
+
 /* end navbar */
 
 /* Kotak 1 */
