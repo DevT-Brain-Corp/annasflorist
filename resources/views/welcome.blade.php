@@ -40,7 +40,9 @@
                                 @endif
                                 <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                             @guest
-                                <!-- <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li> -->
+                                <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
+                            @else
+                                {{--Ganti Dropdown Trigger--}}
                                 <li><a class='dropdown-trigger iconsearch' href='#' data-target='datalogin'><i class="material-icons">person_pin</i></a></li>
 
                                 <ul id='datalogin' class='dropdown-content'>
@@ -48,17 +50,12 @@
                                   <li class="divider" tabindex="-1"></li>
                                   <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a></li>
                                 </ul>
-                            @else
-                                {{--Ganti Dropdown Trigger--}}
-                                <li>
                                     <!-- <a href="{{ route('logout') }}" class="iconsearch scroll" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <i class="material-icons">person_pin</i>
                                     </a> -->
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             @endguest
                         </ul>
                     </div>
