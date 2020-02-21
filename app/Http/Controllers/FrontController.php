@@ -35,4 +35,9 @@ class FrontController extends Controller
     {
         return view('product.totalpay');
     }
+
+    public function riwayat()
+    {
+        return view('product.riwayatpembelian');
+    }
 }

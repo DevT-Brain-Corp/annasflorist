@@ -1,0 +1,33 @@
+nav{
+  height: 90px;
+}
+
+.navnav{
+  background-color: transparent;
+  transition: background-color 1s ease 0s;
+  -webkit-box-shadow:none !important;
+  box-shadow:none !important;
+}
+
+.navbar-fixed .scrolled {
+  background-color: #000000 !important;
+  transition: background-color 200ms linear;
+}
+
+.solid {
+  background-color: #146511 !important;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+
+.navnav .nav-wrapper .brand-logo{
+  margin-top: -30px;
+}
+
+.iconsearch{
+  margin-top: 11px;
+}
+
+.fontrighteous{
+  font-family: 'Righteous';
+}

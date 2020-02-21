@@ -57,6 +57,63 @@
         </div>
       </div>
     </div>
+
+    <div class="datarekening">
+      <div class="row">
+        <div class="col s3">
+          <p class="data1">Nama Pengirim Rekening:</p>
+        </div>
+        <div class="col s9">
+          <input id="namapengirim" type="text" class="validate">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s3">
+          <p class="data1">Nomor Rekening:</p>
+        </div>
+        <div class="col s9">
+          <input id="nomorpengirim" type="number" class="validate">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s3">
+          <p class="data1">Transfer dari Bank:</p>
+        </div>
+        <div class="col s4 offset-s5 right">
+          <select class="icons">
+            <option value="" disabled selected>...</option>
+            <option value="" data-icon="{{ asset('img/pengiriman/bank/icon/bri.png') }}">BANK Mandiri</option>
+            <option value="" data-icon="{{ asset('img/pengiriman/bank/icon/bni.png') }}">BANK BNI</option>
+            <option value="" data-icon="{{ asset('img/pengiriman/bank/icon/ovo.png') }}">OVO</option>
+            <option value="" data-icon="{{ asset('img/pengiriman/bank/icon/linkaja.png') }}">Link Aja</option>
+            <option value="" data-icon="{{ asset('img/pengiriman/bank/icon/dana.png') }}">Dana</option>
+            <option value="" data-icon="{{ asset('img/pengiriman/bank/icon/gopay.png') }}">GoPay</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s3">
+          <p class="data1">Total Pembayaran:</p>
+        </div>
+        <div class="col s4 offset-s5 right data3">
+          <p class="data2">Rp. 147.000</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row tombol">
+      <div class="col s6">
+        <div class="right">
+          <a class="tombol2" href="#">Kirim Bukti Sekarang</a>
+        </div>
+      </div>
+      <div class="col s6">
+        <a class="tombol2" href="#">Kirim Bukti Nanti</a>
+      </div>
+    </div>
   </div>
 </section>
 <!-- End Upload Bukti -->
