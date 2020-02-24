@@ -30,7 +30,7 @@
                     <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdown1'>Kategori</a></li>
                         @if (Auth::check())
-                            <li><a href="#" class="iconsearch">Notifikasi</a></li>
+                            <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                         @endif
                         <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                     @guest

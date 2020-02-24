@@ -11,4 +11,9 @@ class Pot extends Model
     protected $fillable = [
         'pot_image', 'pot_color', 'pot_stock'
     ];
+
+    public function order()
+    {
+        return $this->hasMany(Order::class, 'order_id', 'id');
+    }
 }

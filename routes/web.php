@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontController@getProduct')->name('welcome');
 
 Auth::routes();
 // Override login route from Auth::routes();
@@ -40,7 +38,6 @@ Route::name('js.')->group(function() {
 // Debugging
 Route::get('/detail', 'FrontController@show')->name('detail');
 Route::get('/cart', 'FrontController@cart')->name('cart');
-Route::get('/testing', 'FrontController@testing')->name('testing');
 Route::get('/buynow', 'FrontController@buynow')->name('buynow');
 Route::get('/buynowbyatm', 'FrontController@buynowbyatm')->name('buynowbyatm');
 Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');

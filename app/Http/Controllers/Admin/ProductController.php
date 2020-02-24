@@ -28,7 +28,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $categories = Category::all();
+
+        return view('admin.product.create', compact('categories'));
     }
 
     /**
@@ -45,6 +47,7 @@ class ProductController extends Controller
             'product_description' => 'required|max:255',
             'product_price'       => 'required|integer',
             'product_stock'       => 'required|integer',
+            'category_id'         => 'required|integer',
         ]);
 
         $image = $request->file('product_image');
@@ -57,6 +60,7 @@ class ProductController extends Controller
             'product_description' => $request->product_description,
             'product_price'       => $request->product_price,
             'product_stock'       => $request->product_stock,
+            'category_id'         => $request->category_id,
         ]);
 
         return redirect()->route('product.index')->with('success', 'Product is successfully saved');
@@ -81,9 +85,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
+
         $product = Product::findOrFail($id);
 
-        return view('admin.product.edit', compact('product'));
+        return view('admin.product.edit', compact('categories', 'product'));
     }
 
     /**
@@ -100,6 +106,7 @@ class ProductController extends Controller
             'product_description' => 'required|max:255',
             'product_price'       => 'required|integer',
             'product_stock'       => 'required|integer',
+            'category_id'         => 'required|integer',
         ]);
 
         $product = array(
@@ -107,6 +114,7 @@ class ProductController extends Controller
             'product_description' => $request->product_description,
             'product_price'       => $request->product_price,
             'product_stock'       => $request->product_stock,
+            'category_id'         => $request->category_id
         );
 
         Product::whereId($id)->update($product);

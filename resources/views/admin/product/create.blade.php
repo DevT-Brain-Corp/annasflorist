@@ -47,6 +47,16 @@
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <select class="form-control" name="category_id">
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
                                 <div class="col-sm-12 col-md-7">
                                     <input type="number" class="form-control" name="product_price">

@@ -14,7 +14,7 @@ class CreatePotsTable extends Migration
     public function up()
     {
         Schema::create('pots', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('pot_image');
             $table->string('pot_color');
             $table->integer('pot_stock');
