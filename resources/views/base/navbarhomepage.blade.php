@@ -3,12 +3,11 @@
   <script src="{{ asset('js/base/navbar.js') }}"></script>
 </head>
 
-<!-- Navbar -->
 <div class="navbar-fixed">
     <nav class="navnav">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#top" class="brand-logo scroll" style="margin-top: -30px"><img src="{{ asset('img/logo.png') }}" alt="logo" width="156" height="auto"></a>
+                <a href="#top" class="brand-logo scroll" style="margin-top: 11px; font-family: 'Righteous';">Annas Florist</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down fontrighteous">
                     <li>
@@ -57,12 +56,44 @@
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-  <li><a href="#!">Sales</a></li>
-  <li><a href="#!">Souvenir</a></li>
-  <li><a href="#!">Workshop</a></li>
-  <li><a href="#!">Rental</a></li>
-  <li><a href="#!">Dekorasi</a></li>
+  <li><a class="scroll" href="#sales">Sales</a></li>
+  <li><a class="scroll" href="#souvenir">Souvenir</a></li>
+  <li><a class="scroll" href="#workshop">Workshop</a></li>
+  <li><a class="scroll" href="#rental">Rental</a></li>
+  <li><a class="scroll" href="#dekorasi">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown -->
 
-<!-- End Navbar -->
+<!-- Modal -->
+@guest
+<div id="modal1" class="modal">
+    <form class="modal-content" method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <label for="email">{{ __('Email') }}</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="password" type="password" class="validate" name="password" required autocomplete="current-password">
+                <label for="password">{{ __('Kata Sandi') }}</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3 center-align btnn">
+                <button class="btn waves-effect waves-light modal-close" type="submit" name="action">{{ __('Masuk') }}</button>
+                <a href="{{ route('password.request') }}"><p class="sandi">Lupa Kata Sandi?</p></a>
+                <p class="member">Belum jadi member? <a class="memberdaftar" href="{{ route('register') }}">{{ __('Daftar') }}</a></p>
+            </div>
+        </div>
+
+    </form>
+</div>
+@else
+{{--Content Dropdown Log out & Profile--}}
+@endguest
+<!-- End Modal -->

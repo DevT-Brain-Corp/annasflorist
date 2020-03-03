@@ -58,4 +58,8 @@
 </div>
 <!-- End Catalog -->
 
+<!-- About -->
+@include('base.footer')
+<!-- End About -->
+
 @endsection

@@ -1,12 +1,23 @@
-<!-- Jika Stock Kosong -->
-<div class="stockkosong valign-wrapper">
-  <div class="row">
-    <div class="col s12">
-      <div class="centerdiv">
-        <img src="{{ asset('img/product/emptybox.png') }}" alt="emptybox">
-        <p class="word">anda belum memiliki produk</p>
+<!-- Stock Ada -->
+<div class="stockisi">
+  <div class="stockisi2">
+    <div class="row">
+      <div class="col s3">
+        <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="sukulen panda.jpg">
+      </div>
+      <div class="col s3">
+        <p>Sukulen Panda</p>
+        <p>3 Produk</p>
+      </div>
+      <div class="col s3 texting">
+        <p>Harga Pengiriman</p>
+        <p>Rp.27.000</p>
+      </div>
+      <div class="col s3 texting">
+        <p>Total Harga</p>
+        <p>Rp.147.000</p>
       </div>
     </div>
   </div>
 </div>
-<!-- End Jika Stock Kosong -->
+<!-- End Stock Ada -->

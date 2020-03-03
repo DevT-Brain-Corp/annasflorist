@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcomenew');    //hasil revisi homepage
+});
+
+Route::get('/homelama', function () {
+    return view('welcome');    //awal homepage
 });
 
 Auth::routes();
@@ -39,10 +43,18 @@ Route::name('js.')->group(function() {
 // Debugging
 Route::get('/detail', 'FrontController@show')->name('detail');
 Route::get('/cart', 'FrontController@cart')->name('cart');
-Route::get('/testing', 'FrontController@testing')->name('testing');
+
+Route::get('/testing', function () {
+    return view('testing');
+});
+
 Route::get('/buynow', 'FrontController@buynow')->name('buynow');
 Route::get('/buynowbyatm', 'FrontController@buynowbyatm')->name('buynowbyatm');
 Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');
 Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
 Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
+
+Route::get('/sales', function () {
+    return view('categories.sales');
+});
 // End Debugging

@@ -1,24 +1,3 @@
-// detectscreen
-$(document).ready(function() {
-  $(window).width(function() {
-    if($(this).width() > 1367) {
-        $('.detectscreen').addClass('container');
-    } else {
-        $('.detectscreen').removeClass('container');
-    }
-  });
-});
-// end detectscreen
-
-// Dropdown
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.dropdown-trigger');
-  var instances = M.Dropdown.init(elems, {
-    hover:true
-  });
-});
-// End Dropdown
-
 // Sliding Menu
 $('.scroll').on('click', function(e) {
 
@@ -34,31 +13,7 @@ $('.scroll').on('click', function(e) {
 });
 // End Sliding Menu
 
-
-$(document).ready(function() {
-  $(window).scroll(function() {
-    if($(this).scrollTop() > 50) {
-        $('.navnav').addClass('solid');
-    } else {
-        $('.navnav').removeClass('solid');
-    }
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-  });
-
-// Modal
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems,{
-
-    });
-  });
-// End Modal
-
+// slider
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.slider');
     var instances = M.Slider.init(elems, {
@@ -66,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
       height: 800
     });
   });
+// End Slider
 
 // Maps
 var mymap = L.map('mapid').setView([-8.166074, 113.720853], 100);
@@ -78,7 +34,3 @@ L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=amayy49uQ
 var marker = L.marker([-8.166074, 113.720853]).addTo(mymap);
 marker.bindPopup("<b>Annas Florist</b><br>Perumahan Mastrip Blok W-4, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68121").openPopup();
 // End Maps
-
-// Read more
-
-// End Read More

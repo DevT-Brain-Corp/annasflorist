@@ -5,22 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hover: true
   });
 });
-// Navbar Dropdown
-
-// Sliding Menu
-$('.scroll').on('click', function(e) {
-
- var tujuan = $(this).attr('href');
-
- var elemenTujuan = $(tujuan);
-
- $('html , body').animate({
-  scrollTop: elemenTujuan.offset().top - 90
-}, 1000, 'easeInOutExpo');
-
- e.preventDefault();
-});
-// End Sliding Menu
+// End Navbar Dropdown
 
 $(document).ready(function() {
   $(window).scroll(function() {
