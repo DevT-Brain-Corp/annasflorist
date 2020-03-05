@@ -41,7 +41,10 @@ Route::name('js.')->group(function() {
 
 
 // Debugging
-Route::get('/detail', 'FrontController@show')->name('detail');
+Route::get('/detail', function(){
+  return view('product.detail');
+});
+
 Route::get('/cart', 'FrontController@cart')->name('cart');
 
 Route::get('/testing', function () {
