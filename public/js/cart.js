@@ -42,6 +42,13 @@ $(document).ready(function() {
 });
 // End layar
 
+// Modal Delete Item
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems);
+});
+// End Modal Delete Item
+
 // inputnumber
 function increaseValue() {
   var value = parseInt(document.getElementById('number').value, 10);

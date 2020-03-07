@@ -64,6 +64,10 @@ nav{
   transition: 1s all ease;
 }
 
+.cart .cart2 .btnn i{
+  padding: 10px;
+}
+
 .cart .cart2 .btnn:hover{
   cursor: pointer;
   background-color: #d14747 !important;
@@ -154,6 +158,21 @@ input[type=number]::-webkit-outer-spin-button {
 .harga .cart-quantity-input{
 
 }
+
+/* Modal Delete*/
+.cart-items .modal .modal-footer a{
+  font-family: 'Saira';
+  font-weight: bold;
+}
+
+.cart-items .modal .modal-footer .tidak{
+  color: #FFFFFF !important;
+}
+
+.cart-items .modal .tidak{
+  background: rgba(21, 123, 18, 0.805827);
+}
+/* End Modal Delete*/
 /* End Cart */
 
 /* Total */
