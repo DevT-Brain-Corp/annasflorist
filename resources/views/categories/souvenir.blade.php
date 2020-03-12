@@ -1,6 +1,6 @@
 @extends('base.materialize')
 
-@section('title', 'Sales | Annas Florist')
+@section('title', 'Souvenir | Annas Florist')
 
 @section('content')
 <head>
@@ -14,7 +14,7 @@
 
 <!-- Sales -->
 <div class="container tulisansales">
-  <h1>sales</h1>
+  <h1>souvenir</h1>
 </div>
 <!-- End Sales -->
 
@@ -26,7 +26,27 @@
     <div class="col s3">
       <div class="card">
         <div class="card-image">
-          <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
+          <img class="responsive-img" src="{{ asset('img/souvenir/1.jpg') }}">
+        </div>
+        <div class="card-content">
+          <h5>Pernikahan Kaktus</h5>
+          <div class="row">
+            <div class="col s6">
+              <p>Rp. 40.000</p>
+            </div>
+            <div class="col s6">
+              <p class="right-align">Jember</p>
+            </div>
+          </div>
+          <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+          <img class="responsive-img" src="{{ asset('img/souvenir/2.jpg') }}">
         </div>
         <div class="card-content">
           <h5>Sukulen Panda</h5>
@@ -46,7 +66,7 @@
     <div class="col s3">
       <div class="card">
         <div class="card-image">
-          <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
+          <img class="responsive-img" src="{{ asset('img/souvenir/3.jpg') }}">
         </div>
         <div class="card-content">
           <h5>Sukulen Panda</h5>
@@ -66,27 +86,7 @@
     <div class="col s3">
       <div class="card">
         <div class="card-image">
-          <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
-        </div>
-        <div class="card-content">
-          <h5>Sukulen Panda</h5>
-          <div class="row">
-            <div class="col s6">
-              <p>Rp. 40.000</p>
-            </div>
-            <div class="col s6">
-              <p class="right-align">Jember</p>
-            </div>
-          </div>
-          <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col s3">
-      <div class="card">
-        <div class="card-image">
-          <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
+          <img class="responsive-img" src="{{ asset('img/souvenir/4.jpg') }}">
         </div>
         <div class="card-content">
           <h5>Sukulen Panda</h5>

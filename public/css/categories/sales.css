@@ -1,0 +1,111 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+/* Navbar */
+.iconsearch,
+.brand-logo{
+  color: #011F00 !important;
+}
+
+.solid{
+  background-color: #c3fbc2 !important;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+/* End Navbar */
+
+/* Tulisan Sales */
+.tulisansales{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.tulisansales h1{
+  font-family: 'Saira';
+  font-size: 100px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* End Tulisan Sales */
+
+/* Card Sales */
+.cardsales{
+  height: 865px;
+  margin-bottom: 150px;
+}
+
+.cardsales .card{
+  height: 435px;
+}
+
+.cardsales .card-image img{
+  height: 200px;
+}
+
+.cardsales .card-content h5{
+  font-family: 'Saira';
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+  color: #011F00;
+
+  font-size: 20px;
+}
+
+.cardsales .card-content p{
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 31px;
+  color: #123812;
+}
+
+.cardsales .card-content .btnn{
+  background: #eeeeee;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: 1s all ease;
+
+  position: absolute;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cardsales .card-content .btnn::before{
+  background: #4caf50;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.cardsales .card-content .btnn:hover{
+  background: #4caf50;
+  color: #ffffff;
+}
+/* End Card Sales */
+
+/* Set Halaman */
+.sethalaman{
+  text-align: center;
+}
+
+.sethalaman ul{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.sethalaman .pagination li.active{
+  background-color: #375436 !important;
+}
+/* End Set Halaman */

@@ -1,0 +1,74 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+/* Navbar */
+.iconsearch,
+.brand-logo{
+  color: #011F00 !important;
+}
+
+.solid{
+  background-color: #c3fbc2 !important;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+/* End Navbar */
+
+/* Carousel */
+.catalogcarousel .catalogcarousel2 h1{
+  font-family: 'Saira';
+  font-size: 36px;
+
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.catalogcarousel .catalogcarousel2 .carousel{
+  height: 300px !important;
+  top: -50px;
+  margin-top: 30px;
+}
+
+.catalogcarousel .catalogcarousel2 .carousel a.carousel-item img{
+  height: 300px !important;
+  object-fit: cover;
+}
+
+.catalogcarousel .catalogcarousel2 .textcarousel{
+  position: absolute;
+  margin-top: -70px;
+
+  background: #FFFCFC;
+  border-radius: 0px 40px 0px 0px;
+  padding-right: 20px;
+}
+
+.catalogcarousel .catalogcarousel2 .textcarousel p{
+  font-family: 'Saira';
+  font-size: 15px;
+
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 4px !important;
+  margin-top: 4px !important;
+}
+
+.catalogcarousel .catalogcarousel2 .textcarouselflex{
+  display: flex;
+  justify-content: center;
+}
+
+.catalogcarousel .catalogcarousel2 .textcarousel2{
+  width: 250px;
+}
+
+.catalogcarousel .catalogcarousel2 .textcarousel2 p{
+  font-family: 'Saira';
+  font-size: 15px;
+  text-align: justify;
+
+  color: #011F00;
+  margin-top: 0 !important;
+}
+/* End Carousel */

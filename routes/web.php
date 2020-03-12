@@ -58,6 +58,22 @@ Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
 Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
 
 Route::get('/sales', function () {
-    return view('categories.sales');
+  return view('categories.sales');
+});
+
+Route::get('/souvenir', function () {
+  return view('categories.souvenir');
+});
+
+Route::get('/rental', function () {
+  return view('categories.rental');
+});
+
+Route::get('/workshop', function () {
+  return view('categories.workshop');
+});
+
+Route::get('/dekorasi', function () {
+  return view('categories.dekorasi');
 });
 // End Debugging
