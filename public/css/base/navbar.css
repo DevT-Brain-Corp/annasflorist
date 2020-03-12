@@ -2,6 +2,10 @@ nav{
   height: 90px;
 }
 
+.navbar-fixed{
+  z-index: 90000 !important;
+}
+
 .navnav{
   background-color: transparent;
   transition: background-color 1s ease 0s;
@@ -15,19 +19,66 @@ nav{
 }
 
 .solid {
-  background-color: #146511 !important;
+  background-color: #146511;
   transition: background-color 1s ease 0s;
   box-shadow: 0 0 4px grey;
-}
-
-.navnav .nav-wrapper .brand-logo{
-  margin-top: -30px;
 }
 
 .iconsearch{
   margin-top: 11px;
 }
 
+.dropdown-content{
+  top: 70px !important;
+}
+
+.dropdown-content li a{
+  color: #000000;
+}
+
 .fontrighteous{
   font-family: 'Righteous';
 }
+
+/* Modal */
+.modal{
+  top: 100px !important;
+  width: 40% !important;
+}
+
+.modal .btnn button{
+  background: rgba(67, 210, 31, 0.74) !important;
+  border-radius: 20px !important;
+  font-family: 'Rambla';
+  color: #000000;
+  font-size: 20px;
+}
+
+.modal .sandi{
+  font-family: 'Rambla';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+
+  color: #123812;
+}
+
+.modal .member{
+  font-family: 'Rambla';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+
+  color: #000000;
+}
+
+.modal .memberdaftar{
+  font-family: 'Rambla';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  text-decoration-line: underline;
+
+  color: #375436;
+}
+/* End Modal */

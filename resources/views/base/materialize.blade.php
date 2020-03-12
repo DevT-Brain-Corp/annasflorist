@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+    <script src="{{ asset('js/master/jquery-3.4.1.js') }}"></script>
+    <script src="{{ asset('js/master/jquery.easing.1.3.js') }}"></script>
 
     <!-- materialize CSS -->
     <link rel="stylesheet" href="{{ asset('css/base/materialize.min.css') }}">

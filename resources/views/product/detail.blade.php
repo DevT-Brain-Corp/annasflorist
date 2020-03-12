@@ -6,78 +6,14 @@
 <head>
   <link rel="stylesheet" href="{{ asset('css/product.css') }}">
   <script type="text/javascript" src="{{ asset('js/product.js') }}"></script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <!-- Navbar -->
-<div class="navbar-fixed">
-  <nav class="navnav">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a href="#top" class="brand-logo scroll"><img src="img/logo.png" alt="logo" width="156" height="auto"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down fontrighteous">
-          <li>
-            <div class="center row">
-              <div class="col s12" >
-                <div class="row" id="topbarsearch">
-                  <div class="col s2 iconsearch">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </div>
-                  <div class="input-field col s10">
-                    <input id="search" type="text" class="validate">
-                    <label for="search">Cari sesuatu</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="#" class="iconsearch scroll">Home</a></li>
-          <li><a href="#" class="iconsearch scroll">Profil</a></li>
-          <li><a href="#" class="iconsearch scroll">Kategori</a></li>
-          <li><a href="#" class="iconsearch">Notifikasi</a></li>
-          <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
-          <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-
-<ul class="sidenav" id="mobile-demo">
-  <li>
-   <div class="center row">
-      <div class="col s12" >
-        <div class="row" id="topbarsearch">
-          <div class="col s2">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </div>
-          <div class="input-field col s10">
-            <input id="search" type="text" class="validate">
-            <label for="search">Search</label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li><a href="#" class="iconsearch scroll">Home</a></li>
-  <li><a href="#" class="iconsearch scroll">Profil</a></li>
-  <li><a href="#" class="iconsearch scroll">Kategori</a></li>
-  <li><a href="#" class="iconsearch">Notifikasi</a></li>
-  <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
-  <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
-</ul>
-
-<!-- Modal -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Modal Header</h4>
-    <p>A bunch of text</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>
-<!-- End Modal -->
+@include('base.navbar')
 <!-- End Navbar -->
 
 <!-- Deskripsi -->
@@ -92,13 +28,6 @@
               <img src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
               <div class="caption center-align">
                 <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-            <li>
-              <img src="{{ asset('img/pot/biru.jpg') }}" alt="">
-              <div class="caption left-align">
-                <!-- <h3>Left Aligned Caption</h3> -->
                 <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
               </div>
             </li>
@@ -152,54 +81,61 @@
             </div>
             <div class="col s9">
               <div class="row" id="foobar">
+
                 <div class="col s12 l6 xl4">
                   <label>
                     <input type="radio" name="myRadios" class="card-input-element d-none" onclick="handleClick(this);" id="1">
-                    <div class="card ">
-                      Biru
+                    <div class="card tooltipped" id="Biru">
+                      <span data-position="bottom">Biru</span>
                     </div>
                   </label>
                 </div>
+
                 <div class="col s12 l6 xl4">
                   <label>
                     <input type="radio" name="myRadios" class="card-input-element d-none" onclick="handleClick(this);" id="2">
-                    <div class="card ">
-                      Pink
+                    <div class="card tooltipped" id="Pink">
+                      <span data-position="bottom">Pink</span>
                     </div>
                   </label>
                 </div>
+
                 <div class="col s12 l6 xl4">
                   <label>
                     <input type="radio" name="myRadios" class="card-input-element d-none" onclick="handleClick(this);" id="3">
-                    <div class="card ">
-                      Merah
+                    <div class="card tooltipped" id="Merah">
+                      <span data-position="bottom">Merah</span>
                     </div>
                   </label>
                 </div>
+
                 <div class="col s12 l6 xl4">
                   <label>
                     <input type="radio" name="myRadios" class="card-input-element d-none" onclick="handleClick(this);" id="4">
-                    <div class="card ">
-                      Navy
+                    <div class="card tooltipped" id="Hitam">
+                      <span data-position="bottom">Hitam</span>
                     </div>
                   </label>
                 </div>
+
                 <div class="col s12 l6 xl4">
                   <label>
                     <input type="radio" name="myRadios" class="card-input-element d-none" onclick="handleClick(this);" id="5">
-                    <div class="card ">
-                      Hijau
+                    <div class="card tooltipped" id="Hijau">
+                      <span data-position="bottom">Hijau</span>
                     </div>
                   </label>
                 </div>
+
                 <div class="col s12 l6 xl4">
                   <label>
                     <input type="radio" name="myRadios" class="card-input-element d-none" onclick="handleClick(this);" id="6">
-                    <div class="card ">
-                      Kuning
+                    <div class="card tooltipped" id="Putih">
+                      <span data-position="bottom">Putih</span>
                     </div>
                   </label>
                 </div>
+
               </div>
             </div>
           </div>

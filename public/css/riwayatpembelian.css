@@ -8,7 +8,7 @@ body{
 }
 
 .solid{
-  background-color: #32a852 !important;
+  background-color: #c4f3c4 !important;
 }
 /* End Navbar */
 
@@ -37,12 +37,49 @@ body{
 }
 /* End All Tab */
 
+.carousel{
+  height: 450px !important;
+  background-color: #ffffff;
+  overflow-y: scroll;
+}
+
 /* Stock Kosong */
 .stockkosong{
   margin-top: 10px;
-  height: 450px;
+  height: 450px !important;
   background-color: #ffffff;
   text-align: center;
+}
+
+.stockisi{
+  margin-top: 10px;
+  height: 450px;
+  background-color: #ffffff;
+}
+
+.stockisi .stockisi2{
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+}
+
+.stockisi .stockisi2 .row .col{
+  margin-top: 20px;
+}
+
+.stockisi .stockisi2 .row .col p{
+  font-family: 'Mukta Vaani';
+  font-size: 20px;
+
+  color: #123812;
+}
+
+.stockisi .stockisi2 .row .texting p{
+  margin-top: 0 !important;
+  text-align: center !important;
+}
+
+.stockisi .row .col img{
+  border-radius: 10px;
 }
 
 .stockkosong .col.s12{

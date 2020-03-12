@@ -36,7 +36,18 @@ Route::name('js.')->group(function() {
 
 
 // Debugging
-Route::get('/detail', 'FrontController@show')->name('detail');
+Route::get('/detail', function(){
+  return view('product.detail');
+});
+
+Route::get('/testing', function () {
+    return view('testing');
+});
+
+Route::get('/sales', function () {
+    return view('categories.sales');
+});
+
 Route::get('/cart', 'FrontController@cart')->name('cart');
 Route::get('/buynow', 'FrontController@buynow')->name('buynow');
 Route::get('/buynowbyatm', 'FrontController@buynowbyatm')->name('buynowbyatm');

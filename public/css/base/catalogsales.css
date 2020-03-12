@@ -11,10 +11,11 @@
 }
 
 .sales .card .card-content h5{
-  font-family: 'Mukta Vaani';
-  font-weight: 500;
+  font-family: 'Saira';
+  font-weight: bold;
   font-style: normal;
-  color: #123812;
+  text-align: center;
+  color: #011F00;
 
   font-size: 20px;
 }
