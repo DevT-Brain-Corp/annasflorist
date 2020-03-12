@@ -36,8 +36,12 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Image</th>
                                         <th>Name</th>
-                                        <th>Created At</th>
+                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -45,8 +49,12 @@
                                     @foreach($products as $product)
                                         <tr>
                                             <td>{{$product->id}}</td>
+                                            <td><img width="150px" src="{{ url('/storage/'. $product->product_image) }}"></td>
                                             <td>{{$product->product_name}}</td>
-                                            <td>{{$product->created_at}}</td>
+                                            <td>{{$product->product_description}}</td>
+                                            <td>{{$product->category->category_name}}</td>
+                                            <td>{{$product->product_price}}</td>
+                                            <td>{{$product->product_stock}}</td>
                                             <td>
                                                 <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Edit</a>
                                                 <a>

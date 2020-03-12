@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User;
+use App\Pot;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
-class UserController extends Controller
+class PotController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $pots = Pot::all();
 
-        return view('admin.user.index', compact('users'));
+        return view('admin.pot.index', compact('pots'));
     }
 
     /**
@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.pot.create');
     }
 
     /**
@@ -40,20 +40,22 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'         => 'required|string|max:255',
-            'phone_number' => 'required|phone:id|min:11|max:18',
-            'email'        => 'required|string|email|max:255|unique:users',
-            'password'     => 'required|string|min:8'
+            'pot_image' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'pot_color' => 'required|max:255',
+            'pot_stock' => 'required|integer',
         ]);
 
-        User::create([
-            'name'         => $request->name,
-            'phone_number' => $request->phone_number,
-            'email'        => $request->email,
-            'password'     => Hash::make($request->password),
+        $image = $request->file('pot_image');
+        $pot_image = time()."_".$image->getClientOriginalName();
+        $image->move(public_path('storage'), $pot_image);
+
+        Pot::create([
+            'pot_image' => $pot_image,
+            'pot_color' => $request->pot_color,
+            'pot_stock' => $request->pot_stock,
         ]);
 
-        return redirect()->route('user.index')->with('success', 'User is successfully saved');
+        return redirect()->route('pot.index')->with('success', 'Pot is successfully saved');
     }
 
     /**
@@ -75,9 +77,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $pot = Pot::findOrFail($id);
 
-        return view('admin.user.edit', compact('user'));
+        return view('admin.pot.edit', compact('pot'));
     }
 
     /**
@@ -90,18 +92,18 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name'         => 'required|string|max:255',
-            'phone_number' => 'required|phone:id|min:11|max:18',
-            'password'     => 'required|string|min:8'
+            'pot_color' => 'required|max:255',
+            'pot_stock' => 'required|integer',
         ]);
 
-        User::whereId($id)->update([
-            'name'         => $request->name,
-            'phone_number' => $request->phone_number,
-            'password'     => Hash::make($request->password),
-        ]);
+        $pot = array(
+            'pot_color' => $request->pot_color,
+            'pot_stock' => $request->pot_stock,
+        );
 
-        return redirect()->route('user.index')->with('success', 'User is successfully updated');
+        Pot::whereId($id)->update($pot);
+
+        return redirect()->route('pot.index')->with('success', 'Pot is successfully updated');
     }
 
     /**
@@ -112,9 +114,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        $user->delete();
+        $pot = Pot::findOrFail($id);
+        $pot->delete();
 
-        return redirect()->back()->with('success', 'User is successfully deleted');
+        return redirect()->back()->with('success', 'Pot is successfully deleted');
     }
 }
