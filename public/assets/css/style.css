@@ -94,6 +94,9 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 .bg-danger {
   background-color: #fc544b !important; }
 
+.bg-pink {
+  background-color: #ff91fe !important; }
+
 .bg-light {
   background-color: #e3eaef !important; }
 

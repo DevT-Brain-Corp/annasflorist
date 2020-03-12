@@ -12,5 +12,6 @@
       <li class="{{ Request::route()->getName() == 'category.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fa fa-tags"></i> <span>Categories</span></a></li>
       <li class="{{ Request::route()->getName() == 'product.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('product.index') }}"><i class="fa fa-box"></i> <span>Products</span></a></li>
       <li class="{{ Request::route()->getName() == 'order.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('order.index') }}"><i class="fa fa-shopping-cart"></i> <span>Orders</span></a></li>
+      <li class="{{ Request::route()->getName() == 'pot.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('pot.index') }}"><i class="fa fa-leaf"></i> <span>Pots</span></a></li>
   </ul>
 </aside>
