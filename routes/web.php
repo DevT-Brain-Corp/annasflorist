@@ -54,4 +54,9 @@ Route::get('/buynowbyatm', 'FrontController@buynowbyatm')->name('buynowbyatm');
 Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');
 Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
 Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
+
+Route::get('/admcatcreate', function(){
+	// return view('FEAdmin.category.create');
+	return view('FEAdmin.base.homepage');
+});
 // End Debugging
