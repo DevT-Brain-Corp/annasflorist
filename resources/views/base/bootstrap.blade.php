@@ -8,8 +8,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <!-- SBAdmin CSS -->
+    <link rel="stylesheet" href="{{ asset('FEAdmin/assets/vendor/fonts/circular-std/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('FEAdmin/assets/vendor/charts/chartist-bundle/chartist.css') }}">
+    <link rel="stylesheet" href="{{ asset('FEAdmin/assets/vendor/charts/morris-bundle/morris.css') }}">
+    <link rel="stylesheet" href="{{ asset('FEAdmin/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('FEAdmin/assets/vendor/charts/c3charts/c3.css') }}">
+    <link rel="stylesheet" href="{{ asset('FEAdmin/assets/vendor/fonts/flag-icon-css/flag-icon.min.css') }}">
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('css/FEAdmin/assets/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
+    <link rel="stylesheet" href="{{ asset('FEAdmin/assets/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
 
 
     <title>@yield('title')</title>
@@ -18,9 +26,26 @@
     @yield('content')
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- jquery 3.3.1 -->
+    <script src="{{ asset('FEAdmin/assets/vendor/jquery/jquery-3.3.1.min.js') }}"></script>
+    <!-- bootstap bundle js -->
+    <script src="{{ asset('FEAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <!-- slimscroll js -->
+    <script src="{{ asset('FEAdmin/assets/vendor/slimscroll/jquery.slimscroll.js') }}"></script>
+    <!-- main js -->
+    <script src="{{ asset('FEAdmin/assets/libs/js/main-js.js') }}"></script>
+    <!-- chart chartist js -->
+    <script src="{{ asset('FEAdmin/assets/vendor/charts/chartist-bundle/chartist.min.js') }}"></script>
+    <!-- sparkline js -->
+    <script src="{{ asset('FEAdmin/assets/vendor/charts/sparkline/jquery.sparkline.js') }}"></script>
+    <!-- morris js -->
+    <script src="{{ asset('FEAdmin/assets/vendor/charts/morris-bundle/raphael.min.js') }}"></script>
+    <script src="{{ asset('FEAdmin/assets/vendor/charts/morris-bundle/morris.js') }}"></script>
+    <!-- chart c3 js -->
+    <script src="{{ asset('FEAdmin/assets/vendor/charts/c3charts/c3.min.js') }}"></script>
+    <script src="{{ asset('FEAdmin/assets/vendor/charts/c3charts/d3-5.4.0.min.js') }}"></script>
+    <script src="{{ asset('FEAdmin/assets/vendor/charts/c3charts/C3chartjs.js') }}"></script>
+
+    <script src="{{ asset('FEAdmin/assets/libs/js/dashboard-ecommerce.js') }}"></script>
   </body>
 </html>
