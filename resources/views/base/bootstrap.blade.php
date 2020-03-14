@@ -46,6 +46,6 @@
     <script src="{{ asset('FEAdmin/assets/vendor/charts/c3charts/d3-5.4.0.min.js') }}"></script>
     <script src="{{ asset('FEAdmin/assets/vendor/charts/c3charts/C3chartjs.js') }}"></script>
 
-    <script src="{{ asset('FEAdmin/assets/libs/js/dashboard-ecommerce.js') }}"></script>
+    @yield('javaScript')
   </body>
 </html>

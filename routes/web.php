@@ -57,6 +57,10 @@ Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
 
 Route::get('/admcatcreate', function(){
 	// return view('FEAdmin.category.create');
-	return view('FEAdmin.base.homepage');
+	return view('FEAdmin.dashboard');
+});
+
+Route::get('/workshop', function () {
+    return view('categories.workshop');
 });
 // End Debugging
