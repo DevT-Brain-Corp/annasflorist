@@ -1,12 +1,10 @@
-.tooltip {
-    text-decoration:none;
-    position:relative;
+.a{
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap;
 }
-.tooltip span {
-    display:none;
-}
-.tooltip:hover span {
-    display:block;
-    position:fixed;
-    overflow:hidden;
-}
+
+.b{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}
+
+.c{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}

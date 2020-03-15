@@ -3,6 +3,10 @@
 @section('title', 'Dashboard Admin | Annas Florist')
 
 @section('contentadmin')
+<head>
+  <link rel="stylesheet" href="{{ asset('css/FEAdmin/dashboard.css') }}">
+</head>
+
 <!-- pageheader  -->
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -123,31 +127,58 @@
         </div>
         <!-- end recent orders  -->
     </div>
+
+    <!-- Hasil Penjualan  -->
     <div class="row">
-      <!-- product sales  -->
-      <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
           <div class="card-header">
-            <h5 class="mb-0">Product Sales</h5>
+            <h5 class="mb-0">Hasil Seluruh Penjualan Pada Tahun 2020</h5>
           </div>
           <div class="card-body">
             <div class="ct-chart-product ct-golden-section"></div>
           </div>
         </div>
       </div>
-      <!-- end product sales  -->
     </div>
+    <!-- end Hasil Penjualan  -->
 
     <div class="row">
-        <!-- ============================================================== -->
-        <!-- sales  -->
-        <!-- ============================================================== -->
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+      <!-- Hasil Penjualan Bulan Lalu -->
+      <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">Hasil Penjualan Pada Bulan Februari 2020</h5>
+          </div>
+          <div class="card-body">
+            <div class="ct-chart-product ct-golden-section bulanlalu"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Hasil Penjualan Bulan Lalu -->
+
+      <!-- Hasil Penjualan Bulan Sekarang -->
+      <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">Hasil Penjualan Pada Bulan Maret 2020</h5>
+          </div>
+          <div class="card-body">
+            <div class="ct-chart-product ct-golden-section bulansekarang"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Hasil Penjualan Bulan Sekarang -->
+
+    <div class="row">
+        <!-- keuntungan  -->
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
             <div class="card border-3 border-top border-top-primary">
                 <div class="card-body">
-                    <h5 class="text-muted">Sales</h5>
+                    <h5 class="text-muted">Keuntungan</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">$12099</h1>
+                        <h1 class="mb-1">Rp.6.000.000</h1>
                     </div>
                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                         <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5.86%</span>
@@ -155,18 +186,15 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- end sales  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- new customer  -->
-        <!-- ============================================================== -->
+        <!-- end keuntungan  -->
+
+        <!-- pendaftar baru  -->
         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
             <div class="card border-3 border-top border-top-primary">
                 <div class="card-body">
-                    <h5 class="text-muted">New Customer</h5>
+                    <h5 class="text-muted">Pendaftar Baru</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">1245</h1>
+                        <h1 class="mb-1">70</h1>
                     </div>
                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                         <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
@@ -174,18 +202,16 @@
                 </div>
             </div>
         </div>
+        <!-- end pendaftar baru  -->
+
+        <!-- Pengunjung Website  -->
         <!-- ============================================================== -->
-        <!-- end new customer  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- visitor  -->
-        <!-- ============================================================== -->
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card border-3 border-top border-top-primary">
                 <div class="card-body">
-                    <h5 class="text-muted">Visitor</h5>
+                    <h5 class="text-muted">Pengunjung Website</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">13000</h1>
+                        <h1 class="mb-1">100</h1>
                     </div>
                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                         <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5%</span>
@@ -193,18 +219,15 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- end visitor  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- total orders  -->
-        <!-- ============================================================== -->
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+        <!-- end Pengunjung Website  -->
+
+        <!-- Total Penjualan Bulan Ini  -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card border-3 border-top border-top-primary">
                 <div class="card-body">
-                    <h5 class="text-muted">Total Orders</h5>
+                    <h5 class="text-muted">Total Penjualan Bulan Ini</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">1340</h1>
+                        <h1 class="mb-1">86</h1>
                     </div>
                     <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
                         <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
@@ -212,73 +235,42 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- end total orders  -->
-        <!-- ============================================================== -->
+        <!-- end Total Penjualan Bulan Ini  -->
     </div>
     <div class="row">
-        <!-- ============================================================== -->
-        <!-- total revenue  -->
-        <!-- ============================================================== -->
-
-
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- category revenue  -->
-        <!-- ============================================================== -->
-        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+        <!-- Grafik Penjualan  -->
+        <div class="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Revenue by Category</h5>
+                <h5 class="card-header">Grafik Penjualan</h5>
                 <div class="card-body">
                     <div id="c3chart_category" style="height: 420px;"></div>
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- end category revenue  -->
-        <!-- ============================================================== -->
+        <!-- end Grafik Penjualan  -->
 
-        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
-            <div class="card">
-                <h5 class="card-header"> Total Revenue</h5>
-                <div class="card-body">
-                    <div id="morris_totalrevenue"></div>
-                </div>
-                <div class="card-footer">
-                    <p class="display-7 font-weight-bold"><span class="text-primary d-inline-block">$26,000</span><span class="text-success float-right">+9.45%</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
-            <!-- ============================================================== -->
             <!-- social source  -->
-            <!-- ============================================================== -->
             <div class="card">
                 <h5 class="card-header"> Sales By Social Source</h5>
                 <div class="card-body p-0">
                     <ul class="social-sales list-group list-group-flush">
-                        <li class="list-group-item social-sales-content"><span class="social-sales-icon-circle facebook-bgcolor mr-2"><i class="fab fa-facebook-f"></i></span><span class="social-sales-name">Facebook</span><span class="social-sales-count text-dark">120 Sales</span>
+                        <li class="list-group-item social-sales-content"><img style="width: 40px; height: 40px; margin-right: 10px;" src="{{ asset('img/instagram.png') }}" alt="instagram"><a class="sosmed" href="https://www.instagram.com/annas_florist/" target="_blank"><span class="social-sales-name">Instagram</span></a>
                         </li>
-                        <li class="list-group-item social-sales-content"><span class="social-sales-icon-circle twitter-bgcolor mr-2"><i class="fab fa-twitter"></i></span><span class="social-sales-name">Twitter</span><span class="social-sales-count text-dark">99 Sales</span>
+                        <li class="list-group-item social-sales-content"><img style="width: 40px; height: 40px; margin-right: 10px;" src="{{ asset('img/shopee.png') }}" alt="shopee"><a class="sosmed" href="https://shopee.co.id/annaramadhaniati" target="_blank"><span class="social-sales-name">Shopee</span></a>
                         </li>
-                        <li class="list-group-item social-sales-content"><span class="social-sales-icon-circle instagram-bgcolor mr-2"><i class="fab fa-instagram"></i></span><span class="social-sales-name">Instagram</span><span class="social-sales-count text-dark">76 Sales</span>
+                        <li class="list-group-item social-sales-content"><img style="width: 40px; height: 40px; margin-right: 10px;" src="{{ asset('img/tokopedia.png') }}" alt="tokopedia"><a class="sosmed" href="https://www.tokopedia.com/annasflorist?source=universe&st=product" target="_blank"><span class="social-sales-name">Tokopedia</span></a>
                         </li>
-                        <li class="list-group-item social-sales-content"><span class="social-sales-icon-circle pinterest-bgcolor mr-2"><i class="fab fa-pinterest-p"></i></span><span class="social-sales-name">Pinterest</span><span class="social-sales-count text-dark">56 Sales</span>
-                        </li>
-                        <li class="list-group-item social-sales-content"><span class="social-sales-icon-circle googleplus-bgcolor mr-2"><i class="fab fa-google-plus-g"></i></span><span class="social-sales-name">Google Plus</span><span class="social-sales-count text-dark">36 Sales</span>
+                        <li class="list-group-item social-sales-content"><img style="width: 40px; height: 40px; margin-right: 10px;" src="{{ asset('img/whatsapp.png') }}" alt="whatsapp"><a class="sosmed" href="https://api.whatsapp.com/send?phone=6289683792377&text=Halo%20Admin%20Bagaimana%20Cara%20Order%20Kaktusnya" target="_blank"><span class="social-sales-name">Whatsapp</span></a>
                         </li>
                     </ul>
                 </div>
-                <div class="card-footer text-center">
-                    <a href="#" class="btn-primary-link">View Details</a>
-                </div>
             </div>
-            <!-- ============================================================== -->
             <!-- end social source  -->
-            <!-- ============================================================== -->
         </div>
+
+    </div>
+    <div class="row">
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
             <!-- ============================================================== -->
             <!-- sales traffice source  -->
@@ -346,4 +338,5 @@
 
 @section('javaScript')
   <script src="{{ asset('FEAdmin/assets/libs/js/dashboard-ecommerce.js') }}"></script>
+  <script src="{{ asset('js/FEAdmin/dashboard.js') }}"></script>
 @endsection

@@ -35,7 +35,7 @@
     <!-- main js -->
     <script src="{{ asset('FEAdmin/assets/libs/js/main-js.js') }}"></script>
     <!-- chart chartist js -->
-    <script src="{{ asset('FEAdmin/assets/vendor/charts/chartist-bundle/chartist.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <!-- sparkline js -->
     <script src="{{ asset('FEAdmin/assets/vendor/charts/sparkline/jquery.sparkline.js') }}"></script>
     <!-- morris js -->

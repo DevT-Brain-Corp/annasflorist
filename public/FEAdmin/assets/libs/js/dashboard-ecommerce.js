@@ -1,35 +1,3 @@
-
-
-    $(function() {
-        "use strict";
-        // ==============================================================
-        // Product Sales
-        // ==============================================================
-
-        new Chartist.Bar('.ct-chart-product', {
-            labels: ['Sukulen Panda', 'Sukulen Roseum', 'Terarium', 'Terarium 2', 'Sukulen Roseum 2'],
-            series: [
-                [8, 8, 16, 24, 1],
-            ]
-        }, {
-            stackBars: true,
-            axisY: {
-                labelInterpolationFnc: function(value) {
-                    return (value) + '';
-                }
-            }
-        }).on('draw', function(data) {
-            if (data.type === 'bar') {
-                data.element.attr({
-                    style: 'stroke-width: 40px'
-                });
-            }
-        });
-    });
-
-
-
-
     // ==============================================================
     // Product Category
     // ==============================================================
@@ -201,7 +169,7 @@
         element: 'morris_totalrevenue',
         behaveLikeLine: true,
         data: [
-            { x: '2016 Q1', y: 0, },
+            { x: '2016 Q1', y: 1000, },
             { x: '2016 Q2', y: 7500, },
             { x: '2017 Q3', y: 15000, },
             { x: '2017 Q4', y: 22500, },

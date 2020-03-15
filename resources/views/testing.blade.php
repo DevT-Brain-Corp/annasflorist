@@ -7,15 +7,16 @@
     <title>Testing</title>
   </head>
   <body>
-    <div title="regular tooltip">Hover me</div>
 
-<a class="tooltip" href="http://www.google.com/">
-    Google
-    <span id="tooltip-span">
-        <h1>hai</h1>
-    </span>
-</a>
-
+<div class="a">
+  <div class="b">
+    <h1>B</h1>
+  </div>
+  <div class="c">
+    <h1>C</h1>
+    <h1>D</h1>
+  </div>
+</div>
 
   <script src="{{ asset('js/testing.js') }}"></script>
   </body>
