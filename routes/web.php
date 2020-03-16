@@ -55,12 +55,15 @@ Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowb
 Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
 Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
 
-Route::get('/admcatcreate', function(){
-	// return view('FEAdmin.category.create');
+Route::get('/workshop', function () {
+    return view('categories.workshop');
+});
+
+Route::get('/adm/dashboard', function(){
 	return view('FEAdmin.dashboard');
 });
 
-Route::get('/workshop', function () {
-    return view('categories.workshop');
+Route::get('/adm/sales/dashboard', function(){
+	return view('FEAdmin.category.sales.dashboard');
 });
 // End Debugging

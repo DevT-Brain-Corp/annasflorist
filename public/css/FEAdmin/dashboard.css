@@ -7,3 +7,8 @@
 a.sosmed{
   color: #000000;
 }
+
+.nav-left-sidebar .navbar .navbar-collapse .navbar-nav .nav-link.opened{
+  background-color: #388E3C;
+  color: #FFFFFF;
+}
