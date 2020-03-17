@@ -29,7 +29,7 @@
                     <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdown1'>Kategori</a></li>
                         @if (Auth::check())
-                            <li><a href="#" class="iconsearch">Notifikasi</a></li>
+                            <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                         @endif
                         <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                     @guest
@@ -56,11 +56,11 @@
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-  <li><a class="scroll" href="#sales">Sales</a></li>
-  <li><a class="scroll" href="#souvenir">Souvenir</a></li>
-  <li><a class="scroll" href="#workshop">Workshop</a></li>
-  <li><a class="scroll" href="#rental">Rental</a></li>
-  <li><a class="scroll" href="#dekorasi">Dekorasi</a></li>
+    @foreach($categories as $category)
+        <li><a class="scroll" href="#{{$category->category_name}}">{{$category->category_name}}</a></li>
+    @endforeach
+        <li><a class="scroll" href="#Workshop">Workshop</a></li>
+        <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown -->
 

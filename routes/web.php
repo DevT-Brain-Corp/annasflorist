@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'FrontController@getProduct')->name('welcome');
+Route::get('/', 'FrontController@home')->name('welcome');
+
+Route::get('/homelama', function () {
+    return view('welcome');    //awal homepage
+});
 
 Auth::routes();
 // Override login route from Auth::routes();
@@ -33,7 +37,6 @@ Route::group(['middleware' => ['auth', 'admin'], 'namespace' => 'Admin', 'prefix
 Route::name('js.')->group(function() {
     Route::get('dynamic.js', 'JsController@dynamic')->name('dynamic');
 });
-
 
 // Debugging
 Route::get('/detail', function(){

@@ -16,7 +16,7 @@ class PotController extends Controller
      */
     public function index()
     {
-        $pots = Pot::all();
+        $pots = Pot::paginate(10);
 
         return view('admin.pot.index', compact('pots'));
     }

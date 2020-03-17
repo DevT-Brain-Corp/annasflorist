@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-  public function getProduct()
+  public function home()
     {
-        $products = Product::all();
+        $categories = Category::all();
+        $products = Product::all()->groupBy('category.category_name');
 
-        return view('welcome', compact('products'));
+        return view('welcomenew', compact('categories', 'products'));
     }
 
   public function show()
