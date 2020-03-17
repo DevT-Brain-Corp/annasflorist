@@ -57,4 +57,16 @@ Route::get('/buynowbyatm', 'FrontController@buynowbyatm')->name('buynowbyatm');
 Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');
 Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
 Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
+
+Route::get('/workshop', function () {
+    return view('categories.workshop');
+});
+
+Route::get('/adm/dashboard', function(){
+	return view('FEAdmin.dashboard');
+});
+
+Route::get('/adm/sales/dashboard', function(){
+	return view('FEAdmin.category.sales.dashboard');
+});
 // End Debugging
