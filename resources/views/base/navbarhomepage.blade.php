@@ -35,18 +35,7 @@
                     @guest
                         <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
                     @else
-                        {{--Ganti Dropdown Trigger--}}
-                        <li>
-                            <a href="{{ route('logout') }}" class="iconsearch scroll"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                <i class="material-icons">person_pin</i>
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
+                        <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i></a></li>
                     @endguest
                 </ul>
             </div>
@@ -64,8 +53,8 @@
 </ul>
 <!-- End Dropdown -->
 
-<!-- Modal -->
 @guest
+<!-- Modal Log In -->
 <div id="modal1" class="modal">
     <form class="modal-content" method="POST" action="{{ route('login') }}">
         @csrf
@@ -93,7 +82,14 @@
 
     </form>
 </div>
+<!-- End Modal Log In -->
 @else
-{{--Content Dropdown Log out & Profile--}}
+<!-- Dropdown Akun -->
+<ul id='dropdown1in' class='dropdown-content'>
+  <li><a href="#!">Lihat Profil</a></li>
+  <li><a href="#!">Ubah Profil</a></li>
+  <li class="divider" tabindex="-1"></li>
+  <li><a href="#!">Keluar</a></li>
+</ul>
+<!-- End Dropdown Akun -->
 @endguest
-<!-- End Modal -->

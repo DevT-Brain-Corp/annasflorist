@@ -66,4 +66,8 @@ Route::get('/adm/dashboard', function(){
 Route::get('/adm/sales/dashboard', function(){
 	return view('FEAdmin.category.sales.dashboard');
 });
+
+Route::get('/welcomenew', function(){
+	return view('welcomenew');
+});
 // End Debugging

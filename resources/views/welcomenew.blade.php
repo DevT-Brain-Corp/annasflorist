@@ -465,7 +465,7 @@
 
 <!-- Maps -->
 <div class="container">
-    <div id="mapid"></div>
+  <div id="mapid"></div>
 </div>
 <!-- End Maps -->
 
