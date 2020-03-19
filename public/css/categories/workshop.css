@@ -23,10 +23,9 @@ body{
 }
 
 .workshoptextbg2 .workshoptextbg{
-  width: 1098px;
-  height: 569px;
+  width: 80%;
+  height: 74%;
   background: #c3fbc2;
-  border-radius: 50%;
   transform: translate(-20px, -30px);
 }
 
@@ -34,17 +33,11 @@ body{
   background: rgba(215, 240, 214, 0.5);
   padding-top: 1px;
   padding-bottom: 50px;
-  border-radius: 50%;
   transform: translate(20px, 30px);
-}
-
-.workshoptext{
-  margin-top: 100px;
 }
 
 .workshoptext h1{
   font-family: 'Saira';
-  font-size: 90px;
   text-align: center;
   text-transform: uppercase;
   margin-top: 0 !important;
@@ -62,7 +55,6 @@ body{
 
 .workshoptext p{
   font-family: 'Saira';
-  font-size: 24px;
   text-align: justify;
 }
 
@@ -77,6 +69,40 @@ body{
 .workshoptextbg2 .workshoptextbgg .workshop.showup{
   opacity: 1;
   transform: translate(0,0);
+}
+
+@media only screen and (min-width: 1200px){
+  .workshoptext{
+    margin-top: 100px;
+  }
+
+  .workshoptext h1{
+    font-size: 90px;
+  }
+
+  .workshoptext p{
+    font-size: 24px;
+  }
+
+  .workshoptextbg2 .workshoptextbgg,
+  .workshoptextbg2 .workshoptextbg{
+    border-radius: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .workshoptext h1{
+    font-size: 30px;
+  }
+
+  .workshoptext p{
+    font-size: 18px;
+  }
+
+  .workshoptextbg2 .workshoptextbgg,
+  .workshoptextbg2 .workshoptextbg{
+    border-radius: 30%;
+  }
 }
 /* End Text Workshop */
 

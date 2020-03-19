@@ -36,12 +36,12 @@ Route::name('js.')->group(function() {
 
 
 // Debugging
-Route::get('/detail', function(){
-  return view('product.detail');
-});
-
 Route::get('/testing', function () {
     return view('testing');
+});
+
+Route::get('/detail', function(){
+  return view('product.detail');
 });
 
 Route::get('/sales', function () {
@@ -59,19 +59,7 @@ Route::get('/workshop', function () {
     return view('categories.workshop');
 });
 
-Route::get('/adm/dashboard', function(){
-	return view('FEAdmin.dashboard');
-});
-
-Route::get('/adm/sales/dashboard', function(){
-	return view('FEAdmin.category.sales.dashboard');
-});
-
 Route::get('/welcomenew', function(){
 	return view('welcomenew');
-});
-
-Route::get('/welcomenewresp', function(){
-	return view('welcomenewresp');
 });
 // End Debugging

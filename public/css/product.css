@@ -45,11 +45,6 @@ nav{
 /* end navbar */
 
 /* deskripsi */
-.deskripsi .gambar,
-.deskripsi .caption{
-  margin-top: 204px;
-}
-
 .deskripsi .caption .caption1{
   font-family: 'Mukta Vaani';
   font-style: normal;
@@ -244,8 +239,22 @@ input[type=number]::-webkit-outer-spin-button {
   color: #FFFFFF;
 }
 
-.deskripsi .colorbiru:hover{
+@media only screen and (min-width:1200px){
+  .deskripsi .gambar,
+  .deskripsi .caption{
+    margin-top: 204px;
+  }
+}
 
+@media only screen and (max-width:600px){
+  .deskripsi .deskripsii .deskripsiii div.resp{
+    margin-top: 100px;
+  }
+
+  .deskripsi .deskripsii .deskripsiii div.gambar div.slider,
+  .deskripsi .deskripsii .deskripsiii div.gambar div.slider ul.slides{
+    height: 300px !important;
+  }
 }
 /* end deskripsi */
 

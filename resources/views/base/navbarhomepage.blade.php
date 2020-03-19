@@ -59,11 +59,11 @@
       @if (Auth::check())
         <li><a href="#" class="iconsearch">Notifikasi</a></li>
       @endif
-      <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
+      <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i>Keranjang</a></li>
       @guest
-        <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
+        <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i>Akun</a></li>
       @else
-        <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i></a></li>
+        <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i>Akun</a></li>
       @endguest
     </ul>
     <!-- end responsive -->
