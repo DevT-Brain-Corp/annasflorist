@@ -70,4 +70,8 @@ Route::get('/adm/sales/dashboard', function(){
 Route::get('/welcomenew', function(){
 	return view('welcomenew');
 });
+
+Route::get('/welcomenewresp', function(){
+	return view('welcomenewresp');
+});
 // End Debugging

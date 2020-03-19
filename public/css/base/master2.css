@@ -4,8 +4,7 @@ body{
 
 /* Kotak 1 */
 .kotak1{
-  width: auto;
-  height: auto;
+
   background: linear-gradient(270deg, #123812 4.03%, rgba(18, 56, 18, 0.971095) 11.26%, rgba(18, 56, 18, 0.915584) 23.96%, rgba(18, 56, 18, 0.866449) 37.37%, rgba(19, 78, 18, 0.824989) 54.48%, rgba(19, 88, 18, 0.805827) 68.06%, rgba(20, 101, 18, 0.805827) 79.7%, rgba(21, 123, 18, 0.805827) 91.34%);
 }
 
@@ -41,20 +40,22 @@ body{
   color: rgba(254, 250, 250, 0.62);
 }
 
-.kotakdalamkaktus{
-  position: absolute;
-  width: 755px;
-  height: 500px;
-  top: 100px;
-  margin-top: 200px;
-  background: linear-gradient(270deg, rgba(152, 203, 152, 0.67) 5.1%, rgba(120, 186, 120, 0.458523) 39.08%, rgba(90, 170, 90, 0.257447) 61.95%, rgba(71, 161, 71, 0.135619) 81.46%, rgba(51, 150, 51, 0) 100%);
-  border-radius: 0px 400px 0px 0px;
+@media only screen and (min-width: 1200px){
+  .kotakdalamkaktus{
+    position: absolute;
+    width: 755px;
+    height: 500px;
+    top: 100px;
+    margin-top: 200px;
+    background: linear-gradient(270deg, rgba(152, 203, 152, 0.67) 5.1%, rgba(120, 186, 120, 0.458523) 39.08%, rgba(90, 170, 90, 0.257447) 61.95%, rgba(71, 161, 71, 0.135619) 81.46%, rgba(51, 150, 51, 0) 100%);
+    border-radius: 0px 400px 0px 0px;
 
-}
+  }
 
-.kotakdalamkaktus img{
-  height: 700px;
-  transform: translate(50px,-150px);
+  .kotakdalamkaktus img{
+    height: 700px;
+    transform: translate(50px,-150px);
+  }
 }
 
 .shopnow{
@@ -103,22 +104,46 @@ body{
 }
 
 .sosmed .sosmed2 h5{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 30px;
   color: #FDF7F7;
   margin-bottom: 2px;
 }
 
-.sosmed .sosmed3{
-  background: #E0E414;
-  border-radius: 0px 300px 0px 0px;
+@media only screen and (min-width: 1200px){
+  .sosmed .sosmed2 h5{
+    font-size: 24px;
+  }
 }
 
-.sosmed .sosmed3 img{
-  height: 170px;
-  margin-top: -70px;
+@media only screen and (max-width: 600px){
+  .sosmed .sosmed2 h5{
+    font-size: 19px;
+  }
+}
+
+.sosmed .sosmed3{
+  background: #E0E414;
+}
+
+@media only screen and (min-width: 1200px){
+  .sosmed .sosmed3{
+    border-radius: 0px 300px 0px 0px;
+  }
+
+  .sosmed .sosmed3 img{
+    height: 170px;
+    margin-top: -70px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .sosmed .sosmed3{
+    display: flex;
+    justify-content: center;
+  }
+
+  .sosmed .sosmed3 img{
+    height: 170px;
+  }
 }
 /* End Kotak 1 */
 
@@ -133,22 +158,48 @@ body{
 }
 
 .sales .salesword{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 79px;
-  text-indent: 2px;
   color: #011F00;
+}
+
+@media only screen and (min-width: 1200px){
+  .sales .salesword{
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .sales .salesword{
+    font-size: 30px;
+  }
+
+  .sales h1.salesword{
+    margin-bottom: 0;
+  }
 }
 
 .sales .lihatsemua{
   text-align: right;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
   line-height: 57px;
   text-indent: 2px;
   color: #011F00;
+}
+
+@media only screen and (min-width: 1200px){
+  .sales .lihatsemua{
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .sales .lihatsemua{
+    font-size: 16px;
+  }
+
+  .sales h1.lihatsemua{
+    margin-top: 30px;
+  }
 }
 
 .sales .card .card-image img{
@@ -161,8 +212,12 @@ body{
   font-style: normal;
   text-align: center;
   color: #011F00;
+}
 
-  font-size: 2vw;
+@media only screen and (min-width: 1200px){
+  .sales .card .card-content h5{
+    font-size: 28px;
+  }
 }
 
 .sales .card .card-content p{
@@ -208,11 +263,6 @@ body{
 
 /* Workshop */
 .workshop .workshopword{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 79px;
-  text-indent: 2px;
   color: #011F00;
 }
 
@@ -220,10 +270,29 @@ body{
   text-align: right;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
   line-height: 57px;
   text-indent: 2px;
   color: #011F00;
+}
+
+@media only screen and (min-width: 1200px){
+  .workshop .workshopword{
+    font-size: 50px;
+  }
+
+  .workshop .lihatsemua{
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .workshop .workshopword{
+    font-size: 30px;
+  }
+
+  .workshop .lihatsemua{
+    font-size: 16px;
+  }
 }
 
 .outer{
@@ -237,44 +306,24 @@ body{
 
 /* Dekorasi */
 .dekorasi .dekorasiword{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 79px;
-  text-indent: 2px;
   color: #011F00;
 }
 
 .dekorasi .lihatsemua{
   text-align: right;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 57px;
-  text-indent: 2px;
   color: #011F00;
 }
 
 .dekorasi .rincian{
   font-family: 'Saira';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  /* line-height: 57px; */
   text-align: justify;
-  text-indent: 2px;
 
   color: #011F00;
 }
 
 .dekorasi .selengkapnya{
   font-family: 'Saira';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 57px;
   text-align: right;
-  text-indent: 2px;
 
   color: #011F00;
   transition: .1s;
@@ -284,15 +333,47 @@ body{
   transition: .1s;
   color: #6DBD3B;
 }
+
+@media only screen and (min-width: 1200px){
+  .dekorasi .dekorasiword{
+    font-size: 50px;
+  }
+
+  .dekorasi .selengkapnya{
+    font-size: 36px;
+  }
+
+  .dekorasi .lihatsemua{
+    font-size: 36px;
+  }
+
+  .dekorasi .rincian{
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .dekorasi .dekorasiword{
+    font-size: 30px;
+  }
+
+  .dekorasi .selengkapnya{
+    font-size: 16px;
+  }
+
+  .dekorasi .lihatsemua{
+    font-size: 16px;
+  }
+
+  .dekorasi .rincian{
+    font-size: 16px;
+  }
+}
 /* End Dekorasi */
 
 /* Profil */
 .profil .profilword{
   font-family: 'Saira';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 48px;
-  line-height: 76px;
   color: #011F00;
 }
 
@@ -310,9 +391,7 @@ body{
 
 .profil .profiltext{
   font-family: 'Saira';
-  font-size: 30px;
   text-align: justify;
-  text-indent: 2px;
 
   color: #011F00;
 }
@@ -351,6 +430,26 @@ body{
   line-height: 2;
   border: 1px solid #ddd;
   border-radius: .25em;
+}
+
+@media only screen and (min-width: 1200px){
+  .profil .profilword{
+    font-size: 48px;
+  }
+
+  .profil .profiltext{
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .profil .profilword{
+    font-size: 28px;
+  }
+
+  .profil .profiltext{
+    font-size: 14px;
+  }
 }
 /* End Profil */
 

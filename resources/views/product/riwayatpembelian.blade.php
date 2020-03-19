@@ -31,22 +31,34 @@
     </div>
 
     <div id="belumdibayar" class="col s12">
-      @include('product.riwayatpembelian.belumdibayar')
+      <div id="slimscrollpanel">
+        @include('product.riwayatpembelian.belumdibayar')
+      </div>
     </div>
     <div id="sudahdibayar" class="col s12">
-      @include('product.riwayatpembelian.sudahdibayar')
+      <div id="slimscrollpanel2">
+        @include('product.riwayatpembelian.sudahdibayar')
+      </div>
     </div>
     <div id="tervalidasi" class="col s12">
-      @include('product.riwayatpembelian.tervalidasi')
+      <div id="slimscrollpanel3">
+        @include('product.riwayatpembelian.tervalidasi')
+      </div>
     </div>
     <div id="dikirim" class="col s12">
-      @include('product.riwayatpembelian.dikirim')
+      <div id="slimscrollpanel4">
+        @include('product.riwayatpembelian.dikirim')
+      </div>
     </div>
     <div id="selesai" class="col s12">
-      @include('product.riwayatpembelian.selesai')
+      <div id="slimscrollpanel5">
+        @include('product.riwayatpembelian.selesai')
+      </div>
     </div>
     <div id="dibatalkan" class="col s12">
-      @include('product.riwayatpembelian.dibatalkan')
+      <div id="slimscrollpanel6">
+        @include('product.riwayatpembelian.dibatalkan')
+      </div>
     </div>
   </div>
 </section>
@@ -62,4 +74,5 @@
 @include('base.footer')
 <!-- End About -->
 
+  <script src="{{ asset('FEAdmin/assets/vendor/slimscroll/jquery.slimscroll.js') }}"></script>
 @endsection

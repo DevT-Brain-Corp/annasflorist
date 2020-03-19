@@ -26,24 +26,12 @@
           <ul class="slides">
             <li>
               <img src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
-              <div class="caption center-align">
-                <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
             </li>
             <li>
               <img src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
-              <div class="caption right-align">
-                <!-- <h3>Right Aligned Caption</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
             </li>
             <li>
               <img src="{{ asset('img/sales/sukulen roseum.jpg') }}" alt="">
-              <div class="caption center-align">
-                <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
             </li>
           </ul>
         </div>
@@ -147,14 +135,12 @@
           <div class="col s3">
             <div class="inputnumber">
               <form>
-                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                <input class="maxinput" type="number" id="number" value="0" max="" min="0" />
-                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                <input type="number" name="jumlah" value="0" min="0">
               </form>
             </div>
           </div>
           <div class="col s3">
-            <p style="margin-top: 0; color: #001E0F;">Tersisa <span id="stokpot2"></span></p>
+            <p style="margin-top: 0; color: #001E0F;"><span id="stokpot2"></span></p>
           </div>
         </div>
         <div class="masukkankeranjang right-align">

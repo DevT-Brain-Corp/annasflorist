@@ -17,20 +17,24 @@
   <!-- Cactus -->
   <div class="cactus">
       <div class="row">
-          <div class="col xl6 m12 s12 center-align">
-              <div class="kotakdalamkaktus">
-                  <img src="{{ asset('img/cactus.png') }}" alt="cactus">
-              </div>
+        <div class="col xl6 m12 s12 hide-on-small-only">
+          <div class="center-align">
+            <div class="kotakdalamkaktus">
+              <img src="{{ asset('img/cactus.png') }}" alt="cactus">
+            </div>
           </div>
-          <div class="annasspesialis col xl5 m12 s12 center-align">
-              <img class="responsive-img" src="{{ asset('img/logo4.png') }}" alt="logo annas Florist">
-              <h5 class="fontsaira spesialis">Spesialis Kaktus</h5>
-              <div class="shopnow">
-                  <a href="#" class="fontmali">SHOP NOW
-                      <i class="fa fa-arrow-down lingkaranshopnow" aria-hidden="true"></i>
-                  </a>
-              </div>
+        </div>
+        <div class="col xl5 m12 s12">
+          <div class="annasspesialis center-align">
+            <img class="responsive-img" src="{{ asset('img/logo4.png') }}" alt="logo annas Florist">
+            <h5 class="fontsaira spesialis">Spesialis Kaktus</h5>
+            <div class="shopnow">
+              <a href="#" class="fontmali">SHOP NOW
+                <i class="fa fa-arrow-down lingkaranshopnow" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
+        </div>
       </div>
   </div>
   <!-- End Cactus -->
@@ -39,41 +43,40 @@
   <div class="sosmed">
       <div class="row">
 
-          <div class="col s3 sosmed1">
-              <div class="col s4"></div>
+          <div class="col s12 xl3 sosmed1">
+              <div class="col xl4 hide-on-small-only"></div>
 
-              <div class="col s2">
+              <div class="col s3 xl2">
                   <a class="btnn" href="https://www.instagram.com/annas_florist/" target="_blank">
                       <img src="{{ asset('img/instagram.png') }}" alt="instagram">
                   </a>
               </div>
 
-              <div class="col s2">
+              <div class="col s3 xl2">
                   <a class="btnn" href="https://api.whatsapp.com/send?phone=6289683792377&text=Halo%20Admin%20Bagaimana%20Cara%20Order%20Kaktusnya" target="_blank">
                       <img src="{{ asset('img/whatsapp.png') }}" alt="whatsapp">
                   </a>
               </div>
 
-              <div class="col s2">
+              <div class="col s3 xl2">
                   <a class="btnn" href="https://www.tokopedia.com/annasflorist?source=universe&st=product" target="_blank">
                       <img src="{{ asset('img/tokopedia.png') }}" alt="tokopedia">
                   </a>
               </div>
 
-              <div class="col s2">
+              <div class="col s3 xl2">
                   <a class="btnn" href="https://shopee.co.id/annaramadhaniati" target="_blank">
                       <img src="{{ asset('img/shopee.png') }}" alt="shopee">
                   </a>
               </div>
-
           </div>
 
-          <div class="col s4 sosmed2">
+          <div class="col s12 xl4 sosmed2">
               <h5 class="fontrighteous">Kaktus termasuk dalam kelompok tanaman berduri dan memiliki buah yang unik.</h5>
           </div>
 
-          <div class="col s2 sosmed3">
-              <img src="{{asset('img/cactus2.png')}}" alt="">
+          <div class="col s12 xl2 sosmed3">
+              <img src="{{asset('img/cactus2.png')}}" alt="img/cactus2.png">
           </div>
 
       </div>
@@ -95,7 +98,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/sales/sukulen panda.jpg') }}">
@@ -115,7 +118,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/sales/sukulen roseum.jpg') }}">
@@ -135,7 +139,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/sales/terarium.jpg') }}">
@@ -155,7 +160,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/sales/terarium3.jpg') }}">
@@ -190,8 +196,9 @@
             <a href="#"><h1 class="fontsaira lihatsemua">Lihat Semua <i class="material-icons">arrow_forward</i></h1></a>
         </div>
     </div>
+
     <div class="row">
-        <div class="col s3">
+        <div class="col s12 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/souvenir/1.jpg') }}">
@@ -211,7 +218,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+
+        <div class="col s12 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/souvenir/2.jpg') }}">
@@ -231,7 +239,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+
+        <div class="col s12 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/souvenir/3.jpg') }}">
@@ -251,7 +260,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+
+        <div class="col s12 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/souvenir/4.jpg') }}">
@@ -285,8 +295,9 @@
             <a href="#"><h1 class="fontsaira lihatsemua">Lihat Semua <i class="material-icons">arrow_forward</i></h1></a>
         </div>
     </div>
+
     <div class="row">
-        <div class="col s3">
+        <div class="col s12 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/rental/1.jpg') }}">
@@ -306,7 +317,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+        <div class="col s12 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/rental/2.jpg') }}">
@@ -326,7 +337,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+        <div class="col s12 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/rental/3.jpg') }}">
@@ -346,7 +357,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s3">
+        <div class="col s12 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/rental/4.jpg') }}">
@@ -449,10 +460,10 @@
 <div class="container profil" id="profil">
     <h1 class="fontsaira profilword">Profil CV. Annas Florist</h1>
     <div class="row">
-        <div class="col s7 profilimg">
+        <div class="col s12 xl7 profilimg">
             <img src="{{ asset('img/profil.png') }}" alt="profil">
         </div>
-        <div class="col s5">
+        <div class="col s12 xl5">
             <input type="checkbox" class="read-more-state" id="post-1" />
 
             <p class="profiltext read-more-wrap">CV. ANNAS FLORIST (Anna’s Florist) suatu usaha yang bertempat di Perum Mastrip Blok W-4 RT/RW 03/21 Kel./Kec. Sumbersari – Jember 68121.<span class="read-more-target"> Berdiri sejak 25 Februari 2018 dengan fokus produk pada saat itu adalah kaktus. Didirikan oleh Anna Ramadhaniati, Sandra Putra Dwi Permana dan Shandiputra Budhi Perdana. Anna’s Florist memiliki kiblat style and trend di Jakarta.<br><br>Anna’s Florist terus mengembangkan jenis produk dan inovasi usahanya sehingga saat ini produk yang kami pasarkan meliputi Cactus, Indoor Plant dan Home Decor.</span></p>
