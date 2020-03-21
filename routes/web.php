@@ -36,10 +36,7 @@ Route::name('js.')->group(function() {
 
 
 // Debugging
-Route::get('/testing', function () {
-    return view('testing');
-});
-
+// Done Responsive
 Route::get('/detail', function(){
   return view('product.detail');
 });
@@ -48,12 +45,9 @@ Route::get('/sales', function () {
     return view('categories.sales');
 });
 
-Route::get('/cart', 'FrontController@cart')->name('cart');
-Route::get('/buynow', 'FrontController@buynow')->name('buynow');
-Route::get('/buynowbyatm', 'FrontController@buynowbyatm')->name('buynowbyatm');
-Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');
-Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
-Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
+Route::get('/cart', function () {
+    return view('product.cart');
+});
 
 Route::get('/workshop', function () {
     return view('categories.workshop');
@@ -61,5 +55,22 @@ Route::get('/workshop', function () {
 
 Route::get('/welcomenew', function(){
 	return view('welcomenew');
+});
+
+Route::get('/buynow', function(){
+	return view('product.buynow');
+});
+// End Done Responsive
+
+Route::get('/buynowbyatm', function(){
+	return view('product.buynowbyatm');
+});
+
+Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');
+Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
+Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
+
+Route::get('/testing', function () {
+    return view('testing');
 });
 // End Debugging

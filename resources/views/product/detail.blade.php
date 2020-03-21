@@ -21,7 +21,7 @@
   <div class="deskripsii">
     <div class="deskripsiii">
       <div class="row resp">
-        <div class="col s12 xl5 gambar">
+        <div class="col s12 m6 l5 xl5 gambar">
           <div class="slider">
             <ul class="slides">
               <li>
@@ -36,7 +36,7 @@
             </ul>
           </div>
         </div>
-        <div class="col s12 xl5 offset-xl1 caption">
+        <div class="col s12 m6 l5 offset-l1 xl5 offset-xl1 caption">
           <p class="caption1">Sukulen Panda<br>Rp. 40.000</p>
           <div class="caption2">
             <div class="row">
@@ -129,17 +129,17 @@
             </div>
           </div>
           <div class="row caption2">
-            <div class="col s3">
+            <div class="col s3 xl3">
               <p style="margin-top: 0">Jumlah</p>
             </div>
-            <div class="col s3">
+            <div class="col s2 xl3">
               <div class="inputnumber">
                 <form>
                   <input type="number" name="jumlah" value="0" min="0">
                 </form>
               </div>
             </div>
-            <div class="col s3">
+            <div class="col s2 xl3">
               <p style="margin-top: 0; color: #001E0F;"><span id="stokpot2"></span></p>
             </div>
           </div>
