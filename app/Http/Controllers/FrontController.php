@@ -13,24 +13,4 @@ class FrontController extends Controller
 
         return view('welcome', compact('products'));
     }
-
-  public function show()
-    {
-        return view('product.detail');
-    }
-
-    public function buynowbybarcode()
-    {
-        return view('product.buynowbybarcode');
-    }
-
-    public function totalpay()
-    {
-        return view('product.totalpay');
-    }
-
-    public function riwayat()
-    {
-        return view('product.riwayatpembelian');
-    }
 }

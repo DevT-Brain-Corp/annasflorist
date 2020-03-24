@@ -60,15 +60,23 @@ Route::get('/welcomenew', function(){
 Route::get('/buynow', function(){
 	return view('product.buynow');
 });
-// End Done Responsive
 
 Route::get('/buynowbyatm', function(){
 	return view('product.buynowbyatm');
 });
 
-Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');
-Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
-Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
+Route::get('/buynowbybarcode', function(){
+	return view('product.buynowbybarcode');
+});
+
+Route::get('/totalpay', function(){
+	return view('product.totalpay');
+});
+// End Done Responsive
+
+Route::get('/riwayat', function(){
+	return view('product.riwayatpembelian');
+});
 
 Route::get('/testing', function () {
     return view('testing');

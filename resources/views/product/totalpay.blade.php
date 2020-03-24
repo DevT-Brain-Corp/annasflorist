@@ -10,16 +10,16 @@
 
 <!-- Bayar -->
 <section class="container row bayar">
-  <div class="col s10 offset-s2">
+  <div class="col s12 m12 l10 offset-l2 xl10 offset-xl2">
     <h2 class="total">Total Pembayaran</h2>
     <h2 class="harga">Rp.147.000</h2>
     <p class="ket">Silahkan melakukan pembayaran sesuai total pembayaran diatas</p>
 
     <div class="row">
-      <div class="col s2">
+      <div class="col s4 m3 l2 xl2">
         <img class="responsive-img" src="{{ asset('img/pengiriman/bank/mandiri.png') }}" alt="mandiri">
       </div>
-      <div class="col s10 banking">
+      <div class="col s12 m9 l10 xl10 banking">
         <p>Bank Mandiri<br><br>No. Rekening : 0240357984<br>Nama Rekening : Shandiputra Budhi Perdana</p>
       </div>
     </div>
@@ -35,53 +35,58 @@
 
 <!-- Upload Bukti -->
 <section class="container row uploadbukti">
-  <div class="col s10 offset-s2">
+  <div class="col s12 m12 l10 offset-l2 xl10 offset-xl2">
     <p class="text">Bukti Pembayaran</p>
 
     <div class="row">
-      <div class="col s5 offset-s3">
-        <div class="file-upload">
-          <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload Bukti</button>
-          <div class="image-upload-wrap">
-            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-            <div class="drag-text">
-              <i class="large material-icons">camera_alt</i>
-            </div>
-          </div>
-          <div class="file-upload-content">
-            <img class="file-upload-image" src="#" alt="your image" />
-            <div class="image-title-wrap">
-              <button type="button" onclick="removeUpload()" class="remove-image">Hapus <span class="image-title">Uploaded Image</span></button>
+      <div class="col s12 centerflex">
+        <div class="row">
+          <div class="col m5 l5 xl5">
+            <div class="file-upload">
+              <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload Bukti</button>
+              <div class="image-upload-wrap">
+                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="drag-text">
+                  <i class="large material-icons">camera_alt</i>
+                </div>
+              </div>
+              <div class="file-upload-content">
+                <img class="file-upload-image" src="#" alt="your image" />
+                <div class="image-title-wrap">
+                  <button type="button" onclick="removeUpload()" class="remove-image">Hapus <span class="image-title">Uploaded Image</span></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+
     <div class="datarekening">
       <div class="row">
-        <div class="col s3">
+        <div class="col s5 m4 l3 xl3">
           <p class="data1">Nama Pengirim Rekening:</p>
         </div>
-        <div class="col s9">
+        <div class="col s7 m8 l9 xl9">
           <input id="namapengirim" type="text" class="validate">
         </div>
       </div>
 
       <div class="row">
-        <div class="col s3">
+        <div class="col s5 m4 l3 xl3">
           <p class="data1">Nomor Rekening:</p>
         </div>
-        <div class="col s9">
+        <div class="col s7 m8 l9 xl9">
           <input id="nomorpengirim" type="number" class="validate">
         </div>
       </div>
 
       <div class="row">
-        <div class="col s3">
+        <div class="col s5 m4 l3 xl3">
           <p class="data1">Transfer dari Bank:</p>
         </div>
-        <div class="col s4 offset-s5 right">
+        <div class="col s7 m8 l4 offset-l5 xl4 offset-xl5 right">
           <select class="icons">
             <option value="" disabled selected>...</option>
             <option value="" data-icon="{{ asset('img/pengiriman/bank/icon/bri.png') }}">BANK Mandiri</option>
@@ -95,10 +100,10 @@
       </div>
 
       <div class="row">
-        <div class="col s3">
+        <div class="col s5 l3 xl3">
           <p class="data1">Total Pembayaran:</p>
         </div>
-        <div class="col s4 offset-s5 right data3">
+        <div class="col s7 l4 offset-l5 xl4 offset-xl5 right data3">
           <p class="data2">Rp. 147.000</p>
         </div>
       </div>
