@@ -25,46 +25,20 @@
         <div class="slider">
           <ul class="slides">
             <li>
-              <img src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
-              <div class="caption center-align">
-                <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-            <li>
-              <img src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
-              <div class="caption right-align">
-                <!-- <h3>Right Aligned Caption</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-            <li>
-              <img src="{{ asset('img/sales/sukulen roseum.jpg') }}" alt="">
-              <div class="caption center-align">
-                <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
+                <img src="{{ url('/storage/'. $product->product_image) }}">
             </li>
           </ul>
         </div>
       </div>
       <div class="col s6 offset-s1 caption">
-        <p class="caption1">Sukulen Panda<br>Rp. 40.000</p>
+        <p class="caption1">{{$product->product_name}}<br>Rp. {{$product->product_price}}</p>
         <div class="caption2">
           <div class="row">
             <div class="col s3">
               <p>Kategori</p>
             </div>
             <div class="col s6">
-              <p>Sales</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s3">
-              <p>Jenis</p>
-            </div>
-            <div class="col s6">
-              <p>Sukulen</p>
+              <p>{{$product->category->category_name}}</p>
             </div>
           </div>
           <div class="row">
@@ -72,7 +46,7 @@
               <p>Stok</p>
             </div>
             <div class="col s6">
-              <p>5</p>
+              <p>{{$product->product_stock}}</p>
             </div>
           </div>
           <div class="row">
