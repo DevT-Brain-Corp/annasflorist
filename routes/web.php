@@ -36,46 +36,58 @@ Route::name('js.')->group(function() {
 
 
 // Debugging
-// Done Responsive
-Route::get('/detail', function(){
-  return view('product.detail');
-});
-
+// Sales
 Route::get('/sales', function () {
-    return view('categories.sales');
+	return view('categories.sales');
 });
 
-Route::get('/cart', function () {
-    return view('product.cart');
+Route::get('/sales/detail', function(){
+	return view('product.sales.detail');
 });
 
+Route::get('/sales/cart', function () {
+	return view('product.sales.cart');
+});
+
+Route::get('/sales/buynow', function(){
+	return view('product.sales.buynow');
+});
+
+Route::get('/sales/buynowbyatm', function(){
+	return view('product.sales.buynowbyatm');
+});
+
+Route::get('/sales/buynowbybarcode', function(){
+	return view('product.sales.buynowbybarcode');
+});
+
+Route::get('/sales/totalpay', function(){
+	return view('product.sales.totalpay');
+});
+
+Route::get('/sales/riwayat', function(){
+	return view('product.sales.riwayatpembelian');
+});
+// End Sales
+
+// rental
+Route::get('/rental', function () {
+	return view('categories.rental');
+});
+
+Route::get('/rental/detail', function () {
+	return view('product.rental.detail');
+});
+// end rental
+
+// workshop
 Route::get('/workshop', function () {
-    return view('categories.workshop');
+	return view('categories.workshop');
 });
+// end workshop
 
 Route::get('/welcomenew', function(){
 	return view('welcomenew');
-});
-
-Route::get('/buynow', function(){
-	return view('product.buynow');
-});
-
-Route::get('/buynowbyatm', function(){
-	return view('product.buynowbyatm');
-});
-
-Route::get('/buynowbybarcode', function(){
-	return view('product.buynowbybarcode');
-});
-
-Route::get('/totalpay', function(){
-	return view('product.totalpay');
-});
-// End Done Responsive
-
-Route::get('/riwayat', function(){
-	return view('product.riwayatpembelian');
 });
 
 Route::get('/testing', function () {
