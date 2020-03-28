@@ -26,50 +26,72 @@
                         </div>
                     </li>
                     <li><a href="#top" class="iconsearch scroll">Home</a></li>
+                    <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdown1'>Kategori</a></li>
-                    @if(Auth::check() && auth()->user()->is_admin == 1)
-                        <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
-                        <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
-                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
-                    @else
-                        <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
-                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
+                    @if (Auth::check())
+                      <li><a href="#" class="iconsearch">Notifikasi</a></li>
                     @endif
                     <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                     @guest
-                        <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
+                      <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
                     @else
-                        {{--Ganti Dropdown Trigger--}}
-                        <li>
-                            <a href="{{ route('logout') }}" class="iconsearch scroll"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                <i class="material-icons">person_pin</i>
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
+                      <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i></a></li>
                     @endguest
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- responsive -->
+    <ul class="sidenav" id="mobile-demo">
+      <li>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">search</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">Cari Sesuatu</label>
+          </div>
+        </div>
+      </li>
+      <li><a href="#top" class="iconsearch scroll">Home</a></li>
+      <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
+      <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdownmobile'>Kategori</a></li>
+      @if (Auth::check())
+        <li><a href="#" class="iconsearch">Notifikasi</a></li>
+      @endif
+      <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i>Keranjang</a></li>
+      @guest
+        <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i>Akun</a></li>
+      @else
+        <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i>Akun</a></li>
+      @endguest
+    </ul>
+    <!-- end responsive -->
+
 </div>
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-    @foreach($categories as $category)
-        <li><a class="scroll" href="#{{$category->category_name}}">{{$category->category_name}}</a></li>
-    @endforeach
-        <li><a class="scroll" href="#Workshop">Workshop</a></li>
-        <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>
+  <li><a class="scroll" href="#sales">Sales</a></li>
+  <li><a class="scroll" href="#souvenir">Souvenir</a></li>
+  <li><a class="scroll" href="#workshop">Workshop</a></li>
+  <li><a class="scroll" href="#rental">Rental</a></li>
+  <li><a class="scroll" href="#dekorasi">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown -->
 
-<!-- Modal -->
+<!-- Dropdown Mobile -->
+<ul id='dropdownmobile' class="dropdown-content">
+  <li><a href="#">Sales</a></li>
+  <li><a href="#">Souvenir</a></li>
+  <li><a href="#">Workshop</a></li>
+  <li><a href="#">Rental</a></li>
+  <li><a href="#">Dekorasi</a></li>
+</ul>
+<!-- End Dropdown Mobile -->
+
 @guest
+<!-- Modal Log In -->
 <div id="modal1" class="modal">
     <form class="modal-content" method="POST" action="{{ route('login') }}">
         @csrf
@@ -94,10 +116,16 @@
                 <p class="member">Belum jadi member? <a class="memberdaftar" href="{{ route('register') }}">{{ __('Daftar') }}</a></p>
             </div>
         </div>
-
     </form>
 </div>
+<!-- End Modal Log In -->
 @else
-{{--Content Dropdown Log out & Profile--}}
+<!-- Dropdown Akun -->
+<ul id='dropdown1in' class='dropdown-content'>
+  <li><a href="#!">Lihat Profil</a></li>
+  <li><a href="#!">Ubah Profil</a></li>
+  <li class="divider" tabindex="-1"></li>
+  <li><a href="#!">Keluar</a></li>
+</ul>
+<!-- End Dropdown Akun -->
 @endguest
-<!-- End Modal -->

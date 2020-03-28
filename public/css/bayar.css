@@ -5,13 +5,11 @@ body{
 /* Bayar */
 .bayar .total{
   font-family: 'Righteous';
-  font-size: 48px;
   color: #000000;
 }
 
 .bayar .harga{
   font-family: 'Righteous';
-  font-size: 64px;
   color: #000000;
 }
 
@@ -25,7 +23,6 @@ body{
 .bayar .banking{
   font-family: 'Rambla';
   font-size: 20px;
-
   color: #000000;
 }
 
@@ -47,6 +44,15 @@ body{
   font-size: 20px;
 
   color: #000000;
+}
+
+.uploadbukti .centerflex{
+  display: flex;
+  justify-content: center;
+}
+
+.uploadbukti .centerflex .row .col{
+  width: 250px !important;
 }
 
 .file-upload {
@@ -208,3 +214,100 @@ body{
   color: #ffffff;
 }
 /* End Upload Bukti */
+
+@media only screen and (min-width:1200px){
+  .bayar .total{
+    font-size: 48px;
+  }
+
+  .bayar .harga{
+    font-size: 64px;
+  }
+}
+
+@media only screen and (min-width:992px){
+  .bayar .total{
+    font-size: 40px;
+  }
+
+  .bayar .harga{
+    font-size: 56px;
+  }
+
+  .bayar .banking{
+    font-size: 18px;
+  }
+
+  .bayar .ket2{
+    font-size: 14px;
+  }
+
+  .uploadbukti .text{
+    font-size: 18px;
+  }
+
+  .tombol a{
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width:600px){
+  .bayar .total{
+    font-size: 30px;
+  }
+
+  .bayar .harga{
+    font-size: 46px;
+  }
+
+  .bayar .ket{
+    font-size: 15px;
+  }
+
+  .bayar .banking{
+    font-size: 16px;
+  }
+
+  .bayar .ket2{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width:600px){
+  .bayar .total{
+    font-size: 24px;
+  }
+
+  .bayar .harga{
+    font-size: 36px;
+  }
+
+  .bayar .ket{
+    font-size: 15px;
+  }
+
+  .bayar .banking{
+    font-size: 17px;
+  }
+
+  .bayar .ket2{
+    font-size: 13px;
+  }
+
+  .uploadbukti .text{
+    font-size: 18px;
+  }
+
+  .datarekening .data1{
+    font-size: 14px;
+  }
+
+  .datarekening .data2{
+    font-size: 30px;
+  }
+
+  .tombol a{
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
