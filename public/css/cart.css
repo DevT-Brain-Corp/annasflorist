@@ -178,6 +178,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* Total */
 .total{
   font-family: 'Saira';
+  font-size: 28px;
   color: #000000;
 }
 
@@ -200,18 +201,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .total .belisekarang a{
   color: #FFFFFF;
-}
-
-@media only screen and (min-width:992px) {
-  .total{
-    font-size: 28px;
-  }
-}
-
-@media only screen and (max-width:992px) {
-  .total{
-    font-size: 20px;
-  }
 }
 /* End Total */
 

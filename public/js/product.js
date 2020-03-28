@@ -85,7 +85,7 @@ function decreaseValue() {
 
 // Stok Pot
 function handleClick(myRadio) {
-  document.getElementById("stokpot2").innerHTML = "Tersisa " + myRadio.id;
+  document.getElementById("stokpot2").innerHTML = myRadio.id;
 }
 // End Stok Pot
 

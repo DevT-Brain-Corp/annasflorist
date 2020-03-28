@@ -40,7 +40,7 @@ body{
 .carousel{
   height: 450px !important;
   background-color: #ffffff;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 /* Stock Kosong */
@@ -73,16 +73,6 @@ body{
   color: #123812;
 }
 
-.stockisi .stockisi2 .row .row.texting2 p,
-.stockisi .stockisi2 .row .row.texting2 .a{
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.stockisi .stockisi2 .row .row.texting2 .a{
-  white-space: nowrap;
-}
-
 .stockisi .stockisi2 .row .texting p{
   margin-top: 0 !important;
   text-align: center !important;
@@ -92,9 +82,12 @@ body{
   border-radius: 10px;
 }
 
-.stockkosong.valign-wrapper{
-  display: flex !important;
-  justify-content: center !important;
+.stockkosong .col.s12{
+  width: 912.8px;
+}
+
+.stockkosong .centerdiv{
+  display: inline-block !important;
 }
 
 .stockkosong .centerdiv p{
@@ -105,40 +98,3 @@ body{
   color: #000000;
 }
 /* End Stock Kosong */
-
-@media only screen and (max-width:1200px){
-  .tabriwayat .tabs li a{
-    font-size: 13px;
-    white-space: pre;
-  }
-
-  .stockisi .stockisi2 .row .col .row .col p{
-    font-size: 18px;
-  }
-}
-
-@media only screen and (max-width:992px){
-  .tabriwayat .tabs li a{
-    font-size: 12px;
-    white-space: pre;
-  }
-
-  .tabriwayat .tabs .tab a{
-    overflow: visible;
-  }
-
-  .stockisi .stockisi2 .row .col .row .col p{
-    font-size: 15px;
-  }
-}
-
-@media only screen and (max-width:600px){
-  .tabriwayat .tabs li a{
-    font-size: 10px;
-    white-space: pre;
-  }
-
-  .tabriwayat .tabs .tab a{
-    overflow: visible;
-  }
-}

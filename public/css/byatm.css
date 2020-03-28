@@ -2,8 +2,7 @@ body{
   background: rgba(196, 243, 196, 0.32);
 }
 
-.mt1,
-.mt2{
+.mt1{
   margin-top: 76px;
 }
 
@@ -12,78 +11,24 @@ body{
   border-radius: 30px;
 }
 
-.deskripsi .row .col p{
-  margin-top: 0;
+.deskripsi .judul{
+  height: 144px;
 }
 
 .deskripsi .judul p{
   font-family: 'Mukta Vaani';
+  font-size: 30px;
   color: #123812;
 }
 
 .deskripsi .rincian{
   font-family: 'Mukta Vaani';
+  font-size: 20px;
   color: #000000;
-}
-
-.deskripsi .rincian .input-field{
-  margin-top: 0 !important;
 }
 
 .deskripsi .rincian img{
   margin-top: 5px;
-}
-
-.deskripsi .rincian p.jumlahsatuan{
-  white-space: nowrap;
-}
-
-@media only screen and (min-width:992px){
-  .deskripsi .judul{
-    height: 144px;
-  }
-
-  .deskripsi .judul p{
-    font-size: 30px;
-  }
-
-  .deskripsi .rincian{
-    font-size: 20px;
-  }
-}
-
-@media only screen and (max-width:992px){
-  .deskripsi .judul{
-    height: 100px;
-  }
-
-  .deskripsi .judul p{
-    font-size: 20px;
-  }
-
-  .deskripsi .rincian,
-  .deskripsi .rincian .materialize-textarea,
-  .fontmax992{
-    font-size: 15px !important;
-  }
-
-  .deskripsi .rincian textarea.materialize-textarea{
-    padding-bottom: 0;
-  }
-}
-
-@media only screen and (max-width:600px){
-  .mt2{
-    margin-top: 0;
-  }
-
-  .deskripsi .judul{
-    height: 119px;
-  }
-
-  .deskripsi .rincian img.responsive-img{
-    height: 25px;
-  }
 }
 /* End Deskripsi */
 
@@ -92,10 +37,6 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-.pemesanan p{
-  margin-top: 0;
 }
 
 .pemesanan .valign-wrapper{

@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="{{ url('css/login.css') }}">
 </head>
 
-@section('content')
+@section('bootstrap')
 
     <!-- Pendaftaran -->
     <div class="container pendaftaran">
         <div class="row">
             <div class="row-12 mx-auto word">
                 <div class="shadow-sm">
-                    <p>DAFTAR</p>
+                    <p>PENDAFTARAN</p>
                 </div>
             </div>
         </div>
