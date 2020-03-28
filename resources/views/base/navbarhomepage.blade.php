@@ -31,10 +31,11 @@
                     @if (Auth::check())
                       <li><a href="#" class="iconsearch">Notifikasi</a></li>
                     @endif
-                    <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                     @guest
+                      <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                       <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
                     @else
+                      <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdowncart'><i class="material-icons">shopping_cart</i></a></li>
                       <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i></a></li>
                     @endguest
                 </ul>
@@ -128,4 +129,11 @@
   <li><a href="#!">Keluar</a></li>
 </ul>
 <!-- End Dropdown Akun -->
+
+<!-- Dropdown Cart -->
+<ul id='dropdowncart' class='dropdown-content'>
+  <li><a href="#!">Sales</a></li>
+  <li><a href="#!">Rental</a></li>
+</ul>
+<!-- End Dropdown Cart -->
 @endguest
