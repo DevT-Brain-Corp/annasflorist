@@ -1,0 +1,73 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+/* Navbar */
+.iconsearch,
+.brand-logo{
+  color: #000000 !important;
+}
+
+.solid{
+  background-color: #c4f3c4 !important;
+}
+/* End Navbar */
+
+/* Deskripsi */
+.container.deskripsi{
+  width: 90%;
+}
+
+.container.deskripsi,
+.deskripsi .acc{
+  margin-top: 50px;
+}
+
+.deskripsi .z-depth-2{
+  background-color: #ffffff;
+}
+/* End Deskripsi */
+
+/* cactus */
+.cactus .cactusimg{
+  display: flex;
+  justify-content: center;
+}
+
+.cactus .title p,
+.cactus .title2 p,
+.cactus .title3 p{
+  font-family: 'Mukta Vaani';
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.cactus .title2 p{
+  color: #AFAEB3;
+}
+/* end cactus */
+
+@media only screen and (min-width:1200px){
+  .cactus .title p{
+    font-size: 30px;
+  }
+
+  .cactus .title2 p{
+    font-size: 17px;
+  }
+
+  .cactus .title3 p{
+    font-size: 20px;
+  }
+
+  .cactus .title3 p span{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width:1200px){}
+
+@media only screen and (max-width:992px){}
+
+@media only screen and (min-width:600px){}

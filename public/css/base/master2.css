@@ -4,7 +4,6 @@ body{
 
 /* Kotak 1 */
 .kotak1{
-
   background: linear-gradient(270deg, #123812 4.03%, rgba(18, 56, 18, 0.971095) 11.26%, rgba(18, 56, 18, 0.915584) 23.96%, rgba(18, 56, 18, 0.866449) 37.37%, rgba(19, 78, 18, 0.824989) 54.48%, rgba(19, 88, 18, 0.805827) 68.06%, rgba(20, 101, 18, 0.805827) 79.7%, rgba(21, 123, 18, 0.805827) 91.34%);
 }
 
@@ -348,7 +347,7 @@ body{
   }
 
   .dekorasi .rincian{
-    font-size: 36px;
+    font-size: 2vw;
   }
 }
 
@@ -438,7 +437,7 @@ body{
   }
 
   .profil .profiltext{
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
@@ -452,6 +451,208 @@ body{
   }
 }
 /* End Profil */
+
+/* 3founder */
+.founder .founder1 .bg{
+  background: rgb(194,250,194);
+  background: linear-gradient(45deg, rgba(194,250,194,0.82) 50%, rgba(0,0,0,0) 50%);
+}
+
+.founder .founder1 .bg img.founder1{
+  max-width: 337px;
+  height: 450px;
+
+  margin-top: 100px;
+  margin-left: 180px;
+  margin-bottom: 101px;
+}
+
+.founder .founder1 .bg2 .a{
+  margin-top: 100px;
+}
+
+.founder .founder1 .bg2 .b{
+  background: rgba(215, 240, 214, 0.805827);
+  z-index: -10;
+  position: relative;
+
+  margin-left: -150px;
+}
+
+.founder .founder1 .bg2 .a p,
+.founder .founder1 .bg2 .b p,
+.founder .founder2 .bg .a p,
+.founder .founder2 .bg .b p{
+  font-family: 'Mukta Vaani';
+  font-size: 22px;
+
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.founder .founder1 .bg2 .a p{
+  text-align: right;
+}
+
+.founder .founder1 .bg2 .b p{
+  text-align: justify;
+
+  padding-top: 100px;
+  padding-bottom: 65px;
+  padding-left: 30%;
+}
+
+.founder .founder2 .xl8.bg2{
+  background: rgb(194,250,194);
+  background: linear-gradient(315deg, rgba(194,250,194,0.82) 50%, rgba(0,0,0,0) 50%);
+}
+
+.founder .founder2 .bg2 img.founder2{
+  max-width: 337px;
+  height: 450px;
+  object-fit: cover;
+  float: right;
+
+  margin-top: 100px;
+  margin-right: 180px;
+  margin-bottom: 101px;
+}
+
+.founder .founder2 .bg .a{
+  margin-top: 100px;
+}
+
+.founder .founder2 .bg .b{
+  background: rgba(215, 240, 214, 0.805827);
+  z-index: -10;
+  position: relative;
+
+  margin-right: -150px;
+}
+
+.founder .founder2 .bg .b p{
+  text-align: justify;
+
+  padding-top: 100px;
+  padding-bottom: 65px;
+  padding-right: 30%;
+}
+
+@media only screen and (max-width: 1200px){
+  .founder .founder1 .bg img.founder1{
+    max-width: 270px;
+    height: 360px;
+
+    margin-top: 100px;
+    margin-left: 120px;
+    margin-bottom: 101px;
+  }
+
+  .founder .founder2 .bg2 img.founder2{
+    max-width: 270px;
+    height: 360px;
+    object-fit: cover;
+    float: right;
+
+    margin-top: 100px;
+    margin-right: 120px;
+    margin-bottom: 101px;
+  }
+}
+
+@media only screen and (max-width: 992px){
+  .founder .founder1 .bg img.founder1,
+  .founder .founder2 .bg2 img.founder2{
+    max-width: 240px;
+    height: 320px;
+    margin-top: 100px;
+    margin-bottom: 101px;
+
+    object-fit: cover;
+  }
+
+  .founder .founder1 .bg img.founder1{
+    margin-left: 70px;
+  }
+
+  .founder .founder2 .bg2 img.founder2{
+    float: right;
+    margin-right: 70px;
+  }
+
+  .founder .founder1 .bg2 .a p,
+  .founder .founder1 .bg2 .b p,
+  .founder .founder2 .bg .a p,
+  .founder .founder2 .bg .b p{
+    font-family: 'Mukta Vaani';
+    font-size: 18px;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .founder .founder1 .bg2 .b p,
+  .founder .founder2 .bg .b p{
+    padding-top: 60px;
+    padding-bottom: 65px;
+  }
+
+  .founder .founder1 .bg2 .b p{
+    padding-left: 35%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .founder .founder1 .bg img.founder1,
+  .founder .founder2 .bg2 img.founder2{
+    max-width: 200px;
+    height: 266px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    object-fit: cover;
+  }
+
+  .founder .founder1 .bg img.founder1{
+    margin-left: 0;
+  }
+
+  .founder .founder2 .bg2 img.founder2{
+    float: right;
+    margin-right: 70px;
+  }
+
+  .founder .founder1 .bg2 .a p,
+  .founder .founder1 .bg2 .b p,
+  .founder .founder2 .bg .a p,
+  .founder .founder2 .bg .b p{
+    font-family: 'Mukta Vaani';
+    font-size: 18px;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .founder .founder1 .bg2 .b p,
+  .founder .founder2 .bg .b p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .founder .founder1 .bg2 .a,
+  .founder .founder2 .bg .a{
+    margin-top: 0;
+  }
+
+  .founder .founder2 .bg .b{
+    margin-right: 0;
+  }
+
+  .founder .founder1 .bg2 .b{
+    margin-left: 0;
+  }
+}
+/* end 3founder */
 
 /* Maps */
 #mapid {

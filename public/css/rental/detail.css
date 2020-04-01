@@ -55,22 +55,129 @@ body{
 }
 
 .background .plants3 .title{
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .background .plants3 .title p,
-.background .plants3 .title2 p{
+.background .plants3 .title2 p,
+.background .plants3 .title3 p,
+.background .plants3 .hasilsewa p{
   margin-top: 0;
   margin-bottom: 2px;
+  margin-left: 15px;
   font-family: 'Mukta Vaani';
 }
 
-.background .plants3 .title p{
-  font-size: 30px;
-}
-
 .background .plants3 .title2 p{
-  font-size: 15px;
   color: #AFAEB3;
 }
+
+.background .plants3 .datepickerplants .iconchevron{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background .plants3 .nextstep .col .right a.btn{
+  background-color: #4CAF50;
+  text-transform: none;
+  font-family: 'Mukta Vaani';
+}
 /* end background */
+
+@media only screen and (min-width:1200px){
+  .background .plants3 .title p,
+  .background .plants3 .title3 p
+  {
+    font-size: 30px;
+  }
+
+  .background .plants3 .title2 p{
+    font-size: 15px;
+  }
+
+  .background .plants3 .title3 p span{
+    font-size: 15px;
+  }
+
+  .background .plants3 .title3 p.a{
+    font-size: 12px;
+  }
+
+  .background .plants3 .datepickerplants .iconchevron{
+    height: 70px;
+  }
+
+  .background .plants3 .hasilsewa p{
+    font-size: 17px;
+  }
+
+  .background .plants3 .hasilsewa p span{
+    font-size: 25px;
+  }
+
+  .background .plants3 .datepickerplants{
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width:1200px){
+  .background .plants3 .title p,
+  .background .plants3 .title3 p,
+  .background .plants3 .hasilsewa p span
+  {
+    font-size: 20px;
+  }
+
+  .background .plants3 .title3 p span{
+    font-size: 11px;
+  }
+
+  .background .plants3 .title3 p.a{
+    font-size: 12px;
+  }
+
+  .background .plants3 .datepickerplants{
+    margin-left: 5px;
+  }
+
+  .background .plants3 .hasilsewa p{
+    font-size: 15px;
+  }
+
+  .background{
+    margin-bottom: 130px;
+  }
+}
+
+@media only screen and (max-width:992px){
+  .background{
+    margin-bottom: 100px;
+  }
+
+  .background .plants3{
+    padding-bottom: 30px;
+  }
+
+  .background .plants3 .datepickerplants .iconchevron div i{
+    -ms-transform: rotate(90deg); /* IE 9 */
+    transform: rotate(90deg);
+  }
+}
+
+@media only screen and (max-width:600px){
+  .background .plants2{
+    min-height: 200px;
+  }
+
+  .background .plants3 .title p,
+  .background .plants3 .title2 p,
+  .background .plants3 .title3 p,
+  .background .plants3 .hasilsewa p{
+    text-align: center;
+  }
+
+  .background .plants3 .title p{
+    font-size: 30px;
+  }
+}

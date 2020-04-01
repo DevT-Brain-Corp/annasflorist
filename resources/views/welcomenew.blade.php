@@ -3,6 +3,10 @@
 
 @section('content')
 <head>
+  <!-- Maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
   <link rel="stylesheet" href="{{ asset('css/base/master2.css') }}">
 </head>
 
@@ -198,7 +202,7 @@
     </div>
 
     <div class="row">
-        <div class="col s12 xl3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/souvenir/1.jpg') }}">
@@ -219,7 +223,7 @@
             </div>
         </div>
 
-        <div class="col s12 xl3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/souvenir/2.jpg') }}">
@@ -240,7 +244,7 @@
             </div>
         </div>
 
-        <div class="col s12 xl3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/souvenir/3.jpg') }}">
@@ -261,7 +265,7 @@
             </div>
         </div>
 
-        <div class="col s12 xl3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/souvenir/4.jpg') }}">
@@ -297,7 +301,7 @@
     </div>
 
     <div class="row">
-        <div class="col s12 xl3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/rental/1.jpg') }}">
@@ -317,7 +321,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 xl3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/rental/2.jpg') }}">
@@ -337,7 +341,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 xl3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/rental/3.jpg') }}">
@@ -357,7 +361,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 xl3">
+        <div class="col s12 m6 l4 xl3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{ asset('img/rental/4.jpg') }}">
@@ -460,10 +464,10 @@
 <div class="container profil" id="profil">
     <h1 class="fontsaira profilword">Profil CV. Annas Florist</h1>
     <div class="row">
-        <div class="col s12 xl7 profilimg">
+        <div class="col s12 l7 xl7 profilimg">
             <img src="{{ asset('img/profil.png') }}" alt="profil">
         </div>
-        <div class="col s12 xl5">
+        <div class="col s12 l5 xl5">
             <input type="checkbox" class="read-more-state" id="post-1" />
 
             <p class="profiltext read-more-wrap">CV. ANNAS FLORIST (Anna’s Florist) suatu usaha yang bertempat di Perum Mastrip Blok W-4 RT/RW 03/21 Kel./Kec. Sumbersari – Jember 68121.<span class="read-more-target"> Berdiri sejak 25 Februari 2018 dengan fokus produk pada saat itu adalah kaktus. Didirikan oleh Anna Ramadhaniati, Sandra Putra Dwi Permana dan Shandiputra Budhi Perdana. Anna’s Florist memiliki kiblat style and trend di Jakarta.<br><br>Anna’s Florist terus mengembangkan jenis produk dan inovasi usahanya sehingga saat ini produk yang kami pasarkan meliputi Cactus, Indoor Plant dan Home Decor.</span></p>
@@ -473,6 +477,10 @@
     </div>
 </div>
 <!-- End Profil -->
+
+<!-- 3 Founder -->
+@include('base.founder')
+<!-- End 3 Founder -->
 
 <!-- Maps -->
 <div class="container">

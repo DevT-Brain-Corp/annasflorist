@@ -78,6 +78,10 @@ Route::get('/rental', function () {
 Route::get('/rental/detail', function () {
 	return view('product.rental.detail');
 });
+
+Route::get('/rental/detail/aksesoris', function () {
+	return view('product.rental.aksesoris');
+});
 // end rental
 
 // workshop
@@ -91,6 +95,6 @@ Route::get('/welcomenew', function(){
 });
 
 Route::get('/testing', function () {
-    return view('testing');
+    return view('base.testing');
 });
 // End Debugging
