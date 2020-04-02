@@ -29,4 +29,12 @@
     </div>
   </div>
 </div>
+
+<!-- Action button -->
+<div class="fixed-action-btn">
+  <a href="#" class="btn-floating btn-large red">
+    <i class="large material-icons">done</i>
+  </a>
+</div>
+<!-- End action button -->
 @endsection

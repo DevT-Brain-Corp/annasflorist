@@ -2,6 +2,10 @@ body{
   background: rgba(196, 243, 196, 0.32);
 }
 
+:root{
+
+}
+
 /* Navbar */
 .iconsearch,
 .brand-logo{
@@ -46,7 +50,50 @@ body{
 .cactus .title2 p{
   color: #AFAEB3;
 }
+
 /* end cactus */
+
+/* pot */
+.potletter div p,
+.accletter div p{
+  font-family: 'Mukta Vaani';
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.pot label.card-input .card .card-image img{
+  height: 200px;
+  object-fit: cover;
+}
+
+.pot label.card-input{
+  width: 100%;
+}
+
+.pot .card-input .card{
+  background-color:#f8f9fa;
+  transition: 0.5s;
+}
+
+.pot .card-input-element{
+  display:none!important;
+}
+
+.card-input-element+.card:hover{
+  cursor: pointer;
+  background-color: #9C27B0;
+  transition: 0.5s;
+}
+
+.card-input-element:checked+.card{
+  background-color: #F9A825;
+  -webkit-transition: border .3s;
+  -o-transition: border .3s;
+  transition: border .3s;
+}
+/* end pot */
 
 @media only screen and (min-width:1200px){
   .cactus .title p{
@@ -63,6 +110,11 @@ body{
 
   .cactus .title3 p span{
     font-size: 15px;
+  }
+
+  .potletter div p,
+  .accletter div p{
+    font-size: 40px;
   }
 }
 

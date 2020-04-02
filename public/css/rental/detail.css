@@ -83,6 +83,15 @@ body{
   text-transform: none;
   font-family: 'Mukta Vaani';
 }
+
+.background .plants3 .xl3.title3{
+  margin-top: 10px;
+}
+
+.background .plants3 .input-field{
+  margin-top: 10px;
+  margin-bottom: 0;
+}
 /* end background */
 
 @media only screen and (min-width:1200px){
