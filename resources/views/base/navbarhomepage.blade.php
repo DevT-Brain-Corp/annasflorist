@@ -33,9 +33,7 @@
                         <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @else
                         <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
-                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @endif
-                    <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                     @guest
                       <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                       <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
@@ -78,21 +76,21 @@
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-    @foreach($categories as $category)
-        <li><a class="scroll" href="#{{$category->category_name}}">{{$category->category_name}}</a></li>
-    @endforeach
-        <li><a class="scroll" href="#Workshop">Workshop</a></li>
-        <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>
+    <li><a class="scroll" href="#Dekorasi">Sales</a></li>
+    <li><a class="scroll" href="#Workshop">Souvenir</a></li>
+    <li><a class="scroll" href="#Dekorasi">Rental</a></li>
+    <li><a class="scroll" href="#Workshop">Workshop</a></li>
+    <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown -->
 
 <!-- Dropdown Mobile -->
 <ul id='dropdownmobile' class="dropdown-content">
-  <li><a href="#">Sales</a></li>
-  <li><a href="#">Souvenir</a></li>
-  <li><a href="#">Workshop</a></li>
-  <li><a href="#">Rental</a></li>
-  <li><a href="#">Dekorasi</a></li>
+    <li><a href="#">Sales</a></li>
+    <li><a href="#">Souvenir</a></li>
+    <li><a href="#">Rental</a></li>
+    <li><a href="#">Workshop</a></li>
+    <li><a href="#">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown Mobile -->
 
