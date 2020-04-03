@@ -45,26 +45,65 @@ Route::get('/testing', function () {
     return view('testing');
 });
 
+// Sales
 Route::get('/sales', function () {
-    return view('categories.sales');
+	return view('categories.sales');
 });
 
-Route::get('/cart', 'FrontController@cart')->name('cart');
-Route::get('/buynow', 'FrontController@buynow')->name('buynow');
-Route::get('/buynowbyatm', 'FrontController@buynowbyatm')->name('buynowbyatm');
-Route::get('/buynowbybarcode', 'FrontController@buynowbybarcode')->name('buynowbybarcode');
-Route::get('/totalpay', 'FrontController@totalpay')->name('totalpay');
-Route::get('/riwayat', 'FrontController@riwayat')->name('riwayat');
+Route::get('/sales/detail', function(){
+	return view('product.sales.detail');
+});
 
+Route::get('/sales/cart', function () {
+	return view('product.sales.cart');
+});
+
+Route::get('/sales/buynow', function(){
+	return view('product.sales.buynow');
+});
+
+Route::get('/sales/buynowbyatm', function(){
+	return view('product.sales.buynowbyatm');
+});
+
+Route::get('/sales/buynowbybarcode', function(){
+	return view('product.sales.buynowbybarcode');
+});
+
+Route::get('/sales/totalpay', function(){
+	return view('product.sales.totalpay');
+});
+
+Route::get('/sales/riwayat', function(){
+	return view('product.sales.riwayatpembelian');
+});
+// End Sales
+
+// rental
+Route::get('/rental', function () {
+	return view('categories.rental');
+});
+
+Route::get('/rental/detail', function () {
+	return view('product.rental.detail');
+});
+
+Route::get('/rental/detail/aksesoris', function () {
+	return view('product.rental.aksesoris');
+});
+// end rental
+
+// workshop
 Route::get('/workshop', function () {
-    return view('categories.workshop');
+	return view('categories.workshop');
+});
+// end workshop
+
+Route::get('/welcomenew', function(){
+	return view('welcomenew');
 });
 
-Route::get('/adm/dashboard', function(){
-	return view('FEAdmin.dashboard');
-});
-
-Route::get('/adm/sales/dashboard', function(){
-	return view('FEAdmin.category.sales.dashboard');
+Route::get('/testing', function () {
+    return view('base.testing');
 });
 // End Debugging

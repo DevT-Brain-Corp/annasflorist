@@ -85,44 +85,44 @@ function decreaseValue() {
 
 // Stok Pot
 function handleClick(myRadio) {
-  document.getElementById("stokpot2").innerHTML = myRadio.id;
+  document.getElementById("stokpot2").innerHTML = "Tersisa " + myRadio.id;
 }
 // End Stok Pot
 
 // tooltip
 $(document).ready(function(){
   $("#foobar #Biru").tooltip({
-  	html: "<img src='img/pot/biru2.png'>"
+  	html: "<img src='/img/pot/biru2.png'>"
   });
 });
 
 $(document).ready(function(){
   $("#foobar #Pink").tooltip({
-  	html: "<img src='img/pot/pink.png'>"
+  	html: "<img src='/img/pot/pink.png'>"
   });
 });
 
 $(document).ready(function(){
   $("#foobar #Merah").tooltip({
-  	html: "<img src='img/pot/merah.png'>"
+  	html: "<img src='/img/pot/merah.png'>"
   });
 });
 
 $(document).ready(function(){
   $("#foobar #Hitam").tooltip({
-  	html: "<img src='img/pot/hitam.png'>"
+  	html: "<img src='/img/pot/hitam.png'>"
   });
 });
 
 $(document).ready(function(){
   $("#foobar #Hijau").tooltip({
-  	html: "<img src='img/pot/hijau.png'>"
+  	html: "<img src='/img/pot/hijau.png'>"
   });
 });
 
 $(document).ready(function(){
   $("#foobar #Putih").tooltip({
-  	html: "<img src='img/pot/putih.png'>"
+  	html: "<img src='/img/pot/putih.png'>"
   });
 });
 // End Tolltip

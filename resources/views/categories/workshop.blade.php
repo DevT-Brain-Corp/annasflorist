@@ -34,7 +34,7 @@
 <!-- Foto catalog 6 -->
 <div class="container fotocatalog6" id="fotocatalog6">
   <div class="row">
-    <div class="col s4">
+    <div class="col s12 xl4">
       <figure class="snip1477">
         <img src="{{ asset('img/workshop/1.jpg') }}" alt="">
         <div class="title">
@@ -50,7 +50,7 @@
       </figure>
     </div>
 
-    <div class="col s4">
+    <div class="col s12 xl4">
       <figure class="snip1477">
         <img src="{{ asset('img/workshop/2.jpg') }}" alt="">
         <div class="title">
@@ -66,7 +66,7 @@
       </figure>
     </div>
 
-    <div class="col s4">
+    <div class="col s12 xl4">
       <figure class="snip1477">
         <img src="{{ asset('img/workshop/3.jpg') }}" alt="">
         <div class="title">
@@ -82,7 +82,7 @@
       </figure>
     </div>
 
-    <div class="col s4">
+    <div class="col s12 xl4">
       <figure class="snip1477">
         <img src="{{ asset('img/workshop/4.jpg') }}" alt="">
         <div class="title">
@@ -98,7 +98,7 @@
       </figure>
     </div>
 
-    <div class="col s4">
+    <div class="col s12 xl4">
       <figure class="snip1477">
         <img src="{{ asset('img/workshop/5.jpg') }}" alt="">
         <div class="title">
@@ -114,7 +114,7 @@
       </figure>
     </div>
 
-    <div class="col s4">
+    <div class="col s12 xl4">
       <figure class="snip1477">
         <img src="{{ asset('img/workshop/6.jpg') }}" alt="">
         <div class="title">

@@ -10,25 +10,25 @@
 
 <!-- Deskripsi -->
 <section class="deskripsi row">
-  <div class="col offset-s2">
+  <div class="col offset-m1 offset-l1 offset-xl2">
     <div class="row">
-      <div class="col s5 mt1">
+      <div class="col m6 l6 xl5 mt1">
         <div class="valign-wrapper">
           <img class="responsive-img hoverable" src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
         </div>
       </div>
-      <div class="col s5 offset-s1 mt1">
+      <div class="col m6 l6 xl5 offset-xl1 mt2">
         <p class="tipe1">Sukulen Panda</p>
         <p class="tipe1">Rp.40.000</p>
         <div class="row">
-          <div class="col s3">
+          <div class="col s6 m3 l3 xl3">
             <p class="tipe2">Kategori</p>
             <p class="tipe2">Jenis</p>
             <p class="tipe2">Warna</p>
             <p class="tipe2">Jumlah</p>
             <p class="tipe2">Harga</p>
           </div>
-          <div class="col s6">
+          <div class="col s6 m6 l6 xl6">
             <p class="tipe2">Sales</p>
             <p class="tipe2">Sukulen</p>
             <p class="tipe2">Biru</p>
@@ -45,47 +45,49 @@
 <!-- Alamat Anda -->
 <div class="container alamat">
   <div class="row">
-    <div class="col s2">
+    <div class="col s3 m2 l2 xl2">
       <p class="tipe3">Alamat</p>
     </div>
-    <div class="col s5">
+    <div class="col s9 m9 l7 xl5">
       <div class="row">
         <div class="input-field col s4">
-            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
         </div>
         <div class="input-field col s4">
-            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
         </div>
         <div class="input-field col s4">
-            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
         </div>
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <textarea disabled id="textarea1" class="materialize-textarea">Testing</textarea>
+              <textarea id="textarea1" class="materialize-textarea" placeholder="Tesing"></textarea>
             </div>
           </div>
         </form>
       </div>
     </div>
   </div>
+
   <div class="row">
-    <div class="col s2">
+    <div class="col s3 m2 l2 xl2">
       <p class="tipe3">Nomor Telepon</p>
     </div>
-    <div class="col s5">
+    <div class="col s9 m9 l7 xl5">
       <div class="row">
         <div class="input-field col s10">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+          <input placeholder="I am not editable" id="disabled" type="text" class="validate">
         </div>
       </div>
     </div>
   </div>
+
   <div class="row">
-    <div class="col s2">
+    <div class="col s3 m3 l2 xl2">
       <p class="tipe3">Pengiriman</p>
     </div>
-    <div class="input-field col s5">
+    <div class="input-field col s9 m9 l7 xl5">
       <select class="icons font">
         <option value="" disabled selected>Pilih Pengiriman...</option>
         <option value="" data-icon="{{ asset('img/pengiriman/jne.png') }}" class="left">JNE</option>
@@ -100,17 +102,18 @@
 <!-- Opsi Bank -->
 <div class="container opsibank">
   <div class="row">
-    <div class="col s2">
+    <div class="col s2 xl2">
       <p class="tipe3">Opsi Bank</p>
     </div>
-    <div class="col s8">
+
+    <div class="col s10 xl8">
       <form action="#">
         <div class="row">
           <div class="col s4">
               <p>
                 <label>
                   <input class="with-gap" name="group1" type="radio" />
-                  <span class="gambar"><img src="{{ asset('img/pengiriman/bank/mandiri.png') }}" alt=""></span>
+                  <span class="gambar"><img class="responsive-img" src="{{ asset('img/pengiriman/bank/mandiri.png') }}" alt=""></span>
                 </label>
               </p>
           </div>
@@ -121,12 +124,13 @@
             <p class="capt2">Transfer Manual</p>
           </div>
         </div>
+
         <div class="row">
           <div class="col s4">
               <p>
                 <label>
                   <input class="with-gap" name="group1" type="radio" />
-                  <span class="gambar"><img src="{{ asset('img/pengiriman/bank/bri.png') }}" alt=""></span>
+                  <span class="gambar"><img class="responsive-img" src="{{ asset('img/pengiriman/bank/bri.png') }}" alt=""></span>
                 </label>
               </p>
           </div>
@@ -137,12 +141,13 @@
             <p class="capt2">Transfer Manual</p>
           </div>
         </div>
+
         <div class="row">
           <div class="col s4">
               <p>
                 <label>
                   <input class="with-gap" name="group1" type="radio" />
-                  <span class="gambar"><img src="{{ asset('img/pengiriman/bank/bni.png') }}" alt=""></span>
+                  <span class="gambar"><img class="responsive-img" src="{{ asset('img/pengiriman/bank/bni.png') }}" alt=""></span>
                 </label>
               </p>
           </div>
@@ -153,12 +158,13 @@
             <p class="capt2">Transfer Manual</p>
           </div>
         </div>
+
         <div class="row">
           <div class="col s4">
               <p>
                 <label>
                   <input class="with-gap" name="group1" type="radio" />
-                  <span class="gambar"><img src="{{ asset('img/pengiriman/bank/ovo.png') }}" alt=""></span>
+                  <span class="gambar"><img class="responsive-img" class="responsive-img" src="{{ asset('img/pengiriman/bank/ovo.png') }}" alt=""></span>
                 </label>
               </p>
           </div>
@@ -169,12 +175,13 @@
             <p class="capt2">Melalui Barcode</p>
           </div>
         </div>
+
         <div class="row">
           <div class="col s4">
               <p>
                 <label>
                   <input class="with-gap" name="group1" type="radio" />
-                  <span class="gambar"><img src="{{ asset('img/pengiriman/bank/linkaja.png') }}" alt=""></span>
+                  <span class="gambar"><img class="responsive-img" src="{{ asset('img/pengiriman/bank/linkaja.png') }}" alt=""></span>
                 </label>
               </p>
           </div>
@@ -185,12 +192,13 @@
             <p class="capt2">Melalui Barcode</p>
           </div>
         </div>
+
         <div class="row">
           <div class="col s4">
               <p>
                 <label>
                   <input class="with-gap" name="group1" type="radio" />
-                  <span class="gambar"><img src="{{ asset('img/pengiriman/bank/dana.PNG') }}" alt=""></span>
+                  <span class="gambar"><img class="responsive-img" src="{{ asset('img/pengiriman/bank/dana.PNG') }}" alt=""></span>
                 </label>
               </p>
           </div>
@@ -201,12 +209,13 @@
             <p class="capt2">Melalui Barcode</p>
           </div>
         </div>
+
         <div class="row">
           <div class="col s4">
               <p>
                 <label>
                   <input class="with-gap" name="group1" type="radio" />
-                  <span class="gambar"><img src="{{ asset('img/pengiriman/bank/gopay.PNG') }}" alt=""></span>
+                  <span class="gambar"><img class="responsive-img" src="{{ asset('img/pengiriman/bank/gopay.PNG') }}" alt=""></span>
                 </label>
               </p>
           </div>
@@ -218,6 +227,7 @@
           </div>
         </div>
     </div>
+
   </div>
   <div class="row">
     <div class="col s12">
@@ -228,5 +238,8 @@
 </div>
 <!-- End Opsi Bank -->
 
+<!-- footer -->
 @include('base.footer')
+<!-- end footer -->
+
 @endsection

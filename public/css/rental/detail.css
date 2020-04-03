@@ -1,0 +1,192 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+/* Navbar */
+.iconsearch,
+.brand-logo{
+  color: #000000 !important;
+}
+
+.solid{
+  background-color: #c4f3c4 !important;
+}
+/* End Navbar */
+
+/* background */
+.background{
+  margin-top: 50px;
+  background-color: #ffffff;
+}
+
+.background .row{
+  margin-bottom: 0;
+}
+
+.background a .plants{
+  height: 50px;
+
+  font-family: 'Mukta Vaani';
+  font-size: 20px;
+  color: #727379;
+  transition: .3s;
+  text-transform: capitalize;
+}
+
+.background a  .plants:hover{
+  color: #000000;
+  transition: .3s;
+}
+
+.background .plants2,
+.background .plants3{
+  min-height: 400px;
+}
+
+.background .plants2{
+  display: flex;
+  justify-content: center;
+}
+
+.background .plants3{
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #e0e0e0;
+}
+
+.background .plants3 .title{
+  margin-top: 20px;
+}
+
+.background .plants3 .title p,
+.background .plants3 .title2 p,
+.background .plants3 .title3 p,
+.background .plants3 .hasilsewa p{
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-left: 15px;
+  font-family: 'Mukta Vaani';
+}
+
+.background .plants3 .title2 p{
+  color: #AFAEB3;
+}
+
+.background .plants3 .datepickerplants .iconchevron{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background .plants3 .nextstep .col .right a.btn{
+  background-color: #4CAF50;
+  text-transform: none;
+  font-family: 'Mukta Vaani';
+}
+
+.background .plants3 .xl3.title3{
+  margin-top: 10px;
+}
+
+.background .plants3 .input-field{
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+/* end background */
+
+@media only screen and (min-width:1200px){
+  .background .plants3 .title p,
+  .background .plants3 .title3 p
+  {
+    font-size: 30px;
+  }
+
+  .background .plants3 .title2 p{
+    font-size: 15px;
+  }
+
+  .background .plants3 .title3 p span{
+    font-size: 15px;
+  }
+
+  .background .plants3 .title3 p.a{
+    font-size: 12px;
+  }
+
+  .background .plants3 .datepickerplants .iconchevron{
+    height: 70px;
+  }
+
+  .background .plants3 .hasilsewa p{
+    font-size: 17px;
+  }
+
+  .background .plants3 .hasilsewa p span{
+    font-size: 25px;
+  }
+
+  .background .plants3 .datepickerplants{
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width:1200px){
+  .background .plants3 .title p,
+  .background .plants3 .title3 p,
+  .background .plants3 .hasilsewa p span
+  {
+    font-size: 20px;
+  }
+
+  .background .plants3 .title3 p span{
+    font-size: 11px;
+  }
+
+  .background .plants3 .title3 p.a{
+    font-size: 12px;
+  }
+
+  .background .plants3 .datepickerplants{
+    margin-left: 5px;
+  }
+
+  .background .plants3 .hasilsewa p{
+    font-size: 15px;
+  }
+
+  .background{
+    margin-bottom: 130px;
+  }
+}
+
+@media only screen and (max-width:992px){
+  .background{
+    margin-bottom: 100px;
+  }
+
+  .background .plants3{
+    padding-bottom: 30px;
+  }
+
+  .background .plants3 .datepickerplants .iconchevron div i{
+    -ms-transform: rotate(90deg); /* IE 9 */
+    transform: rotate(90deg);
+  }
+}
+
+@media only screen and (max-width:600px){
+  .background .plants2{
+    min-height: 200px;
+  }
+
+  .background .plants3 .title p,
+  .background .plants3 .title2 p,
+  .background .plants3 .title3 p,
+  .background .plants3 .hasilsewa p{
+    text-align: center;
+  }
+
+  .background .plants3 .title p{
+    font-size: 30px;
+  }
+}
