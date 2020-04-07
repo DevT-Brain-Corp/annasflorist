@@ -479,7 +479,7 @@
 <!-- End Profil -->
 
 <!-- 3 Founder -->
-@include('base.founder')
+@include('base.static.founder2')
 <!-- End 3 Founder -->
 
 <!-- Maps -->

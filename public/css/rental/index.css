@@ -1,0 +1,67 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+/* Navbar */
+.iconsearch,
+.brand-logo{
+  color: #000000 !important;
+}
+
+.solid{
+  background-color: #c4f3c4 !important;
+}
+/* End Navbar */
+
+/* content */
+.content .xl3,
+.content .xl8{
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.content .datepickerplants .iconchevron{
+  display: flex;
+  justify-content: center;
+}
+
+.content .datepickerplants .iconchevron div i{
+  -ms-transform: rotate(90deg); /* IE 9 */
+  transform: rotate(90deg);
+}
+
+.content .listcactus p.title,
+.content .listcactus p.title2,
+.content .listcactus p a.title3{
+  text-transform: capitalize;
+  font-family: 'Mukta Vaani';
+  margin-bottom: 0;
+}
+
+.content .listcactus p.title2{
+  margin-top: 0;
+  color: #AFAEB3;
+}
+/* end content */
+
+@media only screen and (min-width:1200px){
+  .content{
+    margin: 50px auto;
+    max-width:1280px;
+    width:90%;
+  }
+
+  .content .listcactus p.title{
+    font-size: 30px;
+  }
+
+  .content .listcactus p.title2{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width:1200px){}
+
+@media only screen and (max-width:992px){}
+
+@media only screen and (max-width:600px){}

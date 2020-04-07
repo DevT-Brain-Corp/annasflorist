@@ -75,6 +75,10 @@ Route::get('/rental', function () {
 	return view('categories.rental');
 });
 
+Route::get('/rental/index', function () {
+	return view('product.rental.index');
+});
+
 Route::get('/rental/detail', function () {
 	return view('product.rental.detail');
 });
@@ -95,6 +99,6 @@ Route::get('/welcomenew', function(){
 });
 
 Route::get('/testing', function () {
-    return view('base.testing');
+    return view('base.static.testing');
 });
 // End Debugging
