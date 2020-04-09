@@ -1,3 +1,4 @@
+// Date picker
 $(document).ready(function(){
   var date = new Date();
   var year = date.getFullYear();
@@ -88,8 +89,31 @@ $(document).ready(function(){
                   'Sabtu'
                 ]
               },
+          onSelect: function(){
+            var toYear = this.date.getFullYear();
+            var toMonth = this.date.getMonth();
+            var toDay = this.date.getDate();
+            lastDate = new Date(toYear, toMonth, toDay);
+            var diff = lastDate - firstDate;
+
+            diff = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("hasil").innerHTML="Total : <span>"+diff+"</span> hari";
+          },
         });
       });
     }
   });
 });
+// end Date picker
+
+// nullalert
+function nullalert() {
+  var alert1=document.getElementById("datepicker2").value;
+  if (!alert1) {
+    M.toast({html: "Harap isi tanggal terlebih dahulu"});
+    document.getElementById("addrental").href="#";
+  } else {
+    document.getElementById("addrental").href="#isi";
+  }
+}
+// end nullalert
