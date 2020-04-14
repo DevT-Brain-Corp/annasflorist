@@ -49,6 +49,10 @@ Route::get('/sales/cart', function () {
 	return view('product.sales.cart');
 });
 
+Route::get('/sales/cart2', function () {
+	return view('product.sales.cart2');
+});
+
 Route::get('/sales/buynow', function(){
 	return view('product.sales.buynow');
 });
