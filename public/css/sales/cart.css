@@ -122,6 +122,45 @@ body{
   color: var(--redhover);
   transition: .3s;
 }
+
+.cart .totalprice div div:nth-last-child(2) p,
+.cart .totalprice div div:nth-child(2) p{
+  font-family: var(--mukta);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cart .totalprice div div:nth-last-child(2) p{
+  font-weight: bold;
+}
+
+.cart .totalprice div div:nth-last-child(2) p + p{
+  font-weight: normal;
+  color: var(--grey);
+}
+
+.cart .totalprice div div:nth-child(2) p{
+  color: var(--black);
+  font-weight: bold;
+  text-align: right;
+}
+
+.cart .totalprice div a{
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: var(--green);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  transition: .3s;
+  border-radius: 5px;
+}
+
+.cart .totalprice div a:hover{
+  background-color: var(--greenhover);
+  transition: .3s;
+}
 /* end cart */
 
 @media only screen and (min-width:1200px){
@@ -167,6 +206,23 @@ body{
   .cart .bgwhite div:nth-child(4) > a p{
     font-size: 16px;
     margin-top: 5px;
+  }
+
+  .cart .totalprice div div:nth-last-child(2) p{
+    font-size: 20px;
+  }
+
+  .cart .totalprice div div:nth-last-child(2) p + p{
+    font-size: 15px;
+  }
+
+  .cart .totalprice div div:nth-child(2) p{
+    font-size: 30px;
+  }
+
+  .cart .totalprice div a{
+    padding: 14px 28px;
+    font-size: 16px;
   }
   /* end cart */
 }
