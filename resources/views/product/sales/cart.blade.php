@@ -8,6 +8,7 @@
 
 @section('content')
 <!-- Navbar -->
+@include('base.navbarcart')
 <!-- End Navbar -->
 
 <!-- title -->
