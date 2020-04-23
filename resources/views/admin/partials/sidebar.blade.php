@@ -7,7 +7,7 @@
   </div>
   <ul class="sidebar-menu">
       <li class="menu-header">Dashboard</li>
-      <li class="{{ Request::route()->getName() == 'admin.dashboard' ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fa fa-columns"></i> <span>Dashboard</span></a></li>
+      <li class="{{ Request::route()->getName() == 'dashboard.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('dashboard.index') }}"><i class="fa fa-columns"></i> <span>Dashboard</span></a></li>
       <li class="{{ Request::route()->getName() == 'user.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fa fa-user"></i> <span>Users</span></a></li>
       <li class="{{ Request::route()->getName() == 'category.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fa fa-tags"></i> <span>Categories</span></a></li>
       <li class="{{ Request::route()->getName() == 'product.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('product.index') }}"><i class="fa fa-box"></i> <span>Products</span></a></li>
