@@ -69,7 +69,7 @@
                                             </tr>
                                         @endforeach
                                     @else
-                                        <tr>
+                                        <tr style="background: #FFFFFF">
                                             <td>
                                                 <h6>Tidak ada data</h6>
                                             </td>
