@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-    public function home()
+  public function home()
     {
         $categories = Category::all();
         $products = Product::all()->groupBy('category.category_name');
@@ -16,26 +16,17 @@ class FrontController extends Controller
         return view('welcomenew', compact('categories', 'products'));
     }
 
-    public function showCategory($id)
+  public function show()
     {
-        $product = Product::findOrFail($id);
-
-        return view('categories.sales', compact('product'));
+        return view('product.detail');
     }
 
-    public function showDetail($id)
-    {
-        $product = Product::findOrFail($id);
-
-        return view('product.detail', compact('product'));
-    }
-
-    public function cart()
+  public function cart()
     {
         return view('product.cart');
     }
 
-    public function buynow()
+  public function buynow()
     {
         return view('product.buynow');
     }

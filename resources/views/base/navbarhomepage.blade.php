@@ -26,9 +26,9 @@
                         </div>
                     </li>
                     <li><a href="#top" class="iconsearch scroll">Home</a></li>
+                    <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdown1'>Kategori</a></li>
                     @if(Auth::check() && auth()->user()->is_admin == 1)
-                        <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                         <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
                         <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @else
