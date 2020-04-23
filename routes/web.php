@@ -14,7 +14,7 @@
 Route::get('/', 'FrontController@home')->name('welcome');
 
 Route::get('/homelama', function () {
-    return view('welcome');    //awal homepage
+    return view('welcomeold');    //awal homepage
 });
 
 Auth::routes();

@@ -67,7 +67,7 @@
       @guest
         <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i>Akun</a></li>
       @else
-        <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i>Akun</a></li>
+        <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown2in'><i class="material-icons">person_pin</i>Akun</a></li>
       @endguest
     </ul>
     <!-- end responsive -->
@@ -129,7 +129,30 @@
   <li><a href="#!">Lihat Profil</a></li>
   <li><a href="#!">Ubah Profil</a></li>
   <li class="divider" tabindex="-1"></li>
-  <li><a href="#!">Keluar</a></li>
+  <li>
+      <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+          Keluar
+      </a>
+
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+      </form>
+  </li>
+</ul>
+
+<ul id='dropdown2in' class='dropdown-content'>
+    <li><a href="#!">Lihat Profil</a></li>
+    <li><a href="#!">Ubah Profil</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            Keluar
+        </a>
+    </li>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 </ul>
 <!-- End Dropdown Akun -->
 
