@@ -11,6 +11,6 @@ class FrontController extends Controller
     {
         $products = Product::all();
 
-        return view('welcome', compact('products'));
+        return view('welcomenew', compact('products'));
     }
 }
