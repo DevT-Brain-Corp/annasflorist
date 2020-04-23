@@ -58,6 +58,10 @@ Route::get('/sales/cart', function () {
 	return view('product.sales.cart');
 });
 
+Route::get('/sales/cart2', function () {
+	return view('product.sales.cart2');
+});
+
 Route::get('/sales/buynow', function(){
 	return view('product.sales.buynow');
 });
@@ -84,6 +88,10 @@ Route::get('/rental', function () {
 	return view('categories.rental');
 });
 
+Route::get('/rental/index', function () {
+	return view('product.rental.index');
+});
+
 Route::get('/rental/detail', function () {
 	return view('product.rental.detail');
 });
@@ -104,6 +112,6 @@ Route::get('/welcomenew', function(){
 });
 
 Route::get('/testing', function () {
-    return view('base.testing');
+    return view('base.static.testing');
 });
 // End Debugging

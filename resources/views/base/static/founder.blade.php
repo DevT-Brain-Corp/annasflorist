@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="{{ asset('css/base/founder.css') }}">
+</head>
+
 <div class="container founder">
   <div class="row founder1">
     <div class="col s12 m9 l8 xl8 bg">

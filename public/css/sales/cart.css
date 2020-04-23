@@ -1,0 +1,234 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+:root{
+  /* Fonts */
+  --mukta:'Mukta Vaani';
+  /* End Fonts */
+
+  /* Color */
+  --black:#000000;
+  --grey:#757575;
+  --white:#ffffff;
+  --blue:#283593;
+  --green:#2E7D32;
+  --greenhover:#66BB6A;
+  --red:#c62828;
+  --redhover:#f44336;
+  /* End Color */
+}
+
+/* Navbar */
+.iconsearch,
+.brand-logo{
+  color: #000000 !important;
+}
+
+.solid{
+  background-color: #c4f3c4 !important;
+}
+/* End Navbar */
+
+/* title */
+.title p{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--mukta);
+  text-align: left;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.title p + p{
+  font-weight: normal;
+  color: var(--grey);
+}
+/* end title */
+
+/* cart */
+.cart .bgwhite{
+  background-color: var(--white);
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.cart .bgwhite img.responsive-img{
+  border-radius: 10px;
+  transition: .3s;
+}
+
+.cart .bgwhite img.responsive-img:hover{
+  transform: scale(1.1);
+  transition: .3s;
+}
+
+.cart .bgwhite .word1 p{
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.cart .bgwhite .word1 p span{
+  font-weight: normal;
+  color: var(--grey);
+}
+
+.cart .bgwhite div:nth-child(1),
+.cart .bgwhite div:nth-child(2),
+.cart .bgwhite div:nth-child(3){
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+  -ms-flex-align:center;
+  align-items:center;
+}
+
+.cart .bgwhite div:nth-child(4){
+  text-align: right;
+}
+
+.cart .bgwhite div:nth-child(4) p{
+  font-family: var(--mukta);
+}
+
+.cart .bgwhite div:nth-child(4) > a p{
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.cart .bgwhite div:nth-child(4) > a p.exp{
+  color: var(--green);
+  transition: .3s;
+}
+
+.cart .bgwhite div:nth-child(4) > a p.exp:hover{
+  color: var(--greenhover);
+  transition: .3s;
+}
+
+.cart .bgwhite div:nth-child(4) > a p.rmv{
+  color: var(--red);
+  transition: .3s;
+}
+
+.cart .bgwhite div:nth-child(4) > a p.rmv:hover{
+  color: var(--redhover);
+  transition: .3s;
+}
+
+.cart .totalprice div div:nth-last-child(2) p,
+.cart .totalprice div div:nth-child(2) p{
+  font-family: var(--mukta);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cart .totalprice div div:nth-last-child(2) p{
+  font-weight: bold;
+}
+
+.cart .totalprice div div:nth-last-child(2) p + p{
+  font-weight: normal;
+  color: var(--grey);
+}
+
+.cart .totalprice div div:nth-child(2) p{
+  color: var(--black);
+  font-weight: bold;
+  text-align: right;
+}
+
+.cart .totalprice div a{
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: var(--green);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  transition: .3s;
+  border-radius: 5px;
+}
+
+.cart .totalprice div a:hover{
+  background-color: var(--greenhover);
+  transition: .3s;
+}
+/* end cart */
+
+@media only screen and (min-width:1200px){
+  /* title */
+  .title{
+    margin-top: 80px;
+  }
+
+  .title p{
+    font-size: 25px;
+  }
+
+  .title p + p{
+    font-size: 15px;
+  }
+  /* End title */
+
+  /* cart */
+  .cart .bgwhite img.responsive-img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+
+  .cart .bgwhite .col{
+    height: 180px;
+  }
+
+  .cart .bgwhite .word1 p{
+    font-size: 30px;
+  }
+
+  .cart .bgwhite .word1 p span{
+    font-size: 13px;
+  }
+
+  .cart .bgwhite div:nth-child(4) > p{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+
+  .cart .bgwhite div:nth-child(4) > a p{
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .cart .totalprice div div:nth-last-child(2) p{
+    font-size: 20px;
+  }
+
+  .cart .totalprice div div:nth-last-child(2) p + p{
+    font-size: 15px;
+  }
+
+  .cart .totalprice div div:nth-child(2) p{
+    font-size: 30px;
+  }
+
+  .cart .totalprice div a{
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  /* end cart */
+}
+
+@media only screen and (max-width:1200px){}
+
+@media only screen and (max-width:992px){}
+
+@media only screen and (max-width:600px){}

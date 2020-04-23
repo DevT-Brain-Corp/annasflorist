@@ -20,6 +20,11 @@
   .about .about2 h5{
     text-align:center;
   }
+
+  .about .footer{
+    font-size: 15px !important;
+    line-height: 20px !important;
+  }
 }
 
 .about .about1 p,
