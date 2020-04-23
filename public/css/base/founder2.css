@@ -1,0 +1,67 @@
+.founder2 .row .col .card .card-image img.activator.a{
+  object-fit: cover;
+}
+
+.founder2 .row .col .card .card-content span.card-title,
+.founder2 .row .col .card .card-reveal span.card-title{
+  font-family: 'Saira';
+}
+
+.founder2 .row .col .card .card-reveal .iconsosmed{
+  display: flex;
+  justify-content: center;
+}
+
+.founder2 .row .col .card .card-reveal .iconsosmed div a i{
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #C8E6C9;
+  color: #212121;
+  transition: 0.2s;
+}
+
+.founder2 .row .col .card .card-reveal .iconsosmed div a i.fa-facebook-official:hover{
+  color: #4267b2;
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+.founder2 .row .col .card .card-reveal .iconsosmed div a i.fa-twitter:hover{
+  color: #38A1F3;
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+.founder2 .row .col .card .card-reveal .iconsosmed div a i.fa-whatsapp:hover{
+  color: #25d366;
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+.founder2 .row .col .card .card-reveal .iconsosmed div a i.fa-instagram:hover{
+  color: #c13584;
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+@media only screen and (min-width:1200px){
+  .founder2 .row .col .card .card-image,
+  .founder2 .row .col .card .card-image img{
+    height: 300px;
+  }
+
+  .founder2 .row .col .card .card-content span.card-title,
+  .founder2 .row .col .card .card-reveal span.card-title{
+    font-size: 20px;
+  }
+
+  .founder2 .row .col .card .card-reveal .iconsosmed div a i{
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width:1200px){}
+
+@media only screen and (max-width:992px){}
+
+@media only screen and (max-width:600px){}

@@ -28,7 +28,7 @@
 
   <div class="row">
     <div class="col s12">
-      <p class="footer">© CV. ANNAS FLORIST  - SPESIALIS KAKTUS JEMBER</p>
+      <p class="footer">© CV. ANNAS FLORIST - SPESIALIS KAKTUS JEMBER</p>
     </div>
   </div>
 </div>

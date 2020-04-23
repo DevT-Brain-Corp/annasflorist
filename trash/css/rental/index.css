@@ -1,0 +1,323 @@
+body{
+  background: rgba(196, 243, 196, 0.32);
+}
+
+/* Navbar */
+.iconsearch,
+.brand-logo{
+  color: #000000 !important;
+}
+
+.solid{
+  background-color: #c4f3c4 !important;
+}
+/* End Navbar */
+
+/* title */
+.title .row .col{
+  display: flex;
+  justify-content: center;
+}
+
+.title .row .col div{
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.title .row .col h1.title{
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Mukta Vaani';
+}
+/* end title */
+
+/* content */
+.content .xl3,
+.content .xl8{
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.content .datepickerplants .iconchevron{
+  display: flex;
+  justify-content: center;
+}
+
+.content .datepickerplants .iconchevron div i{
+  -ms-transform: rotate(90deg); /* IE 9 */
+  transform: rotate(90deg);
+}
+
+.content .listcactus p.title,
+.content .listcactus p.title2,
+.content .listcactus p.qty,
+.content .listcactus p.title3,
+.content .listcactus p.prc,
+.content .listcactus p.rmv{
+  text-transform: capitalize;
+  font-family: 'Mukta Vaani';
+  margin-bottom: 0;
+}
+
+.content .listcactus p.qty{
+  white-space: nowrap;
+}
+
+.content .listcactus p.title2{
+  color: #616161;
+}
+
+.content .listcactus p.title2,
+.content .listcactus p.title3,
+.content .listcactus p.rmv{
+  margin-top: 0;
+}
+
+.content .listcactus p.title3,
+.content .listcactus p.prc,
+.content .listcactus p.rmv{
+  text-align: right;
+}
+
+.content .listcactus p.title3 a{
+  color: #558B2F;
+}
+
+.content .listcactus p.title3 a:hover{
+  color: #7CB342;
+}
+
+.content .listcactus p.rmv a{
+  color: #BDBDBD;
+}
+
+.content .listcactus p.rmv a:hover{
+  color: #d50000;
+}
+
+.content .listcactus p.title3 a,
+.content .listcactus p.title3 a:hover,
+.content .listcactus p.rmv a,
+.content .listcactus p.rmv a:hover{
+  transition: .3s;
+}
+
+.content .datepickerplants .input-field label{
+  font-family: 'Mukta Vaani';
+}
+
+.content .totalhari .col p{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Mukta Vaani';
+}
+/* end content */
+
+/* empty */
+.empty .empty2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty .empty2 a div{
+  border-style: dashed;
+  border-color: #212121;
+  border-radius: 10px;
+  background-color: #EEEEEE;
+  transition: .3s;
+}
+
+.empty .empty2 a div:hover{
+  background-color: #DCEDC8;
+  transition: .3s;
+}
+
+.empty .empty2 a div i{
+  color: #212121;
+}
+/* end empty */
+
+/* submittotal */
+.submittotal .offset-xl7 p.ordertotal,
+.submittotal .offset-xl7 p.item,
+.submittotal .offset-xl7 p.price{
+  font-family: 'Mukta Vaani';
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.submittotal .offset-xl7 p.item{
+  color: #616161;
+}
+
+.submittotal .offset-xl7 p.price{
+  font-weight: bold;
+}
+
+.submittotal .offset-xl7 button.buttonsubmit{
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: #43A047;
+  cursor: pointer;
+  text-align: center;
+  transition: .3s;
+
+  font-family: 'Mukta Vaani';
+  color: #E8F5E9;
+}
+
+.submittotal .offset-xl7 button.buttonsubmit:hover{
+  background-color: #2E7D32;
+  transition: .3s;
+}
+/* end submittotal */
+
+@media only screen and (min-width:1200px){
+  /* title */
+  .title .row .col div{
+    width: 400px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  /* end title */
+
+  /* content */
+  .content{
+    margin: 50px auto;
+    max-width:1280px;
+    width:90%;
+  }
+
+  .content .listcactus p.title,
+  .content .listcactus p.qty,
+  .content .listcactus p.prc{
+    font-size: 30px;
+  }
+
+  .content .listcactus p.title2,
+  .content .listcactus p.qty span{
+    font-size: 15px;
+  }
+
+  .content .listcactus p.title3 a,
+  .content .datepickerplants .input-field label{
+    font-size: 17px;
+  }
+
+  .content .totalhari .col p{
+    font-size: 20px;
+  }
+
+  .content .totalhari .col p span{
+    font-size: 24px;
+  }
+  /* end content */
+
+  /* empty */
+  .empty .empty2 a div i{
+    padding: 20px 355px 20px 355px;
+  }
+
+  .empty,
+  .empty .empty2{
+    height: 122px;
+  }
+  /* end empty */
+
+  /* submittotal */
+  .submittotal .offset-xl7 p.ordertotal{
+    font-size: 20px;
+  }
+
+  .submittotal .offset-xl7 p.item{
+    font-size: 16px;
+  }
+
+  .submittotal .offset-xl7 p.price{
+    font-size: 27px;
+  }
+
+  .submittotal .offset-xl7 .valign-wrapper{
+    height: 54px;
+  }
+
+  .submittotal .offset-xl7 button.buttonsubmit{
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  /* end submittotal */
+}
+
+@media only screen and (max-width:1200px){
+  /* title */
+  .title .row .col div{
+    width: 350px;
+    margin-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .title .row .col h1.title{
+    font-size: 50px;
+  }
+  /* end title */
+
+  /* content */
+  .content{
+    margin: 50px auto;
+    max-width:1280px;
+    width:90%;
+  }
+
+  .content .listcactus p.title,
+  .content .listcactus p.qty,
+  .content .listcactus p.prc{
+    font-size: 25px;
+  }
+
+  .content .listcactus p.title2,
+  .content .listcactus p.qty span{
+    font-size: 13px;
+  }
+
+  .content .listcactus p.title3 a,
+  .content .datepickerplants .input-field label{
+    font-size: 15px;
+  }
+
+  .content .totalhari .col p{
+    font-size: 15px;
+  }
+
+  .content .totalhari .col p span{
+    font-size: 20px;
+  }
+  /* end content */
+
+  /* empty */
+  .empty{
+    margin-top: 20px;
+  }
+
+  .empty .empty2 a div i{
+    padding-top: 20px;
+    padding-left: 1.5em;
+    padding-bottom: 20px;
+    padding-right: 200px;
+  }
+
+  .empty,
+  .empty .empty2{
+    height: auto;
+  }
+  /* end empty */
+}
+
+@media only screen and (max-width:992px){}
+
+@media only screen and (max-width:600px){}

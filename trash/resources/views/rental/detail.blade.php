@@ -44,11 +44,11 @@
           <p>Rp.30.000<span>/hari</span></p>
           <p class="a">(Harga tidak termasuk pot dan aksesoris)</p>
         </div>
-        <div class="col xl3 title3">
+        <div class="col xl3 s4 title3">
           <p>Stok : 6</p>
         </div>
-        <div class="input-field col xl3">
-          <input id="jumlah" type="number" class="validate" min="0" max="6">
+        <div class="input-field col xl3 s8">
+          <input id="jumlah" type="number" class="validate" min="1" max="6">
           <label for="jumlah">Banyak Barang</label>
         </div>
       </div>

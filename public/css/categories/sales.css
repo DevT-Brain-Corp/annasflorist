@@ -2,6 +2,10 @@ body{
   background: rgba(196, 243, 196, 0.32);
 }
 
+.container{
+  width: 80% !important;
+}
+
 /* Navbar */
 .iconsearch,
 .brand-logo{
@@ -16,14 +20,8 @@ body{
 /* End Navbar */
 
 /* Tulisan Sales */
-.tulisansales{
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
 .tulisansales h1{
   font-family: 'Saira';
-  font-size: 100px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -109,3 +107,31 @@ body{
   background-color: #375436 !important;
 }
 /* End Set Halaman */
+
+@media only screen and (min-width:1200px){
+  .tulisansales h1{
+    font-size: 100px;
+  }
+
+  .tulisansales{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width:1200px){}
+
+@media only screen and (max-width:992px){}
+
+@media only screen and (max-width:600px){
+  .tulisansales h1{
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .tulisansales{
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+}
