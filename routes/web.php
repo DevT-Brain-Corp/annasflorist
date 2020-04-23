@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', 'FrontController@getProduct')->name('welcome');
+Route::get('/', 'FrontController@home')->name('welcome');
+//Route::get('/{category}', 'FrontController@showCategory')->name('product.category');
+//Route::get('/{product}', 'FrontController@showDetail')->name('product.detail');
+
+Route::get('/homelama', function () {
+    return view('welcome');    //awal homepage
+});
 
 Auth::routes();
 // Override login route from Auth::routes();
@@ -22,7 +28,7 @@ Route::get('/login', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'admin'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
-	Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+	Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
 	Route::resource('user', 'UserController');
     Route::resource('category', 'CategoryController');
     Route::resource('product', 'ProductController');
@@ -34,8 +40,11 @@ Route::name('js.')->group(function() {
     Route::get('dynamic.js', 'JsController@dynamic')->name('dynamic');
 });
 
-
 // Debugging
+Route::get('/testing', function () {
+    return view('testing');
+});
+
 // Sales
 Route::get('/sales', function () {
 	return view('categories.sales');
