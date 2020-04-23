@@ -26,13 +26,10 @@
                         </div>
                     </li>
                     <li><a href="#top" class="iconsearch scroll">Home</a></li>
+                    <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdown1'>Kategori</a></li>
-                    @if(Auth::check() && auth()->user()->is_admin == 1)
-                        <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
-                        <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
-                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
-                    @else
-                        <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
+                    @if (Auth::check())
+                      <li><a href="#" class="iconsearch">Notifikasi</a></li>
                     @endif
                     @guest
                       <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
@@ -76,21 +73,21 @@
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-    <li><a class="scroll" href="#Dekorasi">Sales</a></li>
-    <li><a class="scroll" href="#Workshop">Souvenir</a></li>
-    <li><a class="scroll" href="#Dekorasi">Rental</a></li>
-    <li><a class="scroll" href="#Workshop">Workshop</a></li>
-    <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>
+  <li><a class="scroll" href="#sales">Sales</a></li>
+  <li><a class="scroll" href="#souvenir">Souvenir</a></li>
+  <li><a class="scroll" href="#workshop">Workshop</a></li>
+  <li><a class="scroll" href="#rental">Rental</a></li>
+  <li><a class="scroll" href="#dekorasi">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown -->
 
 <!-- Dropdown Mobile -->
 <ul id='dropdownmobile' class="dropdown-content">
-    <li><a href="#">Sales</a></li>
-    <li><a href="#">Souvenir</a></li>
-    <li><a href="#">Rental</a></li>
-    <li><a href="#">Workshop</a></li>
-    <li><a href="#">Dekorasi</a></li>
+  <li><a href="#">Sales</a></li>
+  <li><a href="#">Souvenir</a></li>
+  <li><a href="#">Workshop</a></li>
+  <li><a href="#">Rental</a></li>
+  <li><a href="#">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown Mobile -->
 
