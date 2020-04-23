@@ -23,14 +23,13 @@
   <div class="row">
 
     <!-- Looping Card -->
-      @foreach($products as $product)
     <div class="col s12 m6 l4 xl3">
       <div class="card">
         <div class="card-image">
           <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
         </div>
         <div class="card-content">
-          <h5>{{$product->product_name}}</h5>
+          <h5>Sukulen Panda</h5>
           <div class="row">
             <div class="col s6">
               <p>Rp. 40.000</p>
@@ -43,7 +42,86 @@
         </div>
       </div>
     </div>
-      @endforeach
+
+    <div class="col s12 m6 l4 xl3">
+      <div class="card">
+        <div class="card-image">
+          <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
+        </div>
+        <div class="card-content">
+          <h5>Sukulen Panda</h5>
+          <div class="row">
+            <div class="col s6">
+              <p>Rp. 40.000</p>
+            </div>
+            <div class="col s6">
+              <p class="right-align">Jember</p>
+            </div>
+          </div>
+          <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l4 xl3">
+      <div class="card">
+        <div class="card-image">
+          <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
+        </div>
+        <div class="card-content">
+          <h5>Sukulen Panda</h5>
+          <div class="row">
+            <div class="col s6">
+              <p>Rp. 40.000</p>
+            </div>
+            <div class="col s6">
+              <p class="right-align">Jember</p>
+            </div>
+          </div>
+          <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l4 xl3">
+      <div class="card">
+        <div class="card-image">
+          <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
+        </div>
+        <div class="card-content">
+          <h5>Sukulen Panda</h5>
+          <div class="row">
+            <div class="col s6">
+              <p>Rp. 40.000</p>
+            </div>
+            <div class="col s6">
+              <p class="right-align">Jember</p>
+            </div>
+          </div>
+          <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l4 xl3">
+      <div class="card">
+        <div class="card-image">
+          <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
+        </div>
+        <div class="card-content">
+          <h5>Sukulen Panda</h5>
+          <div class="row">
+            <div class="col s6">
+              <p>Rp. 40.000</p>
+            </div>
+            <div class="col s6">
+              <p class="right-align">Jember</p>
+            </div>
+          </div>
+          <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
+        </div>
+      </div>
+    </div>
     <!-- End Looping Card -->
 
   </div>
