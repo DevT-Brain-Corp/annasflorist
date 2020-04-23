@@ -15,7 +15,7 @@
 <!-- Kotak 1 -->
 <div class="kotak1">
   <!-- Navbar -->
-  @include('base.navbarhomepage', compact('categories'))
+  @include('base.navbarhomepage')
   <!-- End Navbar -->
 
   <!-- Cactus -->
