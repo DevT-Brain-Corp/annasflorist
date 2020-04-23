@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-  public function getProduct()
+  public function home()
     {
         $products = Product::all();
 

@@ -92,93 +92,36 @@
 
 <!-- Sales -->
 <div class="salesbg">
-  <div class="container sales" id="sales">
-    <div class="row">
-        <div class="col s6">
-            <h1 class="fontsaira salesword">Sales</h1>
-        </div>
-        <div class="col s6">
-            <a href="#"><h1 class="fontsaira lihatsemua">Lihat Semua <i class="material-icons">arrow_forward</i></h1></a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12 m6 l4 xl3">
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{ asset('img/sales/sukulen panda.jpg') }}">
-                    <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">add_shopping_cart</i></a>
+    @foreach($products as $category => $products)
+        <div class="container sales" id="{{$category}}">
+            <div class="row">
+                <div class="col s6">
+                    <h1 class="fontsaira salesword">{{$category}}</h1>
                 </div>
-                <div class="card-content">
-                    <h5>Sukulen Panda</h5>
-                    <div class="row">
-                        <div class="col s6">
-                            <p>Rp. 40.000</p>
-                        </div>
-                        <div class="col s6">
-                            <p class="right-align">Jember</p>
-                        </div>
-                    </div>
-                    <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
+                <div class="col s6">
+                    <a href="#"><h1 class="fontsaira lihatsemua">Lihat Semua <i class="material-icons">arrow_forward</i></h1></a>
                 </div>
             </div>
-        </div>
-
-        <div class="col s12 m6 l4 xl3">
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{ asset('img/sales/sukulen roseum.jpg') }}">
-                    <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">add_shopping_cart</i></a>
-                </div>
-                <div class="card-content">
-                    <h5>Sukulen Roseum</h5>
-                    <div class="row">
-                        <div class="col s6">
-                            <p>Rp. 35.000</p>
-                        </div>
-                        <div class="col s6">
-                            <p class="right-align">Jember</p>
-                        </div>
-                    </div>
-                    <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m6 l4 xl3">
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{ asset('img/sales/terarium.jpg') }}">
-                    <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">add_shopping_cart</i></a>
-                </div>
-                <div class="card-content">
-                    <h5>Terarium</h5>
-                    <div class="row">
-                        <div class="col s6">
-                            <p>Rp. 80.000</p>
-                        </div>
-                        <div class="col s6">
-                            <p class="right-align">Jember</p>
-                        </div>
-                    </div>
-                    <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m6 l4 xl3">
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{ asset('img/sales/terarium3.jpg') }}">
-                    <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">add_shopping_cart</i></a>
-                </div>
-                <div class="card-content">
-                    <h5>Terarium Hiasan</h5>
-                    <div class="row">
-                        <div class="col s6">
-                            <p>Rp. 70.000</p>
-                        </div>
-                        <div class="col s6">
-                            <p class="right-align">Jember</p>
+            <div class="row">
+                @foreach($products as $product)
+                    <div class="col s12 m6 l4 xl3">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{{ url('/storage/'. $product->product_image) }}">
+                                <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">add_shopping_cart</i></a>
+                            </div>
+                            <div class="card-content">
+                                <h5>{{$product->product_name}}</h5>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <p>Rp. {{$product->product_price}}</p>
+                                    </div>
+                                    <div class="col s6">
+                                        <p class="right-align">Jember</p>
+                                    </div>
+                                </div>
+                                <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>
+                            </div>
                         </div>
                     </div>
                     <a class="center-align" href="#"><p class="btnn">Deskripsi</p></a>

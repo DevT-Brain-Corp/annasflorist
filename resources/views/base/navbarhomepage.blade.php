@@ -28,8 +28,11 @@
                     <li><a href="#top" class="iconsearch scroll">Home</a></li>
                     <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdown1'>Kategori</a></li>
-                    @if (Auth::check())
-                      <li><a href="#" class="iconsearch">Notifikasi</a></li>
+                    @if(Auth::check() && auth()->user()->is_admin == 1)
+                        <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
+                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
+                    @else
+                        <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     @endif
                     @guest
                       <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
@@ -64,7 +67,7 @@
       @guest
         <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i>Akun</a></li>
       @else
-        <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i>Akun</a></li>
+        <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown2in'><i class="material-icons">person_pin</i>Akun</a></li>
       @endguest
     </ul>
     <!-- end responsive -->
@@ -73,11 +76,11 @@
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-  <li><a class="scroll" href="#sales">Sales</a></li>
-  <li><a class="scroll" href="#souvenir">Souvenir</a></li>
-  <li><a class="scroll" href="#workshop">Workshop</a></li>
-  <li><a class="scroll" href="#rental">Rental</a></li>
-  <li><a class="scroll" href="#dekorasi">Dekorasi</a></li>
+    <li><a class="scroll" href="#Sales">Sales</a></li>
+    <li><a class="scroll" href="#Souvenir">Souvenir</a></li>
+    <li><a class="scroll" href="#Rental">Rental</a></li>
+    <li><a class="scroll" href="#Workshop">Workshop</a></li>
+    <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown -->
 
@@ -126,7 +129,30 @@
   <li><a href="#!">Lihat Profil</a></li>
   <li><a href="#!">Ubah Profil</a></li>
   <li class="divider" tabindex="-1"></li>
-  <li><a href="#!">Keluar</a></li>
+  <li>
+      <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+          Keluar
+      </a>
+
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+      </form>
+  </li>
+</ul>
+
+<ul id='dropdown2in' class='dropdown-content'>
+    <li><a href="#!">Lihat Profil</a></li>
+    <li><a href="#!">Ubah Profil</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            Keluar
+        </a>
+    </li>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 </ul>
 <!-- End Dropdown Akun -->
 
