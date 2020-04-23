@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="col s3">
+    <div class="col s12 m6 l4 xl3">
       <div class="card">
         <div class="card-image">
           <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="col s3">
+    <div class="col s12 m6 l4 xl3">
       <div class="card">
         <div class="card-image">
           <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
@@ -83,7 +83,7 @@
       </div>
     </div>
 
-    <div class="col s3">
+    <div class="col s12 m6 l4 xl3">
       <div class="card">
         <div class="card-image">
           <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
@@ -103,7 +103,7 @@
       </div>
     </div>
 
-    <div class="col s3">
+    <div class="col s12 m6 l4 xl3">
       <div class="card">
         <div class="card-image">
           <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}">
