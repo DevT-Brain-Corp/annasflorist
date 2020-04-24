@@ -15,12 +15,12 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('order_name');
-            $table->string('order_province');
-            $table->string('order_city');
-            $table->string('order_address');
-            $table->string('order_service');
-            $table->string('order_payment');
+            $table->string('invoice')->unique();
+            $table->string('customer_id');
+            $table->string('customer_name');
+            $table->string('customer_phone');
+            $table->string('customer_address');
+            $table->string('subtotal');
             $table->timestamps();
         });
     }

@@ -25,42 +25,36 @@
           <div class="slider">
             <ul class="slides">
               <li>
-                <img src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
-              </li>
-              <li>
-                <img src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
-              </li>
-              <li>
-                <img src="{{ asset('img/sales/sukulen roseum.jpg') }}" alt="">
+                <img src="{{ url('/storage/'. $product->product_image) }}" alt="">
               </li>
             </ul>
           </div>
         </div>
         <div class="col s12 m6 l5 offset-l1 xl5 offset-xl1 caption">
-          <p class="caption1">Sukulen Panda<br>Rp. 40.000</p>
+          <p class="caption1">{{$product->product_name}}<br>{{$product->product_price}}</p>
           <div class="caption2">
             <div class="row">
               <div class="col xl3 s6">
                 <p>Kategori</p>
               </div>
               <div class="col xl6 s6">
-                <p>Sales</p>
+                <p>{{$product->category->category_name}}</p>
               </div>
             </div>
-            <div class="row">
-              <div class="col xl3 s6">
-                <p>Jenis</p>
-              </div>
-              <div class="col xl6 s6">
-                <p>Sukulen</p>
-              </div>
-            </div>
+{{--            <div class="row">--}}
+{{--              <div class="col xl3 s6">--}}
+{{--                <p>Jenis</p>--}}
+{{--              </div>--}}
+{{--              <div class="col xl6 s6">--}}
+{{--                <p>Sukulen</p>--}}
+{{--              </div>--}}
+{{--            </div>--}}
             <div class="row">
               <div class="col s3">
                 <p>Stok</p>
               </div>
               <div class="col s6">
-                <p>5</p>
+                <p>{{$product->product_stock}}</p>
               </div>
             </div>
             <div class="row">
@@ -166,7 +160,7 @@
       <p>Deskripsi</p>
     </div>
     <div class="col xl11 s12">
-      <p>Sukulen panda memiliki bulu halus yang menutupi seluruh permukaan daunnya. Selain itu, di sisi pingir daunnya ada bercak-bercak cokelat yang menyebabkan jenis sukulen ini dinamai panda.<br><br>Karena bentuknya yang kecil dan lembut (selain penampilannya yang menggemaskan), kaktus ini aman diletakkan di tempat yang ramai dengan orang dan anak-anak.</p>
+        <p>{{$product->product_description}}</p>
     </div>
   </div>
   </div>

@@ -7,7 +7,7 @@
     <nav class="navnav">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#top" class="brand-logo scroll" style="margin-top: 11px; font-family: 'Righteous';">Annas Florist</a>
+                <a href="{{route('welcome')}}" class="brand-logo scroll" style="margin-top: 11px; font-family: 'Righteous';">Annas Florist</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down fontrighteous">
                     <li>

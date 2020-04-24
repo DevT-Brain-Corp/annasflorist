@@ -32,32 +32,32 @@
 
     <div id="belumdibayar" class="col s12">
       <div id="slimscrollpanel">
-        @include('product.riwayatpembelian.belumdibayar')
+{{--        @include('product.riwayatpembelian.belumdibayar')--}}
       </div>
     </div>
     <div id="sudahdibayar" class="col s12">
       <div id="slimscrollpanel2">
-        @include('product.riwayatpembelian.sudahdibayar')
+{{--        @include('product.riwayatpembelian.sudahdibayar')--}}
       </div>
     </div>
     <div id="tervalidasi" class="col s12">
       <div id="slimscrollpanel3">
-        @include('product.riwayatpembelian.tervalidasi')
+{{--        @include('product.riwayatpembelian.tervalidasi')--}}
       </div>
     </div>
     <div id="dikirim" class="col s12">
       <div id="slimscrollpanel4">
-        @include('product.riwayatpembelian.dikirim')
+{{--        @include('product.riwayatpembelian.dikirim')--}}
       </div>
     </div>
     <div id="selesai" class="col s12">
       <div id="slimscrollpanel5">
-        @include('product.riwayatpembelian.selesai')
+{{--        @include('product.riwayatpembelian.selesai')--}}
       </div>
     </div>
     <div id="dibatalkan" class="col s12">
       <div id="slimscrollpanel6">
-        @include('product.riwayatpembelian.dibatalkan')
+{{--        @include('product.riwayatpembelian.dibatalkan')--}}
       </div>
     </div>
   </div>
