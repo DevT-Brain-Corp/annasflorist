@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'FrontController@home')->name('welcome');
-Route::get('/{category}', 'FrontController@showCategory')->name('show.category');
-Route::get('/{category}/{product}', 'FrontController@showProduct')->name('show.product');
+Route::get('/', 'FrontController@showProductHome')->name('welcome');
+Route::get('/category/{slug}', 'FrontController@showCategory')->name('show.category');
+Route::get('/product/{slug}', 'FrontController@showProduct')->name('show.product');
 
 Route::get('/homelama', function () {
     return view('welcomeold');    //awal homepage

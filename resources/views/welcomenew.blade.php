@@ -98,12 +98,9 @@
                 <div class="col s6">
                     <h1 class="fontsaira salesword">{{$category}}</h1>
                 </div>
-                @foreach($products as $product)
-                <div class="col s6">
-                    <a href="{{route('show.category', [$category])}}"><h1 class="fontsaira lihatsemua">Lihat Semua <i class="material-icons">arrow_forward</i></h1></a>
-                </div>
             </div>
             <div class="row">
+                @foreach($products->take(4) as $product)
                     <div class="col s12 m6 l4 xl3">
                         <div class="card">
                             <div class="card-image">
@@ -120,11 +117,16 @@
                                         <p class="right-align">Jember</p>
                                     </div>
                                 </div>
-                                <a class="center-align" href="{{route('show.product', [$product->category->id, $product->id])}}"><p class="btnn">Deskripsi</p></a>
+                                <a class="center-align" href="{{route('show.product', $product->product_slug)}}"><p class="btnn">Deskripsi</p></a>
                             </div>
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <a href="{{route('show.category', $product->category->category_slug)}}"><h1 class="fontsaira lihatsemua">Lihat Semua <i class="material-icons">arrow_forward</i></h1></a>
+                </div>
             </div>
         </div>
     @endforeach

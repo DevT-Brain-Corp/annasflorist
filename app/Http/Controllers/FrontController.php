@@ -4,27 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
-use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-    public function home() {
+    public function showProductHome()
+    {
         $products = Product::all()->groupBy('category.category_name');
 
         return view('welcomenew', compact('products'));
     }
 
-    public function showCategory()
+    public function showCategory($slug)
     {
-        $products = Product::all();
-        $categories = Category::all();
+        $products = Category::where('category_slug', $slug)->first()->products()->paginate(8);
 
-        return view('categories.sales', compact('products', 'categories'));
+        return view('categories.sales', compact('products'));
     }
 
-    public function showProduct($id)
+    public function showProduct($slug)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::where('product_slug', $slug)->first();
 
         return view('product.sales.detail', compact('product'));
     }

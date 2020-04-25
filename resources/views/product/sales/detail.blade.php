@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="col s12 m6 l5 offset-l1 xl5 offset-xl1 caption">
-          <p class="caption1">{{$product->product_name}}<br>{{$product->product_price}}</p>
+          <p class="caption1">{{$product->product_name}}<br>Rp. {{$product->product_price}}</p>
           <div class="caption2">
             <div class="row">
               <div class="col xl3 s6">
@@ -168,7 +168,15 @@
 <!-- End Caption -->
 
 <!-- Catalog -->
-@include('base.catalogsales')
+<div class="sales">
+    <div class="saless">
+        <div class="row">
+            <div class="col s6 offset-s6">
+                <a href="{{route('show.category', $product->category->category_slug)}}"><h1 class="lihatsemua">Lihat Produk Lainnya<i class="material-icons">arrow_forward</i></h1></a>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- End Catalog -->
 
 <!-- About -->

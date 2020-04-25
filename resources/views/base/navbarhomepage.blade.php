@@ -32,7 +32,7 @@
                         <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
                         <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @else
-                        <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
+                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @endif
                     @guest
                       <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
@@ -60,9 +60,12 @@
       <li><a href="#top" class="iconsearch scroll">Home</a></li>
       <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
       <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdownmobile'>Kategori</a></li>
-      @if (Auth::check())
-        <li><a href="#" class="iconsearch">Notifikasi</a></li>
-      @endif
+        @if(Auth::check() && auth()->user()->is_admin == 1)
+            <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
+            <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
+        @else
+            <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
+        @endif
       <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i>Keranjang</a></li>
       @guest
         <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i>Akun</a></li>

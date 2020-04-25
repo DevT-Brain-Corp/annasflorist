@@ -6,6 +6,7 @@ use App\Pot;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PotController extends Controller
 {
@@ -16,7 +17,7 @@ class PotController extends Controller
      */
     public function index()
     {
-        $pots = Pot::paginate(10);
+        $pots = Pot::orderBy('id', 'ASC')->paginate(10);
 
         return view('admin.pot.index', compact('pots'));
     }
@@ -45,9 +46,11 @@ class PotController extends Controller
             'pot_stock' => 'required|integer',
         ]);
 
-        $image = $request->file('pot_image');
-        $pot_image = time()."_".$image->getClientOriginalName();
-        $image->move(public_path('storage'), $pot_image);
+        if ($request->hasFile('pot_image')) {
+            $image = $request->file('pot_image');
+            $pot_image = time() . Str::slug($request->pot_name) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('storage'), $pot_image);
+        }
 
         Pot::create([
             'pot_image' => $pot_image,
@@ -96,12 +99,10 @@ class PotController extends Controller
             'pot_stock' => 'required|integer',
         ]);
 
-        $pot = array(
+        Pot::whereId($id)->update([
             'pot_color' => $request->pot_color,
             'pot_stock' => $request->pot_stock,
-        );
-
-        Pot::whereId($id)->update($pot);
+        ]);
 
         return redirect()->route('pot.index')->with('success', 'Pot is successfully updated');
     }

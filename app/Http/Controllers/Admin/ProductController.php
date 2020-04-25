@@ -6,6 +6,8 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -16,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(10);
+        $products = Product::orderBy('id', 'ASC')->paginate(10);
 
         return view('admin.product.index', compact('products'));
     }
@@ -50,16 +52,20 @@ class ProductController extends Controller
             'category_id'         => 'required|integer',
         ]);
 
-        $image = $request->file('product_image');
-        $product_image = time()."_".$image->getClientOriginalName();
-        $image->move(public_path('storage'), $product_image);
+        if ($request->hasFile('product_image')) {
+            $image = $request->file('product_image');
+            $product_image = time() . Str::slug($request->product_name) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('storage'), $product_image);
+        }
 
         Product::create([
             'product_image'       => $product_image,
             'product_name'        => $request->product_name,
+            'product_slug'        => strtolower($request->product_name),
             'product_description' => $request->product_description,
             'product_price'       => $request->product_price,
             'product_stock'       => $request->product_stock,
+            'product_status'      => $request->product_status,
             'category_id'         => $request->category_id,
         ]);
 
@@ -86,7 +92,6 @@ class ProductController extends Controller
     public function edit($id)
     {
         $categories = Category::all();
-
         $product = Product::findOrFail($id);
 
         return view('admin.product.edit', compact('categories', 'product'));
@@ -109,15 +114,14 @@ class ProductController extends Controller
             'category_id'         => 'required|integer',
         ]);
 
-        $product = array(
+        Product::whereId($id)->update([
             'product_name'        => $request->product_name,
             'product_description' => $request->product_description,
             'product_price'       => $request->product_price,
             'product_stock'       => $request->product_stock,
-            'category_id'         => $request->category_id
-        );
-
-        Product::whereId($id)->update($product);
+            'product_status'      => $request->product_status,
+            'category_id'         => $request->category_id,
+        ]);
 
         return redirect()->route('product.index')->with('success', 'Product is successfully updated');
     }

@@ -8,7 +8,7 @@
     <nav class="navnav">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#top" class="brand-logo scroll" style="margin-top: -30px"><img src="{{ asset('img/logo.png') }}" alt="logo" width="156" height="auto"></a>
+                <a href="{{route('welcome')}}" class="brand-logo scroll" style="margin-top: -30px"><img src="{{ asset('img/logo.png') }}" alt="logo" width="156" height="auto"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down fontrighteous">
                     <li>
@@ -29,9 +29,12 @@
                     <li><a href="#top" class="iconsearch scroll">Home</a></li>
                     <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdown1'>Kategori</a></li>
-                        @if (Auth::check())
-                            <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
-                        @endif
+                    @if(Auth::check() && auth()->user()->is_admin == 1)
+                        <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
+                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
+                    @else
+                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
+                    @endif
                         <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                     @guest
                         <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
