@@ -79,8 +79,8 @@
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-    <li><a class="scroll" href="#Sales">Sales</a></li>
-    <li><a class="scroll" href="#Souvenir">Souvenir</a></li>
+    <li><a class="scroll" href="{{url('/category/sales')}}">Sales</a></li>
+    <li><a class="scroll" href="{{url('/category/souvenir')}}">Souvenir</a></li>
     <li><a class="scroll" href="#Rental">Rental</a></li>
     <li><a class="scroll" href="#Workshop">Workshop</a></li>
     <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>

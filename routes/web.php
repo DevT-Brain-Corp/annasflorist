@@ -46,14 +46,6 @@ Route::get('/testing', function () {
 });
 
 // Sales
-Route::get('/sales', function () {
-	return view('categories.sales');
-});
-
-Route::get('/sales/detail', function(){
-	return view('product.sales.detail');
-});
-
 Route::get('/sales/cart', function () {
 	return view('product.sales.cart');
 });
