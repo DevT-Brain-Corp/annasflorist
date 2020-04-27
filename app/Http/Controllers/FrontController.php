@@ -16,9 +16,14 @@ class FrontController extends Controller
 
     public function showCategory($slug)
     {
-        $products = Category::where('category_slug', $slug)->first()->products()->paginate(8);
+        $produk = Category::where('category_slug', $slug)->first();
+        if ($produk==null){
+            return view('categories.sales');
+        }else{
+            $product = Category::where('category_slug', $slug)->first()->products()->paginate(8);
+            return view('categories.sales', compact('products'));
+        }
 
-        return view('categories.sales', compact('products'));
     }
 
     public function showProduct($slug)

@@ -22,21 +22,21 @@ Route::get('/homelama', function () {
 Auth::routes();
 // Override login route from Auth::routes();
 Route::get('/login', function () {
-	return redirect('/');
+    return redirect('/');
 })->name('login');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'admin'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
-	Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
-	Route::resource('user', 'UserController');
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
+    Route::resource('user', 'UserController');
     Route::resource('category', 'CategoryController');
     Route::resource('product', 'ProductController');
     Route::resource('order', 'OrderController');
     Route::resource('pot', 'PotController');
 });
 
-Route::name('js.')->group(function() {
+Route::name('js.')->group(function () {
     Route::get('dynamic.js', 'JsController@dynamic')->name('dynamic');
 });
 
@@ -47,60 +47,60 @@ Route::get('/testing', function () {
 
 // Sales
 Route::get('/sales/cart', function () {
-	return view('product.sales.cart');
+    return view('product.sales.cart');
 });
 
 Route::get('/sales/cart2', function () {
-	return view('product.sales.cart2');
+    return view('product.sales.cart2');
 });
 
-Route::get('/sales/buynow', function(){
-	return view('product.sales.buynow');
+Route::get('/sales/buynow', function () {
+    return view('product.sales.buynow');
 });
 
-Route::get('/sales/buynowbyatm', function(){
-	return view('product.sales.buynowbyatm');
+Route::get('/sales/buynowbyatm', function () {
+    return view('product.sales.buynowbyatm');
 });
 
-Route::get('/sales/buynowbybarcode', function(){
-	return view('product.sales.buynowbybarcode');
+Route::get('/sales/buynowbybarcode', function () {
+    return view('product.sales.buynowbybarcode');
 });
 
-Route::get('/sales/totalpay', function(){
-	return view('product.sales.totalpay');
+Route::get('/sales/totalpay', function () {
+    return view('product.sales.totalpay');
 });
 
-Route::get('/sales/riwayat', function(){
-	return view('product.sales.riwayatpembelian');
+Route::get('/sales/riwayat', function () {
+    return view('product.sales.riwayatpembelian');
 });
 // End Sales
 
 // rental
 Route::get('/rental', function () {
-	return view('categories.rental');
+    return view('categories.rental');
 });
 
 Route::get('/rental/index', function () {
-	return view('product.rental.index');
+    return view('product.rental.index');
 });
 
 Route::get('/rental/detail', function () {
-	return view('product.rental.detail');
+    return view('product.rental.detail');
 });
 
 Route::get('/rental/detail/aksesoris', function () {
-	return view('product.rental.aksesoris');
+    return view('product.rental.aksesoris');
 });
 // end rental
 
 // workshop
 Route::get('/workshop', function () {
-	return view('categories.workshop');
+    return view('categories.workshop');
 });
 // end workshop
 
-Route::get('/welcomenew', function(){
-	return view('welcomenew');
+Route::get('/welcomenew', function () {
+    return view('welcomenew');
 });
 
 Route::get('/testing', function () {
