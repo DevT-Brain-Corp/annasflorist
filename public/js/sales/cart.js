@@ -9,7 +9,6 @@ $(document).ready(function(){
 
 // count Price
 function changeTotalFromCount(input) {
-  console.log(input);
     var unitPrice = parseFloat(input.getAttribute("data-unitPrice"));
     var count = input.value;
 

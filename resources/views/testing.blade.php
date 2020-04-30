@@ -1,34 +1,110 @@
-<table>
-    <tr>
-        <td>Product 1</td>
-        <td>
-            <input type="number" id="product1" class="formnumbers" name="ProductOne" onChange="changeTotalFromCount(this);" onLoad="changeTotalFromCount(this);" min="1" data-unitprice="7" />
-        </td>
-        <td><span id="1"></span>
+<div class="grid">
+		<div class="row cf">
+			<div class="slide-in four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide in from left</p>
+					</span>
+					<div class="overlay">
+						<i class="fa fa-commenting-o fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+			<div class="slide-up four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide up</p>
+					</span>
+					<div class="overlay">
+						<i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+			<div class="slide-down-delay four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide down with icon delay</p>
+					</span>
+					<div class="overlay">
+						<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row cf">
+			<div class="rotate four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Rotate into view</p>
+					</span>
+					<div class="overlay">
+						<i class="fa fa-star fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+			<div class="scale four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide in from right and scale</p>
+					</span>
+					<div class="overlay">
+						<i class="fa fa-trophy fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+			<div class="flip four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Fade in then flip</p>
+					</span>
+					<div class="overlay">
+						<i class="fa fa-thumbs-up fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        </td>
-    </tr>
-    <tr>
-        <td>Product 2</td>
-        <td>
-            <input type="number" id="product2" class="formnumbers" name="ProductTwo" onChange="changeTotalFromCount(this);" onLoad="changeTotalFromCount(this);" min="1" data-unitprice="10" />
-        </td>
-        <td><span id="2"></span>
+		<div class="row cf">
+			<div class="skew four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Fade in and skew</p>
+					</span>
+					<div class="overlay">
+            <h1>Hover!</h1>
+						<p>Fade in afaddsasdand skew</p>
+					</div>
+				</div>
+			</div>
 
-        </td>
-    </tr>
-    <tr>
-        <td>Product 3</td>
-        <td>
-            <input type="number" id="3" class="formnumbers" name="ProductThree" onChange="changeTotalFromCount(this);" onLoad="changeTotalFromCount(this);" min="1" data-unitprice="3" value="2" />
-        </td>
-        <td><span id="3"></span>
-
-        </td>
-    </tr>
-    <tr>
-        <td>Total Price</td>
-        <td></td>
-        <td id="totalPriceDisplay">TOTAL PRICE HERE</td>
-    </tr>
-</table>
+			<div class="corner-bottom four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide in from bottom corner</p>
+					</span>
+					<div class="overlay">
+						<i class="fa fa-coffee fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+			<div class="corner-top four col">
+				<div class="box">
+					<span class="original">
+						<h1>Hover!</h1>
+						<p>Slide in from top corner</p>
+					</span>
+					<div class="overlay">
+						<i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
