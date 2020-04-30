@@ -40,15 +40,20 @@ Route::name('js.')->group(function () {
     Route::get('dynamic.js', 'JsController@dynamic')->name('dynamic');
 });
 
+Route::post('/addCart', 'CartController@store');
+
+
 // Debugging
 Route::get('/testing', function () {
     return view('testing');
 });
 
 // Sales
-Route::get('/sales/cart', function () {
-    return view('product.sales.cart');
-});
+// Route::get('/sales/cart', function () {
+//     return view('product.sales.cart');
+// });
+
+Route::get('/sales/cart','CartController@index');
 
 Route::get('/sales/cart2', function () {
     return view('product.sales.cart2');

@@ -23,16 +23,17 @@
   <!-- detail -->
   <div class="row">
     <div id="detail" class="col s12">
+      @foreach($cart as $cart)
       <div id="row" class="row bgwhite z-depth-2">
         <div class="col xl2">
-          <img class="responsive-img hoverable" src="{{ asset('img/rental/4.png') }}" alt="">
+          <img class="responsive-img hoverable" src="{{ asset('storage') }}/{{$cart->product->product_image}}" alt="">
         </div>
         <div class="col xl4 word1">
-          <p>sukulen panda<br><span>popular house plants</span></p>
+          <p>{{$cart->product->product_name}}<br><span>{{$cart->product->product_description}}</span></p>
         </div>
         <div class="col xl3">
           <div id="12" class="input-field">
-            <input type="number" id="product1" class="formnumbers" name="ProductOne" onChange="changeTotalFromCount(this);" onLoad="changeTotalFromCount(this);" min="1" data-unitprice="10000" value="2" />
+            <input type="number" id="product1" class="formnumbers" name="ProductOne" onChange="changeTotalFromCount(this);" onLoad="changeTotalFromCount(this);" min="1" data-unitprice="{{$cart->product->product_price}}" value="{{$cart->qty}}" />
             <label for="product1">Jumlah Barang</label>
           </div>
         </div>
@@ -42,8 +43,8 @@
           <a href="#"><p class="rmv">hapus</p></a>
         </div>
       </div>
-
-      <div id="row" class="row bgwhite z-depth-2">
+      @endforeach
+      <!-- <div id="row" class="row bgwhite z-depth-2">
         <div class="col xl2">
           <img class="responsive-img hoverable" src="{{ asset('img/rental/4.png') }}" alt="">
         </div>
@@ -61,7 +62,7 @@
           <a href="#"><p class="exp">lihat selengkapnya</p></a>
           <a href="#"><p class="rmv">hapus</p></a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- end detail -->

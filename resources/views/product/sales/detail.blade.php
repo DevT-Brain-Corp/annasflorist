@@ -4,6 +4,7 @@
 
 @section('content')
     <head>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('css/product.css') }}">
         <script type="text/javascript" src="{{ asset('js/product.js') }}"></script>
 
@@ -17,6 +18,22 @@
     <!-- End Navbar -->
 
     <!-- Deskripsi -->
+<div class="modal fade" id="modalCheckout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Berhasil menambahkan ke keranjang</h5>
+      </div>
+      <div class="modal-body">
+        <p>Apakah anda ingin melanjutkan mencari barang ? </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cari Barang</button>
+        <a href="{{url('/sales/cart')}}" class="btn btn-primary">Checkout</a>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="deskripsi">
         <div class="deskripsii">
             <div class="deskripsiii">
@@ -32,6 +49,7 @@
                     </div>
                     <div class="col s12 m6 l5 offset-l1 xl5 offset-xl1 caption">
                         <p class="caption1">{{$product->product_name}}<br>Rp. {{$product->product_price}}</p>
+                        <input type="hidden" value="{{$product->id}}" id="productID">
                         <div class="caption2">
                             <div class="row">
                                 <div class="col xl3 s6">
@@ -91,7 +109,7 @@
                             <div class="col s2 xl3">
                                 <div class="inputnumber">
                                     <form>
-                                        <input type="number" name="jumlah" value="0" min="0">
+                                        <input type="number" id="qty" name="jumlah" value="0" min="0">
                                     </form>
                                 </div>
                             </div>
@@ -99,14 +117,13 @@
                                 <p style="margin-top: 0; color: #001E0F;"><span id="stokpot2"></span></p>
                             </div>
                         </div>
-                        {{ var_dump($status) }}
                         @if(!$status==null)
                             <div class="masukkankeranjang right-align">
                                 <div class="beli">
                                     <a href="#">Beli Sekarang</a>
                                 </div>
                                 <div class="masukkan">
-                                    <a href="#"><i class="large material-icons">shopping_cart</i>Masukkan Keranjang</a>
+                                    <a id="btnKeranjang"><i class="large material-icons">shopping_cart</i>Masukkan Keranjang</a>
                                 </div>
                             </div>
                         @else
@@ -171,6 +188,33 @@
         @endif
         @endforeach
         // tooltip
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $("#btnKeranjang").on('click',function(){
+            var qty = $("#qty").val();
+            var productID = $("#productID").val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "{{url('/addCart')}}",
+                data: {
+                    "qty" : qty,
+                    "productID" : productID,
+                },
+                success: function(data){
+                    if (data.msg == 'ok') {
+                        $("#modalCheckout").modal('open');
+                        // alert('berhasil');
+                    }
+                }
+
+            })
+        });
     </script>
     <!-- About -->
     @include('base.footer')
