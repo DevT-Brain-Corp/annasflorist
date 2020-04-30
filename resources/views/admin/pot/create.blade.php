@@ -39,37 +39,37 @@
                                 <div class="col-md-7 row gutters-xs">
                                     <div class="col-auto">
                                         <label class="colorinput">
-                                            <input name="pot_color" type="radio" value="#6777ef" class="colorinput-input" />
+                                            <input name="pot_color" type="radio" value="Biru-Tua" class="colorinput-input" />
                                             <span class="colorinput-color bg-primary"></span>
                                         </label>
                                     </div>
                                     <div class="col-auto">
                                         <label class="colorinput">
-                                            <input name="pot_color" type="radio" value="#ff91fe" class="colorinput-input" />
+                                            <input name="pot_color" type="radio" value="Pink" class="colorinput-input" />
                                             <span class="colorinput-color bg-pink"></span>
                                         </label>
                                     </div>
                                     <div class="col-auto">
                                         <label class="colorinput">
-                                            <input name="pot_color" type="radio" value="#fc544b" class="colorinput-input" />
+                                            <input name="pot_color" type="radio" value="Merah" class="colorinput-input" />
                                             <span class="colorinput-color bg-danger"></span>
                                         </label>
                                     </div>
                                     <div class="col-auto">
                                         <label class="colorinput">
-                                            <input name="pot_color" type="radio" value="#ffa426" class="colorinput-input" />
+                                            <input name="pot_color" type="radio" value="Kuning" class="colorinput-input" />
                                             <span class="colorinput-color bg-warning"></span>
                                         </label>
                                     </div>
                                     <div class="col-auto">
                                         <label class="colorinput">
-                                            <input name="pot_color" type="radio" value="#3abaf4" class="colorinput-input" />
+                                            <input name="pot_color" type="radio" value="Biru-Muda" class="colorinput-input" />
                                             <span class="colorinput-color bg-info"></span>
                                         </label>
                                     </div>
                                     <div class="col-auto">
                                         <label class="colorinput">
-                                            <input name="pot_color" type="radio" value="#47c363" class="colorinput-input" />
+                                            <input name="pot_color" type="radio" value="Hijau" class="colorinput-input" />
                                             <span class="colorinput-color bg-success"></span>
                                         </label>
                                     </div>

@@ -99,7 +99,6 @@
                                 <p style="margin-top: 0; color: #001E0F;"><span id="stokpot2"></span></p>
                             </div>
                         </div>
-                        {{ var_dump($status) }}
                         @if(!$status==null)
                             <div class="masukkankeranjang right-align">
                                 <div class="beli">
