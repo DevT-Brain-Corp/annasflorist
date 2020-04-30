@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Pot;
 use App\Product;
 
 class FrontController extends Controller
@@ -20,7 +21,7 @@ class FrontController extends Controller
         if ($produk==null){
             return view('categories.sales');
         }else{
-            $product = Category::where('category_slug', $slug)->first()->products()->paginate(8);
+            $products = Category::where('category_slug', $slug)->first()->products()->paginate(8);
             return view('categories.sales', compact('products'));
         }
 
@@ -29,7 +30,21 @@ class FrontController extends Controller
     public function showProduct($slug)
     {
         $product = Product::where('product_slug', $slug)->first();
+        $pots = Pot::all();
 
-        return view('product.sales.detail', compact('product'));
+        //status cek data pot ada atau tidak
+        $status=0;
+        foreach ($pots as $i=>$pot){
+            if (!empty($pot->pot_stock)){
+                $status = $status+1;
+            }
+
+        }
+
+        return view('product.sales.detail')
+            ->with('product', $product)
+            ->with('pots', $pots)
+            ->with('status', $status)
+            ->with('');
     }
 }

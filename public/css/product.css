@@ -223,6 +223,14 @@ input[type=number]::-webkit-outer-spin-button {
   background: rgba(21, 123, 18, 0.805827);
 }
 
+.masukkankeranjang .gagal{
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: red;
+}
+
+
 .masukkankeranjang .masukkan a{
   font-family: 'Mukta Vaani';
   font-size: 28px;
