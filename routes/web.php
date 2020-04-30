@@ -49,10 +49,6 @@ Route::get('/sales/cart', function () {
 	return view('product.sales.cart');
 });
 
-Route::get('/sales/cart2', function () {
-	return view('product.sales.cart2');
-});
-
 Route::get('/sales/buynow', function(){
 	return view('product.sales.buynow');
 });
@@ -74,29 +70,11 @@ Route::get('/sales/riwayat', function(){
 });
 // End Sales
 
-// rental
-Route::get('/rental', function () {
-	return view('categories.rental');
+// daily
+Route::get('/daily', function(){
+	return view('product.daily.index');
 });
-
-Route::get('/rental/index', function () {
-	return view('product.rental.index');
-});
-
-Route::get('/rental/detail', function () {
-	return view('product.rental.detail');
-});
-
-Route::get('/rental/detail/aksesoris', function () {
-	return view('product.rental.aksesoris');
-});
-// end rental
-
-// workshop
-Route::get('/workshop', function () {
-	return view('categories.workshop');
-});
-// end workshop
+// end daily
 
 Route::get('/welcomenew', function(){
 	return view('welcomenew');
