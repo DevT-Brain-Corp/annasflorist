@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-  public function getProduct()
+  public function home()
     {
         $products = Product::all();
 
-        return view('welcome', compact('products'));
+        return view('welcomenew', compact('products'));
     }
 }
