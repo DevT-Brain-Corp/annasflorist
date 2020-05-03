@@ -25,7 +25,7 @@
     <div class="title">
       <p>5 produk terbaru</p>
     </div>
-    <div class="feed1">
+    <div class="feed2">
       @include('product.daily.topchart')
     </div>
   </div>
