@@ -4,8 +4,8 @@
 
 @section('content')
 <head>
-  <link rel="stylesheet" href="{{ asset('css/riwayatpembelian.css') }}">
-  <script src="{{ asset('js/riwayatpembelian.js') }}"></script>
+  <link rel="stylesheet" href="{{ asset('css/sales/riwayatpembelian.css') }}">
+  <script src="{{ asset('js/sales/riwayatpembelian.js') }}"></script>
 </head>
 
 <!-- Navbar -->
@@ -32,32 +32,32 @@
 
     <div id="belumdibayar" class="col s12">
       <div id="slimscrollpanel">
-        @include('product.riwayatpembelian.belumdibayar')
+        @include('product.sales.riwayatpembelian.belumdibayar')
       </div>
     </div>
     <div id="sudahdibayar" class="col s12">
       <div id="slimscrollpanel2">
-        @include('product.riwayatpembelian.sudahdibayar')
+        @include('product.sales.riwayatpembelian.sudahdibayar')
       </div>
     </div>
     <div id="tervalidasi" class="col s12">
       <div id="slimscrollpanel3">
-        @include('product.riwayatpembelian.tervalidasi')
+        @include('product.sales.riwayatpembelian.tervalidasi')
       </div>
     </div>
     <div id="dikirim" class="col s12">
       <div id="slimscrollpanel4">
-        @include('product.riwayatpembelian.dikirim')
+        @include('product.sales.riwayatpembelian.dikirim')
       </div>
     </div>
     <div id="selesai" class="col s12">
       <div id="slimscrollpanel5">
-        @include('product.riwayatpembelian.selesai')
+        @include('product.sales.riwayatpembelian.selesai')
       </div>
     </div>
     <div id="dibatalkan" class="col s12">
       <div id="slimscrollpanel6">
-        @include('product.riwayatpembelian.dibatalkan')
+        @include('product.sales.riwayatpembelian.dibatalkan')
       </div>
     </div>
   </div>

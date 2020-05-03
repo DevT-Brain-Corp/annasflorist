@@ -80,6 +80,16 @@ Route::get('/daily', function(){
 });
 // end daily
 
+// user
+Route::get('/user/read', function(){
+	return view('user.read');
+});
+
+Route::get('/user/update', function(){
+	return view('user.update');
+});
+// end user
+
 Route::get('/welcomenew', function(){
 	return view('welcomenew');
 });
