@@ -22,7 +22,7 @@
         <div class="col s8 offset-s2 input-field">
           <input id="email" type="email" class="validate" value="adithwidhiantara@gmail.com">
           <label for="email">Email</label>
-          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+          <span class="helper-text" data-error="Email kurang tepat!" data-success="Email Benar!"></span>
         </div>
 
         <div class="col s8 offset-s2 input-field">
