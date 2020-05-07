@@ -1,0 +1,250 @@
+@import url("/css/root.css");
+
+body{
+  background: var(--bgallpage);
+}
+
+/* Navbar */
+.iconsearch,
+.brand-logo{
+  color: #000000 !important;
+}
+
+.solid{
+  background-color: var(--nvbrcolor) !important;
+}
+/* End Navbar */
+
+/* card cart */
+.cardcart p.title,
+.cardcart p.title2{
+  font-family: var(--mukta);
+
+  text-transform: capitalize;
+}
+
+.cardcart p.title{
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.cardcart p.title2{
+  margin-top: 0;
+}
+
+.cardcart .row .s12 .row{
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow:0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+.cardcart img.responsive-img.hoverable{
+  border-radius: 5px;
+}
+
+.cardcart .word1 p,
+.cardcart .word2 p span,
+.cardcart .word3 p{
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-family: var(--mukta);
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--black);
+}
+
+.cardcart .word1 p span,
+.cardcart .word2 p{
+  font-weight: normal;
+  color: var(--grey);
+}
+/* end card cart */
+
+/* price */
+.cardcart .price p{
+  font-family: var(--mukta);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cardcart .price div div:nth-last-child(2) p,
+.cardcart .price div div:nth-last-child(1) p{
+  font-weight: bold;
+}
+
+.cardcart .price div div:nth-last-child(2) p + p{
+  font-weight: normal;
+}
+
+.cardcart .price div div:nth-last-child(1) p{
+
+}
+/* end price */
+
+/* Alamat */
+.alamat .row{
+  margin-bottom: 0;
+}
+
+.fontselect,
+.fontselect input{
+  font-family: var(--mukta) !important;
+}
+/* End Alamat */
+
+/* Opsi Bank */
+.opsibank .gambar img{
+  height: 44px;
+}
+
+.opsibank .gambar::before,
+.opsibank .gambar::after{
+  margin-top: 15px;
+}
+
+.opsibank .capt1,
+.opsibank .capt2{
+  font-family: 'Roboto';
+  font-size: 18px;
+
+  color: #000000;
+}
+
+.opsibank .rightbutton{
+  float: right;
+  width: 177px;
+  height: 52px;
+  background: rgba(21, 123, 18, 0.805827);
+  padding: 0 !important;
+
+  font-family: var(--mukta);
+  font-weight: 500;
+  font-size: 20px;
+
+  color: #FFFFFF;
+}
+
+.opsibank form .row{
+  margin-bottom: 0;
+}
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:before,
+[type="radio"].with-gap:checked+span:after{
+  border-color: var(--green);
+}
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:after{
+  background-color: var(--green);
+}
+/* End Opsi Bank */
+
+@media only screen and (min-width: 1200px){
+  /* card cart */
+  .cardcart p.title{
+    margin-top: 50px;
+  }
+
+  .cardcart p.title{
+    font-size: 25px;
+  }
+
+  .cardcart > .row .col > .row{
+    margin-top: 20px;
+  }
+
+  .cardcart img.responsive-img.hoverable{
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .cardcart .row .col .row{
+    margin-top: 0;
+  }
+
+  .cardcart .word1 p,
+  .cardcart .word2 p span,
+  .cardcart .word3 p{
+    font-size: 30px;
+  }
+
+  .cardcart .word3 p,
+  .cardcart .word1 p{
+    margin-top: 15px;
+  }
+
+  .cardcart .word1 p span,
+  .cardcart .word2 p{
+    font-size: 15px;
+  }
+  /* end card cart */
+
+  /* price */
+  .cardcart .price div div:nth-last-child(2) p,
+  .cardcart .price div div:nth-last-child(1) p{
+    font-size: 25px;
+  }
+
+  .cardcart .price div div:nth-last-child(2) p + p{
+    font-size: 18px;
+  }
+  /* end price */
+}
+
+@media only screen and (max-width: 1200px){
+  /* card cart */
+  .cardcart p.title{
+    margin-top: 50px;
+  }
+
+  .cardcart p.title{
+    font-size: 20px;
+  }
+
+  .cardcart > .row .col > .row{
+    margin-top: 20px;
+  }
+
+  .cardcart img.responsive-img.hoverable{
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .cardcart .row .col .row{
+    margin-top: 0;
+  }
+
+  .cardcart .word1 p,
+  .cardcart .word2 p span,
+  .cardcart .word3 p{
+    font-size: 20px;
+  }
+
+  .cardcart .word3 p,
+  .cardcart .word1 p{
+    margin-top: 10px;
+  }
+
+  .cardcart .word1 p span,
+  .cardcart .word2 p{
+    font-size: 13px;
+  }
+  /* end card cart */
+
+  /* price */
+  .cardcart .price div div:nth-last-child(2) p,
+  .cardcart .price div div:nth-last-child(1) p{
+    font-size: 20px;
+  }
+
+  .cardcart .price div div:nth-last-child(2) p + p{
+    font-size: 13px;
+  }
+  /* end price */
+}
+
+@media only screen and (max-width: 992px){}
+
+@media only screen and (max-width: 600px){}
