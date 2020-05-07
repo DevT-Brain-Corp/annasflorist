@@ -10,7 +10,7 @@
           <img class="activator a" src="{{ asset('img/founder/1.jpg') }}">
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Sandra Putra Dwi Permana<i class="material-icons right">more_vert</i></span>
+          <span class="card-title activator grey-text text-darken-4">Anna Ramadhaniati<i class="material-icons right">more_vert</i></span>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Anna Ramadhaniati<i class="material-icons right">close</i></span>

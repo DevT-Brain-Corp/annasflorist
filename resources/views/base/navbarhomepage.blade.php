@@ -7,7 +7,7 @@
     <nav class="navnav">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#top" class="brand-logo scroll" style="margin-top: 11px; font-family: 'Righteous';">Annas Florist</a>
+                <a href="{{route('welcome')}}" class="brand-logo scroll" style="margin-top: 11px; font-family: 'Righteous';">Annas Florist</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down fontrighteous">
                     <li>
@@ -32,7 +32,7 @@
                         <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
                         <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @else
-                        <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
+                        <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @endif
                     @guest
                       <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
@@ -60,9 +60,12 @@
       <li><a href="#top" class="iconsearch scroll">Home</a></li>
       <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
       <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdownmobile'>Kategori</a></li>
-      @if (Auth::check())
-        <li><a href="#" class="iconsearch">Notifikasi</a></li>
-      @endif
+        @if(Auth::check() && auth()->user()->is_admin == 1)
+            <li><a href="{{route('dashboard.index')}}" class="iconsearch scroll">Dashboard</a></li>
+            <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
+        @else
+            <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
+        @endif
       <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i>Keranjang</a></li>
       @guest
         <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i>Akun</a></li>
@@ -76,8 +79,8 @@
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-    <li><a class="scroll" href="#Sales">Sales</a></li>
-    <li><a class="scroll" href="#Souvenir">Souvenir</a></li>
+    <li><a class="scroll" href="{{url('/category/sales')}}">Sales</a></li>
+    <li><a class="scroll" href="{{url('/category/souvenir')}}">Souvenir</a></li>
     <li><a class="scroll" href="#Rental">Rental</a></li>
     <li><a class="scroll" href="#Workshop">Workshop</a></li>
     <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>
@@ -86,11 +89,11 @@
 
 <!-- Dropdown Mobile -->
 <ul id='dropdownmobile' class="dropdown-content">
-  <li><a href="#">Sales</a></li>
-  <li><a href="#">Souvenir</a></li>
-  <li><a href="#">Workshop</a></li>
-  <li><a href="#">Rental</a></li>
-  <li><a href="#">Dekorasi</a></li>
+    <li><a href="#">Sales</a></li>
+    <li><a href="#">Souvenir</a></li>
+    <li><a href="#">Rental</a></li>
+    <li><a href="#">Workshop</a></li>
+    <li><a href="#">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown Mobile -->
 

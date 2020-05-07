@@ -38,54 +38,50 @@
                                         <th>ID</th>
                                         <th>Image</th>
                                         <th>Name</th>
-                                        <th>Description</th>
                                         <th>Category</th>
                                         <th>Price</th>
                                         <th>Stock</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($products as $product)
-                                        <tr>
-                                            <td>{{$product->id}}</td>
-                                            <td><img width="150px" src="{{ url('/storage/'. $product->product_image) }}"></td>
-                                            <td>{{$product->product_name}}</td>
-                                            <td>{{$product->product_description}}</td>
-                                            <td>{{$product->category->category_name}}</td>
-                                            <td>{{$product->product_price}}</td>
-                                            <td>{{$product->product_stock}}</td>
+                                    @if($products->count() > 0)
+                                        @foreach($products as $product)
+                                            <tr>
+                                                <td>{{$product->id}}</td>
+                                                <td><img width="150px" src="{{ url('/storage/'. $product->product_image) }}"></td>
+                                                <td>{{$product->product_name}}</td>
+                                                <td>{{$product->category->category_name}}</td>
+                                                <td>{{$product->product_price}}</td>
+                                                <td>{{$product->product_stock}}</td>
+                                                <td>{!! $product->status_label !!}</td>
+                                                <td>
+                                                    <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Edit</a>
+                                                    <a>
+                                                        <form action="{{ route('product.destroy', $product->id)}}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                                        </form>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @else
+                                        <tr style="background: #FFFFFF">
                                             <td>
-                                                <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Edit</a>
-                                                <a>
-                                                    <form action="{{ route('product.destroy', $product->id)}}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="btn btn-danger" type="submit">Delete</button>
-                                                    </form>
-                                                </a>
+                                                <h6>Tidak ada data</h6>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endif
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         <div class="card-footer text-right">
                             <nav class="d-inline-block">
-                                <ul class="pagination mb-0">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                    </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                    </li>
-                                </ul>
+                                {{$products->links()}}
                             </nav>
                         </div>
                     </div>
