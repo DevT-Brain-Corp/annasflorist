@@ -20,7 +20,12 @@ class CartController extends Controller
     public function index()
     {
     	$cart = Auth::user()->cart;
-    	$sum = Auth::user()->cart->sum('qty'); 
+    	$sum = Auth::user()->cart->sum('qty');
     	return view('product.sales.cart', compact('cart','sum'));
+    }
+    public function removeCart(Request $request)
+    {
+        Cart::whereId($request->itemID)->delete();
+        return response()->json('ok');
     }
 }

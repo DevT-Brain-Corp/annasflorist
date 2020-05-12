@@ -14,11 +14,11 @@ function changeTotalFromCount(input) {
 
 
     var price = unitPrice * count;
-    var formattedPrice = 'Rp.' + price;
+    var formattedPrice = price;
 
     var label = input.parentNode.parentNode.nextElementSibling.firstElementChild;
     label.innerHTML = '';
-    label.appendChild(document.createTextNode(formattedPrice));
+    label.appendChild(document.createTextNode("Rp. "+formattedPrice));
     getTotalPrice();
 }
 
@@ -33,7 +33,7 @@ function getTotalPrice() {
 
   }
     if(total > 0) {
-    document.getElementById('totalPriceDisplay').innerText ="Rp."+total;
+    document.getElementById('totalPriceDisplay').innerText =total;
         }
 }
 

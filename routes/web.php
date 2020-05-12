@@ -54,6 +54,8 @@ Route::get('/testing', function () {
 //     return view('product.sales.cart');
 // });
 
+Route::post('/removeCart','CartController@removeCart');
+
 Route::get('/sales/cart','CartController@index');
 
 Route::get('/sales/cart2', function () {
