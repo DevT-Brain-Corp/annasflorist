@@ -2,45 +2,73 @@
 
 @section('title', 'Beli Sekarang')
 
-@section('content')
-<head>
-  <link rel="stylesheet" href="{{ asset('css/buynow.css') }}">
-  <script type="text/javascript" src="{{ asset('js/buynow.js') }}"></script>
-</head>
+@section('head')
+  <link rel="stylesheet" href="{{ asset('css/sales/buynow.css') }}">
+  <script type="text/javascript" src="{{ asset('js/sales/buynow.js') }}"></script>
+@endsection
 
-<!-- Deskripsi -->
-<section class="deskripsi row">
-  <div class="col offset-m1 offset-l1 offset-xl2">
-    <div class="row">
-      <div class="col m6 l6 xl5 mt1">
-        <div class="valign-wrapper">
-          <img class="responsive-img hoverable" src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
+@section('content')
+<!-- navbar -->
+@include('base.navbarhomepage')
+<!-- end navbar -->
+
+<!-- card cart -->
+<div class="container cardcart">
+  <p class="title">pilih metode pembayaran</p>
+  <p class="title2">anda mempunyai <span id="showcart"></span> barang untuk dibayar</p>
+  <!-- detail -->
+  <div class="row">
+    <div id="detail" class="col s12">
+      <div id="row" class="row">
+        <div class="col s6 m2 l2 xl2">
+          <img class="responsive-img hoverable" src="{{ asset('img/rental/4.png') }}" alt="">
+        </div>
+        <div class="col s6 m4 l4 xl4 word1">
+          <p>sukulen panda<br><span>popular house plants</span></p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word2">
+          <p><span>3</span>Pcs</p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word3">
+          <p>Rp.60000</p>
         </div>
       </div>
-      <div class="col m6 l6 xl5 offset-xl1 mt2">
-        <p class="tipe1">Sukulen Panda</p>
-        <p class="tipe1">Rp.40.000</p>
-        <div class="row">
-          <div class="col s6 m3 l3 xl3">
-            <p class="tipe2">Kategori</p>
-            <p class="tipe2">Jenis</p>
-            <p class="tipe2">Warna</p>
-            <p class="tipe2">Jumlah</p>
-            <p class="tipe2">Harga</p>
-          </div>
-          <div class="col s6 m6 l6 xl6">
-            <p class="tipe2">Sales</p>
-            <p class="tipe2">Sukulen</p>
-            <p class="tipe2">Biru</p>
-            <p class="tipe2">3</p>
-            <p class="tipe2">Rp.120.000</p>
-          </div>
+
+      <div id="row" class="row">
+        <div class="col s6 m2 l2 xl2">
+          <img class="responsive-img hoverable" src="{{ asset('img/rental/3.jpg') }}" alt="">
+        </div>
+        <div class="col s6 m4 l4 xl4 word1">
+          <p>sukulen panda<br><span>popular house plants</span></p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word2">
+          <p><span>3</span>Pcs</p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word3">
+          <p>Rp.60000</p>
         </div>
       </div>
     </div>
   </div>
-</section>
-<!-- End Deskripsi -->
+  <!-- detail -->
+
+  <!-- price -->
+  <div class="row">
+    <div class="col s8 offset-s4 m6 offset-m6 l4 offset-l8 xl4 offset-xl8 price">
+      <div class="row">
+        <div class="col xl6">
+          <p>Order Total</p>
+          <p><span id="showcart2"></span> Barang</p>
+        </div>
+        <div class="col xl6">
+          <p>Rp.120000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- price -->
+</div>
+<!-- end card cart -->
 
 <!-- Alamat Anda -->
 <div class="container alamat">
@@ -51,18 +79,18 @@
     <div class="col s9 m9 l7 xl5">
       <div class="row">
         <div class="input-field col s4">
-            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
+            <input placeholder="Kecamatan" type="text" class="validate">
         </div>
         <div class="input-field col s4">
-            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
+            <input placeholder="Kabupaten/Kota" type="text" class="validate">
         </div>
         <div class="input-field col s4">
-            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
+            <input placeholder="Provinsi" type="text" class="validate">
         </div>
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea" placeholder="Tesing"></textarea>
+              <textarea id="address" class="materialize-textarea" placeholder="Alamat Lengkap"></textarea>
             </div>
           </div>
         </form>
@@ -77,7 +105,7 @@
     <div class="col s9 m9 l7 xl5">
       <div class="row">
         <div class="input-field col s10">
-          <input placeholder="I am not editable" id="disabled" type="text" class="validate">
+          <input placeholder="Nomor Telepon" type="text" class="validate">
         </div>
       </div>
     </div>
@@ -88,7 +116,7 @@
       <p class="tipe3">Pengiriman</p>
     </div>
     <div class="input-field col s9 m9 l7 xl5">
-      <select class="icons font">
+      <select class="icons">
         <option value="" disabled selected>Pilih Pengiriman...</option>
         <option value="" data-icon="{{ asset('img/pengiriman/jne.png') }}" class="left">JNE</option>
         <option value="" data-icon="{{ asset('img/pengiriman/j&t.PNG') }}" class="left">J&T</option>
