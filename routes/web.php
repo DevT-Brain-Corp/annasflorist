@@ -18,6 +18,7 @@ Route::get('/product/{slug}', 'FrontController@showProduct')->name('show.product
 Route::get('/homelama', function () {
     return view('welcomeold');    //awal homepage
 });
+Route::get('/cekongkir','RajaOngkirController@Kota');
 
 Auth::routes();
 // Override login route from Auth::routes();

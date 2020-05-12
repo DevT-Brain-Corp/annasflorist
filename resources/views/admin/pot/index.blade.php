@@ -48,7 +48,19 @@
                                             <tr>
                                                 <td>{{$pot->id}}</td>
                                                 <td><img width="150px" src="{{ url('/storage/'. $pot->pot_image) }}"></td>
-                                                <td style="background-color:{{ $pot->pot_color }}"></td>
+                                                @if($pot->pot_color=='Biru-Tua')
+                                                    <td style="background-color:#6777ef"></td>
+                                                    @elseif($pot->pot_color=='Pink')
+                                                    <td style="background-color:#ff91fe"></td>
+                                                @elseif($pot->pot_color=='Merah')
+                                                    <td style="background-color:#fc544b"></td>
+                                                @elseif($pot->pot_color=='Kuning')
+                                                    <td style="background-color:#ffa426"></td>
+                                                @elseif($pot->pot_color=='Biru-Muda')
+                                                    <td style="background-color:#3abaf4"></td>
+                                                @elseif($pot->pot_color=='Hijau')
+                                                    <td style="background-color:#47c363"></td>
+                                                    @endif
                                                 <td>{{$pot->pot_stock}}</td>
                                                 <td>
                                                     <a href="{{ route('pot.edit', $pot->id) }}" class="btn btn-primary">Edit</a>
