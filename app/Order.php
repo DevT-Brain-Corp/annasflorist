@@ -9,7 +9,12 @@ class Order extends Model
     protected $table = "orders";
 
     protected $fillable = [
-        'order_name', 'order_address', 'order_province', 'order_city', 'order_address', 'order_service', 'order_payment'
+        'invoice',
+        'customer_id',
+        'customer_name',
+        'customer_phone',
+        'customer_address',
+        'subtotal',
     ];
 
     public function product()
