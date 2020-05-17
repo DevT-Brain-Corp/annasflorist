@@ -71,7 +71,7 @@
                     <p>Rp. <span id="totalPriceDisplay"></span></p>
                 </div>
             </div>
-            <a href="#">Checkout</a>
+            <a id="btnCheckout">Checkout</a>
         </div>
     </div>
     <!-- end totalprice -->
@@ -79,6 +79,9 @@
 <!-- end cart -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    $("#btnCheckout").on('click', function(){
+        window.location.replace("{{url('/sales/buynow')}}");
+    });
     $(".rmv").on('click', function () {
         // alert($(this).attr("item-id"));
         var itemID = $(this).attr("item-id");
@@ -89,11 +92,7 @@
         var total = $("#totalPriceDisplay").text();
 
         // alert(total-price);
-        $.ajaxSetup({
-            headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-        });
+        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         $.ajax({
             url : '{{ url('/removeCart') }}',
             type: "POST",

@@ -2,74 +2,121 @@
 
 @section('title', 'Beli Sekarang')
 
-@section('content')
-<head>
-  <link rel="stylesheet" href="{{ asset('css/buynow.css') }}">
-  <script type="text/javascript" src="{{ asset('js/buynow.js') }}"></script>
-</head>
+@section('head')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="stylesheet" href="{{ asset('css/sales/buynow.css') }}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+  {{-- <script type="text/javascript" src="{{ asset('js/sales/buynow.js') }}"></script> --}}
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $('select').select2();
+    });
+   </script>
+@endsection
 
-<!-- Deskripsi -->
-<section class="deskripsi row">
-  <div class="col offset-m1 offset-l1 offset-xl2">
-    <div class="row">
-      <div class="col m6 l6 xl5 mt1">
-        <div class="valign-wrapper">
-          <img class="responsive-img hoverable" src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
+@section('content')
+<!-- navbar -->
+@include('base.navbarhomepage')
+<!-- end navbar -->
+
+<!-- card cart -->
+<div class="container cardcart">
+  <p class="title">pilih metode pembayaran</p>
+  <p class="title2">anda mempunyai <span id="showcart"></span> barang untuk dibayar</p>
+  <!-- detail -->
+  <div class="row">
+    <div id="detail" class="col s12">
+      {{-- LOOp --}}
+      <?php $totalPrice=0 ?>
+      <?php $totalQty=0 ?>
+      @foreach ($cart as $index => $cart)
+        <div id="row" class="row">
+        <div class="col s6 m2 l2 xl2">
+          <img class="responsive-img hoverable" src="{{ asset('storage') }}/{{ $cart->product->product_image }}" alt="">
+        </div>
+        <div class="col s6 m4 l4 xl4 word1">
+            <p>{{ $cart->product->product_name }}<br><span>{{ $cart->product->product_description }}</span>
+        </div>
+        <div class="col s6 m3 l3 xl3 word2">
+            <p><span>{{$cart->qty}}</span>Pcs</p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word3">
+        <?php $totalQty+= $cart->qty ?>
+        <?php $totalPrice+= $cart->qty * ($cart->product->product_price)  ?>
+          <p>Rp.{{$cart->qty * ($cart->product->product_price)}}</p>
         </div>
       </div>
-      <div class="col m6 l6 xl5 offset-xl1 mt2">
-        <p class="tipe1">Sukulen Panda</p>
-        <p class="tipe1">Rp.40.000</p>
-        <div class="row">
-          <div class="col s6 m3 l3 xl3">
-            <p class="tipe2">Kategori</p>
-            <p class="tipe2">Jenis</p>
-            <p class="tipe2">Warna</p>
-            <p class="tipe2">Jumlah</p>
-            <p class="tipe2">Harga</p>
-          </div>
-          <div class="col s6 m6 l6 xl6">
-            <p class="tipe2">Sales</p>
-            <p class="tipe2">Sukulen</p>
-            <p class="tipe2">Biru</p>
-            <p class="tipe2">3</p>
-            <p class="tipe2">Rp.120.000</p>
-          </div>
+      @endforeach
+    </div>
+  </div>
+  <!-- detail -->
+
+  <!-- price -->
+  <div class="row">
+    <div class="col s8 offset-s4 m6 offset-m6 l4 offset-l8 xl4 offset-xl8 price">
+      <div class="row">
+        <div class="col xl6">
+          <p>Order Total</p>
+        <p><span id="showcart2">{{$totalQty}}</span> Barang</p>
+        </div>
+        <div class="col xl6">
+          <p>Rp.{{$totalPrice}}</p>
         </div>
       </div>
     </div>
   </div>
-</section>
-<!-- End Deskripsi -->
+  <!-- price -->
+</div>
+<!-- end card cart -->
 
 <!-- Alamat Anda -->
 <div class="container alamat">
   <div class="row">
     <div class="col s3 m2 l2 xl2">
-      <p class="tipe3">Alamat</p>
+      <p class="tipe3">Kota</p>
     </div>
     <div class="col s9 m9 l7 xl5">
       <div class="row">
-        <div class="input-field col s4">
-            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
+        <div class="input-field col s12">
+            <select class="" id="kotaID">
+                @if(!count($data['rajaongkir']['results']) )
+                <option value="">Kosong</option>
+                @else
+                @for($i=0; $i < count($data['rajaongkir']['results']); $i++)
+                <option value="{{$data['rajaongkir']['results'][$i]['city_id']}}" >{{$data['rajaongkir']['results'][$i]['city_name']}}</option>"
+                @endfor
+                @endif
+            </select>
         </div>
-        <div class="input-field col s4">
-            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
-        </div>
-        <div class="input-field col s4">
-            <input placeholder="I am not editable" id="disabled" type="text" class="validate">
-        </div>
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea" placeholder="Tesing"></textarea>
-            </div>
-          </div>
-        </form>
+
       </div>
     </div>
   </div>
-
+  <div class="row">
+    <div class="col s3 m2 l2 xl2">
+      <p class="tipe3">Nama Penerima</p>
+    </div>
+    <div class="col s9 m9 l7 xl5">
+        <div class="row">
+          <div class="input-field col s10">
+            <input placeholder="Alamat Lengkap" name="namaPenerima" type="text" class="validate">
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col s3 m2 l2 xl2">
+      <p class="tipe3">Alamat Lengkap</p>
+    </div>
+    <div class="col s9 m9 l7 xl5">
+        <div class="row">
+          <div class="input-field col s10">
+            <input placeholder="Alamat Lengkap" name="alamat" type="text" class="validate">
+          </div>
+        </div>
+      </div>
+  </div>
   <div class="row">
     <div class="col s3 m2 l2 xl2">
       <p class="tipe3">Nomor Telepon</p>
@@ -77,7 +124,19 @@
     <div class="col s9 m9 l7 xl5">
       <div class="row">
         <div class="input-field col s10">
-          <input placeholder="I am not editable" id="disabled" type="text" class="validate">
+          <input placeholder="Nomor Telepon" name="nohp" type="text" class="validate">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s3 m2 l2 xl2">
+      <p class="tipe3">Total Pembayaran</p>
+    </div>
+    <div class="col s9 m9 l7 xl5">
+      <div class="row">
+        <div class="input-field col s10">
+          <input type="text" class="validate">
         </div>
       </div>
     </div>
@@ -88,15 +147,52 @@
       <p class="tipe3">Pengiriman</p>
     </div>
     <div class="input-field col s9 m9 l7 xl5">
-      <select class="icons font">
+      <select class="icons" id="kurir">
         <option value="" disabled selected>Pilih Pengiriman...</option>
-        <option value="" data-icon="{{ asset('img/pengiriman/jne.png') }}" class="left">JNE</option>
-        <option value="" data-icon="{{ asset('img/pengiriman/j&t.PNG') }}" class="left">J&T</option>
-        <option value="" data-icon="{{ asset('img/pengiriman/sicepat.PNG') }}" class="left">Sicepat</option>
+        <option value="jne">JNE</option>
+        <option value="tiki">TIKI</option>
+        <option value="pos">POS INDONESIA</option>
       </select>
     </div>
   </div>
+  <button id="cekOngkir">CEK</button>
+  <script>
+      $(document).ready(function(){
+        var kurir = '';
+        var kotaID = '';
+        $("#kotaID").on('change', function(e){
+            kotaID = e.target.value;
+        })
+        $("#kurir").on('change', function(e){
+            kurir = e.target.value;
+        })
+        var asal = 160;
+
+        var berat = 1000;
+        $("#cekOngkir").on('click', function(){
+            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+            $.ajax({
+                url : '{{ url('/hitungTotal') }}',
+                type: "POST",
+                data: {
+                    'asal' : asal,
+                    'kotaID' : kotaID,
+                    'kurir' : kurir,
+                    'berat' : berat,
+                },
+                success: function(e){
+                    console.log(e.rajaongkir);
+                    // $.each(e.origin_details, function(){
+                    //     console.log(this);
+                    // });
+
+                }
+            })
+        })
+      })
+  </script>
 </div>
+
 <!-- End Alamat Anda -->
 
 <!-- Opsi Bank -->

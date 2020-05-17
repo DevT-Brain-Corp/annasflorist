@@ -8,14 +8,7 @@ class Order extends Model
 {
     protected $table = "orders";
 
-    protected $fillable = [
-        'invoice',
-        'customer_id',
-        'customer_name',
-        'customer_phone',
-        'customer_address',
-        'subtotal',
-    ];
+    protected $guarded = [];
 
     public function product()
     {

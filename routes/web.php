@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', 'FrontController@showProductHome')->name('welcome');
 Route::get('/category/{slug}', 'FrontController@showCategory')->name('show.category');
 Route::get('/product/{slug}', 'FrontController@showProduct')->name('show.product');
@@ -19,6 +20,10 @@ Route::get('/homelama', function () {
     return view('welcomeold');    //awal homepage
 });
 Route::get('/cekongkir','RajaOngkirController@Kota');
+
+Route::post('/getKota','BuyController@getKota');
+
+Route::post('/hitungTotal','RajaOngkirController@hitungTotal');
 
 Auth::routes();
 // Override login route from Auth::routes();
@@ -43,6 +48,7 @@ Route::name('js.')->group(function () {
 
 Route::post('/addCart', 'CartController@store');
 
+Route::post('/checkoutCart','CartController@checkoutCart');
 
 // Debugging
 Route::get('/testing', function () {
@@ -62,9 +68,11 @@ Route::get('/sales/cart2', function () {
     return view('product.sales.cart2');
 });
 
-Route::get('/sales/buynow', function () {
-    return view('product.sales.buynow');
-});
+// Route::get('/sales/buynow', function () {
+//     return view('product.sales.buynow');
+// });
+
+Route::get('/sales/buynow','BuyController@index');
 
 Route::get('/sales/buynowbyatm', function () {
     return view('product.sales.buynowbyatm');

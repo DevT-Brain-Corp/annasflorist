@@ -78,9 +78,11 @@
                                             @if($pot->pot_stock >=1)
                                                 <div class="col s12 l6 xl4">
                                                     <label>
+                                                        {{-- <input type="hidden" id="resID"> --}}
                                                         <input type="radio" name="myRadios"
-                                                               class="card-input-element d-none"
-                                                               onclick="handleClick(this);" id="{{$pot->pot_stock}}">
+                                                               class="colsX card-input-element d-none"
+                                                                dt-id="{{$pot->id}}"
+                                                    onclick="handleClick(this);" id="{{$pot->pot_stock}}" value="{{$pot->id}}">
                                                         <div class="card tooltipped" id="{{ $pot->pot_color }}">
                                                             <span data-position="bottom">{{ $pot->pot_color }}</span>
                                                         </div>
@@ -91,13 +93,6 @@
                                             <p>tidak ada pot yang diinputkan</p>
 
                                         @endforelse
-
-{{--                                        @forelse($pots as $barang)--}}
-{{--                                                @if($status==null)--}}
-{{--                                                    <p>Pot tidak tersedia</p>--}}
-
-{{--                                                @endif--}}
-{{--                                            @endforelse--}}
                                     </div>
                                 </div>
                             </div>
@@ -191,9 +186,16 @@
     </script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
+        var colorID;
+        $(".colsX").on('change', function(e){
+            colorID = e.target.value;
+        });
+
         $("#btnKeranjang").on('click',function(){
+
             var qty = $("#qty").val();
             var productID = $("#productID").val();
+            if($("#qty").val()!=0 || !colorID){
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -205,6 +207,7 @@
                 data: {
                     "qty" : qty,
                     "productID" : productID,
+                    "colorID" : colorID,
                 },
                 success: function(data){
                     if (data.msg == 'ok') {
@@ -214,6 +217,7 @@
                 }
 
             })
+        }
         });
     </script>
     <!-- About -->
