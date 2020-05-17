@@ -74,6 +74,12 @@ Route::get('/sales/cart2', function () {
 // });
 
 Route::get('/sales/buynow','BuyController@index');
+Route::get('/sales/buynow', function () {
+    return view('product.sales.buynow');
+Route::get('/sales/buynow', function(){
+	return view('product.sales.buynow');
+
+});
 
 Route::get('/sales/buynowbyatm', function () {
     return view('product.sales.buynowbyatm');
@@ -103,18 +109,29 @@ Route::get('/rental/index', function () {
 
 Route::get('/rental/detail', function () {
     return view('product.rental.detail');
+
+// daily
+Route::get('/daily', function(){
+	return view('product.daily.index');
 });
+// end daily
 
 Route::get('/rental/detail/aksesoris', function () {
     return view('product.rental.aksesoris');
+
+// user
+Route::get('/user/read', function(){
+	return view('user.read');
 });
-// end rental
 
 // workshop
 Route::get('/workshop', function () {
     return view('categories.workshop');
+
+Route::get('/user/update', function(){
+	return view('user.update');
 });
-// end workshop
+// end user
 
 Route::get('/welcomenew', function () {
     return view('welcomenew');

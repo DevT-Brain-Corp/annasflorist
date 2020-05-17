@@ -1,9 +1,9 @@
 // count row
 $(document).ready(function(){
-  var test = $("#detail #row").length;
+  var countdiv = $("#detail #row").length;
 
-  document.getElementById("showcart").innerHTML=test;
-  document.getElementById("showcart2").innerHTML=test;
+  document.getElementById("showcart").innerHTML=countdiv;
+  document.getElementById("showcart2").innerHTML=countdiv;
 });
 // end count row
 

@@ -13,6 +13,8 @@
         $('select').select2();
     });
    </script>
+  <link rel="stylesheet" href="{{ asset('css/sales/buynow.css') }}">
+  <script type="text/javascript" src="{{ asset('js/sales/buynow.js') }}"></script>
 @endsection
 
 @section('content')
@@ -62,10 +64,54 @@
         </div>
         <div class="col xl6">
           <p>Rp.{{$totalPrice}}</p>
+      <div id="row" class="row">
+        <div class="col s6 m2 l2 xl2">
+          <img class="responsive-img hoverable" src="{{ asset('img/rental/4.png') }}" alt="">
+        </div>
+        <div class="col s6 m4 l4 xl4 word1">
+          <p>sukulen panda<br><span>popular house plants</span></p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word2">
+          <p><span>3</span>Pcs</p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word3">
+          <p>Rp.60000</p>
+        </div>
+      </div>
+
+      <div id="row" class="row">
+        <div class="col s6 m2 l2 xl2">
+          <img class="responsive-img hoverable" src="{{ asset('img/rental/3.jpg') }}" alt="">
+        </div>
+        <div class="col s6 m4 l4 xl4 word1">
+          <p>sukulen panda<br><span>popular house plants</span></p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word2">
+          <p><span>3</span>Pcs</p>
+        </div>
+        <div class="col s6 m3 l3 xl3 word3">
+          <p>Rp.60000</p>
         </div>
       </div>
     </div>
   </div>
+  <!-- detail -->
+
+  <!-- price -->
+  <div class="row">
+    <div class="col s8 offset-s4 m6 offset-m6 l4 offset-l8 xl4 offset-xl8 price">
+      <div class="row">
+        <div class="col xl6">
+          <p>Order Total</p>
+          <p><span id="showcart2"></span> Barang</p>
+        </div>
+        <div class="col xl6">
+          <p>Rp.120000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 84d364961f23ae862110cd6ebec42dadc65cdf33
   <!-- price -->
 </div>
 <!-- end card cart -->
@@ -101,6 +147,20 @@
         <div class="row">
           <div class="input-field col s10">
             <input placeholder="Alamat Lengkap" name="namaPenerima" type="text" class="validate">
+        <div class="input-field col s4">
+            <input placeholder="Kecamatan" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+            <input placeholder="Kabupaten/Kota" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+            <input placeholder="Provinsi" type="text" class="validate">
+        </div>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="address" class="materialize-textarea" placeholder="Alamat Lengkap"></textarea>
+            </div>
           </div>
         </div>
       </div>
@@ -137,6 +197,7 @@
       <div class="row">
         <div class="input-field col s10">
           <input type="text" class="validate">
+          <input placeholder="Nomor Telepon" type="text" class="validate">
         </div>
       </div>
     </div>
@@ -148,6 +209,7 @@
     </div>
     <div class="input-field col s9 m9 l7 xl5">
       <select class="icons" id="kurir">
+      <select class="icons">
         <option value="" disabled selected>Pilih Pengiriman...</option>
         <option value="jne">JNE</option>
         <option value="tiki">TIKI</option>
