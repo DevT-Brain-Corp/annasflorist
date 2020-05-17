@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'namespace' => 'Admin', 'prefix
     Route::resource('product', 'ProductController');
     Route::resource('order', 'OrderController');
     Route::resource('pot', 'PotController');
+
 });
 
 Route::name('js.')->group(function () {
@@ -122,4 +123,10 @@ Route::get('/welcomenew', function () {
 Route::get('/testing', function () {
     return view('base.static.testing');
 });
+
+Route::get('/email/tagihan', 'SendMailController@tagihanPembayaran');
+
+Route::get('email/konfirmasi-pembayaran', 'SendMailController@konfirmasiPembayaran');
+
+Route::get('email/pengiriman-barang','SendMailController@pengirimanBarang');
 // End Debugging
