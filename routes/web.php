@@ -21,7 +21,8 @@ Route::get('/homelama', function () {
 });
 Route::get('/cekongkir', 'RajaOngkirController@Kota');
 
-Route::post('/getKota', 'BuyController@getKota');
+
+//Route::post('/getKota', 'BuyController@getKota');
 
 Route::post('/hitungTotal', 'RajaOngkirController@hitungTotal');
 
@@ -73,14 +74,18 @@ Route::get('/sales/cart2', function () {
 //     return view('product.sales.buynow');
 // });
 
-Route::get('/sales/buynow', 'BuyController@index');
-Route::get('/sales/buynow', function () {
-    return view('product.sales.buynow');
-});
-    Route::get('/sales/buynow', function () {
-        return view('product.sales.buynow');
 
-    });
+Route::get('/sales/buynow','BuyController@index');
+// Route::get('/sales/buynow', function () {
+//     return view('product.sales.buynow');
+// });
+// Route::get('/sales/buynow', function(){
+// 	return view('product.sales.buynow');
+
+// });
+
+
+//    });
 
     Route::get('/sales/buynowbyatm', function () {
         return view('product.sales.buynowbyatm');
@@ -108,9 +113,11 @@ Route::get('/sales/buynow', function () {
         return view('product.rental.index');
     });
 
+
     Route::get('/rental/detail', function () {
         return view('product.rental.detail');
     });
+
 
 // daily
     Route::get('/daily', function () {
@@ -118,9 +125,11 @@ Route::get('/sales/buynow', function () {
     });
 // end daily
 
+
     Route::get('/rental/detail/aksesoris', function () {
         return view('product.rental.aksesoris');
     });
+
 
 // user
     Route::get('/user/read', function () {
@@ -128,6 +137,7 @@ Route::get('/sales/buynow', function () {
     });
 
 // workshop
+
     Route::get('/workshop', function () {
         return view('categories.workshop');
     });
@@ -135,6 +145,7 @@ Route::get('/sales/buynow', function () {
     Route::get('/user/update', function () {
         return view('user.update');
     });
+
 // end user
 
     Route::get('/welcomenew', function () {
@@ -151,3 +162,6 @@ Route::get('/sales/buynow', function () {
 
     Route::get('email/pengiriman-barang', 'SendMailController@pengirimanBarang');
 // End Debugging
+Route::get('/kotaTujuan','BuyController@cekKota');
+
+Route::post('/inputOrder','BuyController@store');
