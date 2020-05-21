@@ -8,9 +8,7 @@ class Order extends Model
 {
     protected $table = "orders";
 
-    protected $fillable = [
-        'order_name', 'order_address', 'order_province', 'order_city', 'order_address', 'order_service', 'order_payment'
-    ];
+    protected $guarded = [];
 
     public function product()
     {

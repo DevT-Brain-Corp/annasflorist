@@ -1,0 +1,21 @@
+:root{
+    /* Fonts */
+    --mukta:'Mukta Vaani';
+    /* End Fonts */
+
+    /* Color */
+    --bgallpage:rgba(196, 243, 196, 0.32);
+    --nvbrcolor:#c4f3c4;
+
+    --black:#000000;
+    --grey:#757575;
+    --white:#ffffff;
+    --blue:#283593;
+    --green:#2E7D32;
+    --greenhover:#66BB6A;
+    --green2:#C8E6C9;
+    --red:#c62828;
+    --redhover:#f44336;
+    /* End Color */
+  }
+

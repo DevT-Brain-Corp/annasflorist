@@ -1,9 +1,9 @@
 // count row
 $(document).ready(function(){
-  var test = $("#detail #row").length;
+  var countdiv = $("#detail #row").length;
 
-  document.getElementById("showcart").innerHTML=test;
-  document.getElementById("showcart2").innerHTML=test;
+  document.getElementById("showcart").innerHTML=countdiv;
+  document.getElementById("showcart2").innerHTML=countdiv;
 });
 // end count row
 
@@ -14,11 +14,11 @@ function changeTotalFromCount(input) {
 
 
     var price = unitPrice * count;
-    var formattedPrice = 'Rp.' + price;
+    var formattedPrice = price;
 
     var label = input.parentNode.parentNode.nextElementSibling.firstElementChild;
     label.innerHTML = '';
-    label.appendChild(document.createTextNode(formattedPrice));
+    label.appendChild(document.createTextNode("Rp. "+formattedPrice));
     getTotalPrice();
 }
 
@@ -33,7 +33,7 @@ function getTotalPrice() {
 
   }
     if(total > 0) {
-    document.getElementById('totalPriceDisplay').innerText ="Rp."+total;
+    document.getElementById('totalPriceDisplay').innerText =total;
         }
 }
 

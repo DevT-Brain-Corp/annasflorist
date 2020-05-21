@@ -1,9 +1,9 @@
 <?php
 
+use \App\Category;
 use Illuminate\Database\Seeder;
-use App\Category;
 
-class KategoryTableSeeder extends Seeder
+class KategoriTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
