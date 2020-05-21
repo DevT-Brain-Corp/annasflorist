@@ -1,10 +1,8 @@
 <?php
 
-use \App\Category;
 use Illuminate\Database\Seeder;
 
-
-class KategoriTableSeeder extends Seeder
+class CategoryTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +10,8 @@ class KategoriTableSeeder extends Seeder
      * @return void
      */
     public function run()
+    {
+        public function run()
     {
         Category::create([
             'category_name'=>'sales',
@@ -33,5 +33,6 @@ class KategoriTableSeeder extends Seeder
             'category_name'=>'dekorasi',
             'category_slug'=>'dekorasi',
         ]);
+    }
     }
 }
