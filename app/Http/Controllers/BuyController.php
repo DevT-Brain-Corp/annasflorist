@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 // use Auth;
 use App\Cart;
 use App\Order;
+use App\OrderDetail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -111,6 +112,13 @@ class BuyController extends Controller
             'customer_address'  =>  $request->alamat,
             'subtotal'          =>  $vl,
         ]);
+        $cart = Cart::where('user_id',Auth::user()->id)
+                ->where('invoice',null)
+                ->get();
+        
+        // OrderDetail::create([
+
+        // ]);
         return 'okk ';
     }
 
