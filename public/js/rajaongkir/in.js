@@ -21,7 +21,7 @@ $( document ).ready(function() {
    $("#ongkir").submit(function(e) {
       e.preventDefault();
       $.ajax({
-          url: 'cek-ongkir.php',
+          url: 'cek-ongkir',
           type: 'post',
           data: $( this ).serialize(),
           success: function(data) {

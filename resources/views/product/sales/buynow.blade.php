@@ -48,6 +48,7 @@
         <?php $totalQty+= $cart->qty ?>
         <?php $totalPrice+= $cart->qty * ($cart->product->product_price)  ?>
           <p>Rp.{{$cart->qty * ($cart->product->product_price)}}</p>
+        
         </div>
       </div>
       @endforeach
@@ -64,10 +65,10 @@
       <div class="row">
         <div class="col xl6">
           <p>Order Total</p>
-          <p><span id="showcart2"></span> Barang</p>
+          <p><span id="showcart2"></span>{{$totalQty}} Barang</p>
         </div>
         <div class="col xl6">
-          <p>Rp.<span>2000</span></p>
+          <p>Rp.<span>{{$totalPrice}}</span></p>
         </div>
       </div>
     </div>
@@ -77,20 +78,42 @@
 <!-- end card cart -->
 
 <!-- Alamat Anda -->
+<form action="{{url('/inputOrder')}}" method="POST">
+@csrf
 <div class="container alamat">
   <div class="row">
     <div class="col s3 m2 l2 xl2">
       <p class="tipe3">Kota</p>
     </div>
+    <input type="hidden" name="subtotal" value="{{$totalPrice}}">
+    <input type="hidden" name="itungBerat" value="{{$totalQty}}">
     <div class="col s9 m9 l7 xl5">
       <div class="row">
         <div class="input-field col s12">
-            <select class="form-control" id="kota_tujuan" name="kota_tujuan" required="">
-              <!-- <option></option> -->
+            <!-- <select class="form-control" id="kota_tujuan" name="kota_tujuan" required="">
+            </select> -->
+            <!-- UNTUK TESTING -->
+            <select class="form-control" name="kota_tujuan" required="">
+              <option value="163">Kota A</option>
+              <option value="162">Kota B</option>
+              <option value="161">Kota C</option>
             </select>
         </div>
 
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s3 m3 l2 xl2">
+      <p class="tipe3">Pengiriman</p>
+    </div>
+    <div class="input-field col s9 m9 l7 xl5">
+      <select class="icons" id="kurir" name="kurir">
+        <option value="" disabled selected>Pilih Pengiriman...</option>
+        <option value="jne">JNE</option>
+        <option value="tiki">TIKI</option>
+        <option value="pos">POS INDONESIA</option>
+      </select>
     </div>
   </div>
   <div class="row">
@@ -100,26 +123,10 @@
     <div class="col s9 m9 l7 xl5">
         <div class="row">
           <div class="input-field col s10">
-            <input placeholder="Alamat Lengkap" name="namaPenerima" type="text" class="validate">
-        <div class="input-field col s4">
-            <input placeholder="Kecamatan" type="text" class="validate">
-        </div>
-        <div class="input-field col s4">
-            <input placeholder="Kabupaten/Kota" type="text" class="validate">
-        </div>
-        <div class="input-field col s4">
-            <input placeholder="Provinsi" type="text" class="validate">
-        </div>
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="address" class="materialize-textarea" placeholder="Alamat Lengkap"></textarea>
-            </div>
-          </div>
+            <input placeholder="Nama Penerima" name="namaPenerima" type="text" class="validate">
         </div>
       </div>
   </div>
-</form>
 </div>
   <div class="row">
     <div class="col s3 m2 l2 xl2">
@@ -145,33 +152,8 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col s3 m2 l2 xl2">
-      <p class="tipe3">Total Pembayaran</p>
-    </div>
-    <div class="col s9 m9 l7 xl5">
-      <div class="row">
-        <div class="input-field col s10">
-          <input type="text" class="validate">
-          <input placeholder="Nomor Telepon" type="text" class="validate">
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col s3 m3 l2 xl2">
-      <p class="tipe3">Pengiriman</p>
-    </div>
-    <div class="input-field col s9 m9 l7 xl5">
-      <select class="icons" id="kurir">
-        <option value="" disabled selected>Pilih Pengiriman...</option>
-        <option value="jne">JNE</option>
-        <option value="tiki">TIKI</option>
-        <option value="pos">POS INDONESIA</option>
-      </select>
-    </div>
-  </div>
+  
 </div>
 
 <!-- End Alamat Anda -->
@@ -184,7 +166,6 @@
     </div>
 
     <div class="col s10 xl8">
-      <form action="#">
         <div class="row">
           <div class="col s4">
               <p>
@@ -309,10 +290,11 @@
   <div class="row">
     <div class="col s12">
       <button class="btn waves-effect waves-light rightbutton" type="submit" name="button">Beli Sekarang</button>
-      </form>
+      
     </div>
   </div>
 </div>
+</form>
 <!-- End Opsi Bank -->
 
 <!-- footer -->

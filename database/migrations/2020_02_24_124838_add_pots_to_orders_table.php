@@ -13,7 +13,7 @@ class AddPotsToOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('order_details', function (Blueprint $table) {
             $table->unsignedInteger('pot_id');
             $table->foreign('pot_id')->references('id')->on('pots')->onDelete('cascade');
         });
