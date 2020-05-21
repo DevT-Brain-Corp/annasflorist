@@ -21,26 +21,26 @@ class BuyController extends Controller
             ->where('invoice',null)
             ->get();
 
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "http://api.rajaongkir.com/starter/city",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "key: 6456d855a8c92234aba3562aaf2164cf"
-            ),
-        ));
+        // $curl = curl_init();
+        // curl_setopt_array($curl, array(
+        //     CURLOPT_URL => "http://api.rajaongkir.com/starter/city",
+        //     CURLOPT_RETURNTRANSFER => true,
+        //     CURLOPT_ENCODING => "",
+        //     CURLOPT_MAXREDIRS => 10,
+        //     CURLOPT_TIMEOUT => 30,
+        //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        //     CURLOPT_CUSTOMREQUEST => "GET",
+        //     CURLOPT_HTTPHEADER => array(
+        //         "key: 6456d855a8c92234aba3562aaf2164cf"
+        //     ),
+        // ));
 
-        $response = curl_exec($curl);
+        // $response = curl_exec($curl);
 
-        $data = json_decode($response, true);
+        // $data = json_decode($response, true);
 
 
-        return view('product.sales.buynow', compact('cart','data'));
+        return view('product.sales.buynow', compact('cart'));
     }
 
     /**
@@ -107,5 +107,31 @@ class BuyController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function cekKota()
+    {
+        $curl = curl_init();    
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => "http://api.rajaongkir.com/starter/city",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "GET",
+          CURLOPT_HTTPHEADER => array(
+            "key: 6456d855a8c92234aba3562aaf2164cf"
+          ),
+        ));
+        // $opti = '';
+        $opti='';
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+        $data = json_decode($response, true);
+        for ($i=0; $i < count($data['rajaongkir']['results']); $i++) {
+            echo "<option value='".$data['rajaongkir']['results'][$i]['city_id']."'>".$data['rajaongkir']['results'][$i]['city_name']."</option>";
+        }
+        return response()->json($opti);
     }
 }

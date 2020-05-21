@@ -8,13 +8,14 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
   {{-- <script type="text/javascript" src="{{ asset('js/sales/buynow.js') }}"></script> --}}
+  <script type="text/javascript" src="{{ asset('js/rajaongkir/in.js') }}"></script>
   <script type="text/javascript">
     $(document).ready(function() {
         $('select').select2();
     });
    </script>
-  <link rel="stylesheet" href="{{ asset('css/sales/buynow.css') }}">
-  <script type="text/javascript" src="{{ asset('js/sales/buynow.js') }}"></script>
+  <!-- <link rel="stylesheet" href="{{ asset('css/sales/buynow.css') }}"> -->
+  <!-- <script type="text/javascript" src="{{ asset('js/sales/buynow.js') }}"></script> -->
 @endsection
 
 @section('content')
@@ -55,46 +56,6 @@
   <!-- detail -->
 
   <!-- price -->
-  <div class="row">
-    <div class="col s8 offset-s4 m6 offset-m6 l4 offset-l8 xl4 offset-xl8 price">
-      <div class="row">
-        <div class="col xl6">
-          <p>Order Total</p>
-        <p><span id="showcart2">{{$totalQty}}</span> Barang</p>
-        </div>
-        <div class="col xl6">
-          <p>Rp.{{$totalPrice}}</p>
-      <div id="row" class="row">
-        <div class="col s6 m2 l2 xl2">
-          <img class="responsive-img hoverable" src="{{ asset('img/rental/4.png') }}" alt="">
-        </div>
-        <div class="col s6 m4 l4 xl4 word1">
-          <p>sukulen panda<br><span>popular house plants</span></p>
-        </div>
-        <div class="col s6 m3 l3 xl3 word2">
-          <p><span>3</span>Pcs</p>
-        </div>
-        <div class="col s6 m3 l3 xl3 word3">
-          <p>Rp.60000</p>
-        </div>
-      </div>
-
-      <div id="row" class="row">
-        <div class="col s6 m2 l2 xl2">
-          <img class="responsive-img hoverable" src="{{ asset('img/rental/3.jpg') }}" alt="">
-        </div>
-        <div class="col s6 m4 l4 xl4 word1">
-          <p>sukulen panda<br><span>popular house plants</span></p>
-        </div>
-        <div class="col s6 m3 l3 xl3 word2">
-          <p><span>3</span>Pcs</p>
-        </div>
-        <div class="col s6 m3 l3 xl3 word3">
-          <p>Rp.60000</p>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- detail -->
 
   <!-- price -->
@@ -106,12 +67,11 @@
           <p><span id="showcart2"></span> Barang</p>
         </div>
         <div class="col xl6">
-          <p>Rp.120000</p>
+          <p>Rp.<span>2000</span></p>
         </div>
       </div>
     </div>
   </div>
->>>>>>> 84d364961f23ae862110cd6ebec42dadc65cdf33
   <!-- price -->
 </div>
 <!-- end card cart -->
@@ -125,14 +85,8 @@
     <div class="col s9 m9 l7 xl5">
       <div class="row">
         <div class="input-field col s12">
-            <select class="" id="kotaID">
-                @if(!count($data['rajaongkir']['results']) )
-                <option value="">Kosong</option>
-                @else
-                @for($i=0; $i < count($data['rajaongkir']['results']); $i++)
-                <option value="{{$data['rajaongkir']['results'][$i]['city_id']}}" >{{$data['rajaongkir']['results'][$i]['city_name']}}</option>"
-                @endfor
-                @endif
+            <select class="form-control" id="kota_tujuan" name="kota_tujuan" required="">
+              <!-- <option></option> -->
             </select>
         </div>
 
@@ -165,6 +119,8 @@
         </div>
       </div>
   </div>
+</form>
+</div>
   <div class="row">
     <div class="col s3 m2 l2 xl2">
       <p class="tipe3">Alamat Lengkap</p>
@@ -209,7 +165,6 @@
     </div>
     <div class="input-field col s9 m9 l7 xl5">
       <select class="icons" id="kurir">
-      <select class="icons">
         <option value="" disabled selected>Pilih Pengiriman...</option>
         <option value="jne">JNE</option>
         <option value="tiki">TIKI</option>
@@ -217,42 +172,6 @@
       </select>
     </div>
   </div>
-  <button id="cekOngkir">CEK</button>
-  <script>
-      $(document).ready(function(){
-        var kurir = '';
-        var kotaID = '';
-        $("#kotaID").on('change', function(e){
-            kotaID = e.target.value;
-        })
-        $("#kurir").on('change', function(e){
-            kurir = e.target.value;
-        })
-        var asal = 160;
-
-        var berat = 1000;
-        $("#cekOngkir").on('click', function(){
-            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-            $.ajax({
-                url : '{{ url('/hitungTotal') }}',
-                type: "POST",
-                data: {
-                    'asal' : asal,
-                    'kotaID' : kotaID,
-                    'kurir' : kurir,
-                    'berat' : berat,
-                },
-                success: function(e){
-                    console.log(e.rajaongkir);
-                    // $.each(e.origin_details, function(){
-                    //     console.log(this);
-                    // });
-
-                }
-            })
-        })
-      })
-  </script>
 </div>
 
 <!-- End Alamat Anda -->
