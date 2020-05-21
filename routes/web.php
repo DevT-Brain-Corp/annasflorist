@@ -149,3 +149,5 @@ Route::get('email/konfirmasi-pembayaran', 'SendMailController@konfirmasiPembayar
 Route::get('email/pengiriman-barang','SendMailController@pengirimanBarang');
 // End Debugging
 Route::get('/kotaTujuan','BuyController@cekKota');
+
+Route::post('/inputOrder','BuyController@store');
