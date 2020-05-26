@@ -14,8 +14,8 @@ class AddOrdersToOrderDetailsTable extends Migration
     public function up()
     {
         Schema::table('order_details', function (Blueprint $table) {
-            $table->unsignedInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            // $table->unsignedInteger('order_id');
+            // $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 

@@ -18,6 +18,7 @@ class CreateOrderDetailsTable extends Migration
             $table->string('invoice');
             $table->integer('user_id')->unsigned();
             $table->integer('pots_id')->unsigned();
+
             $table->integer('product_id')->unsigned();
             $table->integer('qty');
             $table->timestamps();
@@ -25,6 +26,7 @@ class CreateOrderDetailsTable extends Migration
             $table->foreign('invoice')->references('invoice')->on('orders');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('pots_id')->references('id')->on('pots');
+
             $table->foreign('product_id')->references('id')->on('products');
         });
     }
