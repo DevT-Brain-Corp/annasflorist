@@ -25,7 +25,20 @@ class UsersTableSeeder extends Seeder
             ],
         ];
 
+        $usersBiasa = [
+            [
+                'id'             => 2,
+                'name'           => 'testing',
+                'phone_number'   => '082233972121',
+                'email'          => 'testing@gmail.com',
+                'password'       => '$2y$10$3Xvqz59R87I//1nk5CIqx.VboI0FLqkj0q.sciLAL1oiCUfMVgRWe',
+                'remember_token' => null,
+                'is_admin'       => false,
+            ],
+        ];
+
         User::insert($users);
+        User::insert($usersBiasa);
 
         Category::create([
             'category_name'=>'sales',

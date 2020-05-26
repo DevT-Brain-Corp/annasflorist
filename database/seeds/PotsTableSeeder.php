@@ -1,7 +1,7 @@
 <?php
 
+use \App\Pot;
 use Illuminate\Database\Seeder;
-use App\Pot;
 
 class PotsTableSeeder extends Seeder
 {
