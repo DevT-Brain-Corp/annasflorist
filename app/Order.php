@@ -26,4 +26,8 @@ class Order extends Model
     {
         return $this->hasMany('App\OrderDetail','invoice');
     }
+    public function pembayaran()
+    {
+        return $this->hasMany('App\Pembayaran','order_id');
+    }
 }
