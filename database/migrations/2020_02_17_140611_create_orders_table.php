@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->string('pengirim');
             $table->integer('hargaPkg');
             $table->integer('subtotal');
+            $table->text('keterangan')->nullable();
             $table->timestamps();
             $table->foreign('atm_id')->references('id')->on('atms')->onDelete('cascade');
         });

@@ -213,4 +213,31 @@ class BuyController extends Controller
           ->get();  
         return view('product.sales.buynowbyatm',compact('Order','barang'));   
     }
+    public function bayar($id, $invoice)
+    {
+      $c = Order::whereId($id)
+          ->where('invoice',$invoice)
+          ->where('user_id',Auth::User()->id)
+          ->firstOrFail();
+      return view('product.sales.totalpay', compact('c'));
+    }
+    public function buktiBayar(Request $request)
+    {
+        $tempatfile = ('buktiBayar');
+
+        $filenya = $request->file('foto');
+        $nama_file = $filenya->getClientOriginalName();
+        $filenya->move($tempatfile, $nama_file);
+        
+        \App\Pembayaran::create([
+            'user_id' => Auth::User()->id,
+            'order_id' => $request->orderID,
+            'nama_pengirim' => $request->namaPengirim,
+            'norek' => $request->nomorPengirim,
+            'bank'  => $request->bank,
+            'file' => $nama_file,
+            'status' => 'pending',
+        ]);
+        return 'ok';
+    }
 }
