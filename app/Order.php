@@ -18,4 +18,12 @@ class Order extends Model
     {
         return $this->belongsTo(Pot::class, 'pot_id');
     }
+    public function atm()
+    {
+        return $this->belongsTo('App\Atm','atm_id');
+    }
+    public function orderDetail()
+    {
+        return $this->hasMany('App\OrderDetail','invoice');
+    }
 }
