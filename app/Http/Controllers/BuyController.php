@@ -115,10 +115,18 @@ class BuyController extends Controller
         $cart = Cart::where('user_id',Auth::user()->id)
                 ->where('invoice',null)
                 ->get();
-        
-        // OrderDetail::create([
-
-        // ]);
+        foreach ($cart as $cart) {
+            OrderDetail::create([
+                'invoice' => $rand,
+                'user_id'=> Auth::user()->id,
+                'pots_id' => $cart->pots_id,
+                'product_id' => $cart->product_id,
+                'qty' => $cart->qty,
+            ]);
+        }
+        Cart::where('user_id',Auth::user()->id)
+            ->where('invoice',null)
+            ->delete();
         return 'okk ';
     }
 
