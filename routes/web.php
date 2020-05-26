@@ -87,9 +87,11 @@ Route::get('/sales/buynow','BuyController@index');
 
 //    });
 
-    Route::get('/sales/buynowbyatm', function () {
-        return view('product.sales.buynowbyatm');
-    });
+    // Route::get('/sales/buynowbyatm/{id}', function () {
+    //     return view('product.sales.buynowbyatm');
+    // });
+
+    Route::get('/sales/buynow/{id}','BuyController@buyAtm');
 
     Route::get('/sales/buynowbybarcode', function () {
         return view('product.sales.buynowbybarcode');
@@ -164,4 +166,4 @@ Route::get('/sales/buynow','BuyController@index');
 // End Debugging
 Route::get('/kotaTujuan','BuyController@cekKota');
 
-Route::post('/inputOrder','BuyController@store');
+Route::post('/sales/buynow','BuyController@store');

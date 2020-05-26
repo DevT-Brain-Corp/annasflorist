@@ -14,7 +14,7 @@ class CreateAtmsTable extends Migration
     public function up()
     {
         Schema::create('atms', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nama_bank');
             $table->string('logo_bank');
             $table->string('no_rekening');

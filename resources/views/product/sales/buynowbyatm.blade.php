@@ -9,42 +9,46 @@
 
 <!-- Deskripsi -->
 <div class="container deskripsi">
+  @foreach($barang as $barang)
   <div class="row">
     <div class="col s12 m3 l3 xl3 mt1">
-      <img class="responsive-img" src="{{ asset('img/sales/sukulen panda.jpg') }}" alt="">
+      <img class="responsive-img" src="{{ asset($barang->product->product_image) }}" alt="">
     </div>
     <div class="col s6 m2 l2 xl3 mt2 judul">
-      <p>Sukulen Panda</p>
+      <p>{{$barang->product->product_name}}
+        ({{$barang->qty * 750}} gram)
+      </p>
     </div>
     <div class="col s3 m2 l2 xl2 mt2 rincian">
       <p>Harga</p>
-      <p>Rp.40.000</p>
+      <p>Rp.{{$barang->product->product_price}}</p>
     </div>
     <div class="col s3 m3 l3 xl2 mt2 rincian">
       <p class="jumlahsatuan">Jumlah Satuan</p>
-      <p>3</p>
+      <p>{{$barang->qty}}</p>
     </div>
     <div class="col s3 offset-s3 m2 l2 xl2 mt2 rincian">
       <p>Total</p>
-      <p>Rp.120.000</p>
+      <p>Rp.{{$barang->qty * $barang->product->product_price}}</p>
     </div>
   </div>
+  @endforeach
 
   <div class="row rincian">
     <div class="col s4 m3 l3 xl3">
       <p>Pengiriman</p>
     </div>
     <div class="col s4 m2 l2 xl2">
-      <p>J&T Express</p>
+      <p>{{$Order->pengirim}}</p>
     </div>
     <div class="col s3 offset-s1 m1 l1 xl1">
       <img style="margin-top: 0;" class="responsive-img" src="{{ asset('img/pengiriman/j&t.PNG') }}" alt="">
     </div>
     <div class="col s6 m4 l4 xl4">
-      <p>Rp.27.000</p>
+      <!-- <p>Ke </p> -->
     </div>
     <div class="col s6 m2 l2 xl2">
-      <p class="right-align">Rp.27.000</p>
+      <p class="right-align">Rp.{{$Order->hargaPkg}} / Kg</p>
     </div>
   </div>
 
@@ -59,7 +63,7 @@
       <p>Total Pembayaran</p>
     </div>
     <div class="col s6 m2 l2 xl2">
-      <p class="right-align">Rp.147.000</p>
+      <p class="right-align">Rp.{{$Order->subtotal}}</p>
     </div>
   </div>
 </div>
@@ -97,15 +101,31 @@
       <p class="fontmax992">Pembayaran</p>
     </div>
   </div>
-
-  <div class="row">
+  @if(!$Order->atm->qr_code)
+    <div class="row">
     <div class="col s3 m1 offset-m1 l1 offset-l1 xl1 offset-xl1 bankingimg">
-      <img class="responsive-img" src="{{ asset('img/pengiriman/bank/mandiri.png') }}" alt="">
+      <img class="responsive-img" src="{{ asset($Order->atm->logo_bank) }}" alt="">
     </div>
     <div class="col s9 m10 l10 xl10 banking">
-      <p class="fontmax992">Bank Mandiri<br><br>No. Rekening : 0240357984<br>Nama Rekening : Shandiputra Budhi Perdana</p>
+      <p class="fontmax992">{{$Order->atm->nama_bank}}<br><br>No. Rekening : {{$Order->atm->no_rekening}}<br>Nama Rekening : {{$Order->atm->nama_pemilik}}</p>
     </div>
   </div>
+  @else
+  <div class="row">
+    <div class="col s3 m1 offset-m1 l1 offset-l1 xl1 offset-xl1 bankingimg">
+      <img class="responsive-img" src="{{ asset('img/pengiriman/bank/ovo.png') }}" alt="">
+    </div>
+    <div class="col s9 m10 l10 xl10 banking">
+      <p class="fontmax992">{{$Order->atm->nama_bank}}<br><br>Nama Akun : {{$Order->atm->nama_pemilik}}</p>
+      <div class="row">
+        <div class="col s5 barcode">
+          <img class="responsive-img" src="{{ asset('img/pengiriman/bank/barcode.PNG') }}" alt="gambarbarcode">
+        </div>
+      </div>
+    </div>
+  </div>
+  @endif  
+  
 
   <div class="row">
     <div class="col s8 cekulang1">

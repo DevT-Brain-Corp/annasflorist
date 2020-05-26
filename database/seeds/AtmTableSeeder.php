@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Atm;
+use \App\Atm;
 
 class AtmTableSeeder extends Seeder
 {
