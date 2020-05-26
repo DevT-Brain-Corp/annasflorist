@@ -18,22 +18,23 @@
     <!-- End Navbar -->
 
     <!-- Deskripsi -->
-<div class="modal fade" id="modalCheckout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Berhasil menambahkan ke keranjang</h5>
-      </div>
-      <div class="modal-body">
-        <p>Apakah anda ingin melanjutkan mencari barang ? </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cari Barang</button>
-        <a href="{{url('/sales/cart')}}" class="btn btn-primary">Checkout</a>
-      </div>
+    <div class="modal fade" id="modalCheckout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Berhasil menambahkan ke keranjang</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah anda ingin melanjutkan mencari barang ? </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cari Barang</button>
+                    <a href="{{url('/sales/cart')}}" class="btn btn-primary">Checkout</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
     <div class="deskripsi">
         <div class="deskripsii">
             <div class="deskripsiii">
@@ -81,8 +82,9 @@
                                                         {{-- <input type="hidden" id="resID"> --}}
                                                         <input type="radio" name="myRadios"
                                                                class="colsX card-input-element d-none"
-                                                                dt-id="{{$pot->id}}"
-                                                    onclick="handleClick(this);" id="{{$pot->pot_stock}}" value="{{$pot->id}}">
+                                                               dt-id="{{$pot->id}}"
+                                                               onclick="handleClick(this);" id="{{$pot->pot_stock}}"
+                                                               value="{{$pot->id}}">
                                                         <div class="card tooltipped" id="{{ $pot->pot_color }}">
                                                             <span data-position="bottom">{{ $pot->pot_color }}</span>
                                                         </div>
@@ -118,7 +120,8 @@
                                     <a href="#">Beli Sekarang</a>
                                 </div>
                                 <div class="masukkan">
-                                    <a id="btnKeranjang"><i class="large material-icons">shopping_cart</i>Masukkan Keranjang</a>
+                                    <a id="btnKeranjang"><i class="large material-icons">shopping_cart</i>Masukkan
+                                        Keranjang</a>
                                 </div>
                             </div>
                         @else
@@ -128,6 +131,7 @@
                                 </div>
                             </div>
                         @endif
+
                     </div>
                 </div>
             </div>
@@ -187,37 +191,37 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
         var colorID;
-        $(".colsX").on('change', function(e){
+        $(".colsX").on('change', function (e) {
             colorID = e.target.value;
         });
 
-        $("#btnKeranjang").on('click',function(){
+        $("#btnKeranjang").on('click', function () {
 
             var qty = $("#qty").val();
             var productID = $("#productID").val();
-            if($("#qty").val()!=0 || !colorID){
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: 'POST',
-                url: "{{url('/addCart')}}",
-                data: {
-                    "qty" : qty,
-                    "productID" : productID,
-                    "colorID" : colorID,
-                },
-                success: function(data){
-                    if (data.msg == 'ok') {
-                        $("#modalCheckout").modal('open');
-                        // alert('berhasil');
+            if ($("#qty").val() != 0 || !colorID) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
-                }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: "{{url('/addCart')}}",
+                    data: {
+                        "qty": qty,
+                        "productID": productID,
+                        "colorID": colorID,
+                    },
+                    success: function (data) {
+                        if (data.msg == 'ok') {
+                            $("#modalCheckout").modal('open');
+                            // alert('berhasil');
+                        }
+                    }
 
-            })
-        }
+                })
+            }
         });
     </script>
     <!-- About -->

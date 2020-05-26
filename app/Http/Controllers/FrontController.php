@@ -34,7 +34,9 @@ class FrontController extends Controller
 
         //status cek data pot ada atau tidak
         $status=0;
+        // tampilkan data pot
         foreach ($pots as $i=>$pot){
+            // cek data pot ->tidak kosong
             if (!empty($pot->pot_stock)){
                 $status = $status+1;
             }
