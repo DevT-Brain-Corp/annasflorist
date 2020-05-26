@@ -16,9 +16,16 @@ class CreateOrderDetailsTable extends Migration
         Schema::create('order_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('invoice'); 
-            $table->integer('product_price');
-            $table->integer('product_quantity');
+            $table->integer('user_id')->unsigned();
+            $table->integer('pots_id')->unsigned();
+            $table->integer('product_id')->unsigned();
+            $table->integer('qty');
             $table->timestamps();
+
+            $table->foreign('invoice')->references('invoice')->on('orders');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('pots_id')->references('id')->on('pots');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
