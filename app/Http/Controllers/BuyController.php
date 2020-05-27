@@ -20,6 +20,9 @@ class BuyController extends Controller
     {
 
         $uid = Auth::user()->id;
+        if (!$uid) {
+          return redirect('/');
+        }
         $cart = Cart::where('user_id',$uid)
             ->where('invoice',null)
             ->get();

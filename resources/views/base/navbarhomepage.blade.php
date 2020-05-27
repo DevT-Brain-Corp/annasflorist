@@ -66,7 +66,7 @@
         @else
             <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
         @endif
-      <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i>Keranjang</a></li>
+      <li><a href="{{url('/sales/buynow')}}" class="iconsearch"><i class="material-icons">shopping_cart</i>Keranjang</a></li>
       @guest
         <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i>Akun</a></li>
       @else
@@ -160,9 +160,9 @@
 <!-- End Dropdown Akun -->
 
 <!-- Dropdown Cart -->
-<ul id='dropdowncart' class='dropdown-content'>
+<ul id='dropdowncart' class='dropdown-content'><!-- 
   <li><a href="#!">Sales</a></li>
-  <li><a href="#!">Rental</a></li>
+  <li><a href="#!">Rental</a></li> -->
 </ul>
 <!-- End Dropdown Cart -->
 @endguest
