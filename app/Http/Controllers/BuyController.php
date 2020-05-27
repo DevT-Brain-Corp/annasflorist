@@ -23,7 +23,7 @@ class BuyController extends Controller
         $cart = Cart::where('user_id',$uid)
             ->where('invoice',null)
             ->get();
-
+        $atm = \App\Atm::All();
         // $curl = curl_init();
         // curl_setopt_array($curl, array(
         //     CURLOPT_URL => "http://api.rajaongkir.com/starter/city",
@@ -43,7 +43,7 @@ class BuyController extends Controller
         // $data = json_decode($response, true);
 
 
-        return view('product.sales.buynow', compact('cart'));
+        return view('product.sales.buynow', compact('cart', 'atm'));
     }
 
     /**
@@ -68,7 +68,6 @@ class BuyController extends Controller
         $kota_tujuan = $request->kota_tujuan;
         $kurir = $request->kurir;
         $berat = ($request->itungBerat) * 750;
-
         $curl = curl_init();
         curl_setopt_array($curl, array(
           CURLOPT_URL => "http://api.rajaongkir.com/starter/cost",
@@ -104,13 +103,17 @@ class BuyController extends Controller
             }
         }
 
-        Order::create([
+        $hargaPkg = ($vl / $request->itungBerat) * (13/10);
+        $o = Order::create([
             'invoice'           =>  $rand, 
             'user_id'           =>  Auth::user()->id,
+            'atm_id'            =>  $request->group1,
             'customer_name'     =>  $request->namaPenerima,
             'customer_phone'    =>  $request->nohp,
             'customer_address'  =>  $request->alamat,
             'subtotal'          =>  $vl,
+            'pengirim'          =>  $kurir,
+            'hargaPkg'          =>  $hargaPkg,
         ]);
         $cart = Cart::where('user_id',Auth::user()->id)
                 ->where('invoice',null)
@@ -127,7 +130,7 @@ class BuyController extends Controller
         Cart::where('user_id',Auth::user()->id)
             ->where('invoice',null)
             ->delete();
-        return 'okk ';
+        return redirect('/sales/buynow/'.$o->id);
     }
 
     /**
@@ -199,5 +202,42 @@ class BuyController extends Controller
             echo "<option value='".$data['rajaongkir']['results'][$i]['city_id']."'>".$data['rajaongkir']['results'][$i]['city_name']."</option>";
         }
         return response()->json($opti);
+    }
+
+    public function buyAtm($id)
+    {
+        $Order = Order::whereId($id)
+          ->where('user_id',Auth::user()->id)
+          ->firstOrFail();
+        $barang = OrderDetail::where('invoice',$Order->invoice)
+          ->get();  
+        return view('product.sales.buynowbyatm',compact('Order','barang'));   
+    }
+    public function bayar($id, $invoice)
+    {
+      $c = Order::whereId($id)
+          ->where('invoice',$invoice)
+          ->where('user_id',Auth::User()->id)
+          ->firstOrFail();
+      return view('product.sales.totalpay', compact('c'));
+    }
+    public function buktiBayar(Request $request)
+    {
+        $tempatfile = ('buktiBayar');
+
+        $filenya = $request->file('foto');
+        $nama_file = $filenya->getClientOriginalName();
+        $filenya->move($tempatfile, $nama_file);
+        
+        \App\Pembayaran::create([
+            'user_id' => Auth::User()->id,
+            'order_id' => $request->orderID,
+            'nama_pengirim' => $request->namaPengirim,
+            'norek' => $request->nomorPengirim,
+            'bank'  => $request->bank,
+            'file' => $nama_file,
+            'status' => 'pending',
+        ]);
+        return 'ok';
     }
 }
