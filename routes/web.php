@@ -87,17 +87,23 @@ Route::get('/sales/buynow','BuyController@index');
 
 //    });
 
-    Route::get('/sales/buynowbyatm', function () {
-        return view('product.sales.buynowbyatm');
-    });
+    // Route::get('/sales/buynowbyatm/{id}', function () {
+    //     return view('product.sales.buynowbyatm');
+    // });
+
+    Route::get('/sales/buynow/{id}','BuyController@buyAtm');
 
     Route::get('/sales/buynowbybarcode', function () {
         return view('product.sales.buynowbybarcode');
     });
 
-    Route::get('/sales/totalpay', function () {
-        return view('product.sales.totalpay');
-    });
+    // Route::get('/sales/totalpay', function () {
+    //     return view('product.sales.totalpay');
+    // });
+
+    Route::get('/sales/buynow/{id}/{invoice}','BuyController@bayar');
+
+    Route::post('/unggahBukti','BuyController@buktiBayar');
 
     Route::get('/sales/riwayat', function () {
         return view('product.sales.riwayatpembelian');
@@ -164,4 +170,4 @@ Route::get('/sales/buynow','BuyController@index');
 // End Debugging
 Route::get('/kotaTujuan','BuyController@cekKota');
 
-Route::post('/inputOrder','BuyController@store');
+Route::post('/sales/buynow','BuyController@store');

@@ -17,12 +17,16 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('invoice')->unique();
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('atm_id');
             $table->string('customer_name');
             $table->string('customer_phone');
             $table->string('customer_address');
-            $table->string('subtotal');
+            $table->string('pengirim');
+            $table->integer('hargaPkg');
+            $table->integer('subtotal');
+            $table->text('keterangan')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('atm_id')->references('id')->on('atms')->onDelete('cascade');
         });
     }
 

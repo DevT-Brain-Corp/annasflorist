@@ -78,7 +78,7 @@
 <!-- end card cart -->
 
 <!-- Alamat Anda -->
-<form action="{{url('/inputOrder')}}" method="POST">
+<form action="{{url('/sales/buynow')}}" method="POST">
 @csrf
 <div class="container alamat">
   <div class="row">
@@ -166,24 +166,25 @@
     </div>
 
     <div class="col s10 xl8">
+      @foreach($atm as $atm)
         <div class="row">
           <div class="col s4">
               <p>
                 <label>
-                  <input class="with-gap" name="group1" type="radio" />
-                  <span class="gambar"><img class="responsive-img" src="{{ asset('img/pengiriman/bank/mandiri.png') }}" alt=""></span>
+                  <input class="with-gap" value="{{$atm->id}}" name="group1" type="radio" />
+                  <span class="gambar"><img class="responsive-img" src="{{ asset($atm->logo_bank) }}" alt=""></span>
                 </label>
               </p>
           </div>
           <div class="col s3">
-            <p class="capt1">BANK Mandiri</p>
+            <p class="capt1">{{$atm->nama_bank}}</p>
           </div>
           <div class="col s4">
-            <p class="capt2">Transfer Manual</p>
+            <p class="capt2">{{!$atm->qr_code ? "Transfer Manual" : "Melalui Barcode"}}</p>
           </div>
         </div>
-
-        <div class="row">
+      @endforeach
+        <!-- <div class="row">
           <div class="col s4">
               <p>
                 <label>
@@ -283,7 +284,7 @@
           <div class="col s4">
             <p class="capt2">Melalui Barcode</p>
           </div>
-        </div>
+        </div -->
     </div>
 
   </div>

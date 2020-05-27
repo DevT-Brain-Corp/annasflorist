@@ -15,7 +15,7 @@ class OrderDetail extends Model
     }
     public function order()
     {
-        return $this->belongsTo('App\Order','order_id');
+        return $this->belongsTo('App\Order','invoice');
     }
     public function pot(){
         return $this->belongsTo(Pot::class, 'pots_id');
