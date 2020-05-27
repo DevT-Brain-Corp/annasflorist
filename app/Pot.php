@@ -16,4 +16,7 @@ class Pot extends Model
     {
         return $this->hasMany(Order::class, 'order_id', 'id');
     }
+    public function orderDetail(){
+        return $this->hasMany(OrderDetail::class);
+    }
 }
