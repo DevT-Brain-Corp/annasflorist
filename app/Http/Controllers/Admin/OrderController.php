@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Order;
 use App\OrderDetail;
+use App\Pembayaran;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,6 +18,9 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
+//        $tuku = Order::where('id', 2)->first();
+//        $bayar = Pembayaran::where('id', 1)->first();
+//        dd($tuku->pembayaran);
 
         return view('admin.order.index', compact('orders'));
     }
@@ -57,9 +61,11 @@ class OrderController extends Controller
     {
         $order = Order::where('invoice', $id)->first();
         $detail = OrderDetail::where('invoice', $order->invoice)->get();
+        $pembayaran = Pembayaran::where('order_id', $order->id)->first();
         return view('admin.order.detail')
             ->with('order', $order)
-            ->with('detail', $detail);
+            ->with('detail', $detail)
+            ->with('pembayaran', $pembayaran);
     }
 
     /**
@@ -80,16 +86,17 @@ class OrderController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $invoice)
     {
-        $validatedData = $request->validate([
-            'order_name' => 'required|max:255',
-        ]);
-        Order::whereId($id)->update($validatedData);
+        $order = Order::where('invoice', $invoice)->first();
+        $bayar = Pembayaran::where('order_id', $order->id)->first();
 
-        return redirect()->route('order.index')->with('success', 'Order is successfully updated');
+            $bayar->update(['status'=>$request->status]);
+
+
+        return redirect()->back();
 
     }
 

@@ -50,11 +50,32 @@
                                             <td>{{ $order->customer_name }}</td>
                                             <td><a href="/admin/order/{{$order->invoice}}">{{$order->invoice}}</a></td>
                                             <td>{{$order->created_at}}</td>
-                                            <td></td>
+
+                                            @if($order->pembayaran->count() == 0)
+                                                <td><p class="btn-round btn-primary text-center">Belum dibayar</p></td>
+                                            @else
+                                                @foreach($order->pembayaran as $index => $s)
+                                                    @if($s->status == 'pending')
+                                                        <td><p class="btn-round btn-warning text-center">Sudah dibayar</p></td>
+                                                    @elseif($s->status == 'tervalaidasi')
+                                                        <td><p class="btn-round btn-warning text-center">tervalidasi</p></td>
+
+                                                        @elseif($s->status == 'dikirim')
+                                                            <td><p class="btn-round btn-warning text-center">dikirim</p></td>
+
+                                                        @elseif($s->status == 'selesai')
+                                                            <td><p class="btn-round btn-warning text-center">selesai</p></td>
+                                                    @elseif($s->status == 'batal')
+                                                        <td><p class="btn-round btn-warning text-center">batal</p></td>
+
+                                                        @endif
+                                                @endforeach
+                                            @endif
+
                                             <td>
-                                                <a href="{{ route('order.edit', $order->id) }}" class="btn btn-primary">Edit</a>
                                                 <a>
-                                                    <form action="{{ route('order.destroy', $order->id)}}" method="POST">
+                                                    <form action="{{ route('order.destroy', $order->id)}}"
+                                                          method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="btn btn-danger" type="submit">Delete</button>
@@ -73,7 +94,8 @@
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                                    </li>
                                     <li class="page-item">
                                         <a class="page-link" href="#">2</a>
                                     </li>

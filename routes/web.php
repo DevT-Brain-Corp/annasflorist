@@ -48,6 +48,8 @@ Route::name('js.')->group(function () {
     Route::get('dynamic.js', 'JsController@dynamic')->name('dynamic');
 });
 
+//Route::post('/admin/order/{invoice}/update', 'OrderController@update');
+
 Route::post('/addCart', 'CartController@store');
 
 Route::post('/checkoutCart', 'CartController@checkoutCart');
