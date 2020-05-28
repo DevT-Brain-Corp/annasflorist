@@ -73,7 +73,8 @@
                                                         <p class="text-center">Rubah status :</p>
                                                         <div class="row">
                                                             @if(empty($pembayaran))
-                                                                <p class="text-danger">Tidak dapat merubah status karna belum ada bukti yang dikirim</p>
+                                                                <p class="text-danger">Tidak dapat merubah status karna
+                                                                    belum ada bukti yang dikirim</p>
                                                             @else
                                                                 @if($pembayaran->status == 'pending')
                                                                     <div class="col-md-3 ">
@@ -120,6 +121,7 @@
                                                                             </button>
                                                                         </form>
                                                                     </div>
+
                                                                 @endif
                                                                 <div class="col-md-3">
                                                                     <form
@@ -203,12 +205,13 @@
                                         <div class="card">
                                             <p class="font-weight-bold">Bukti Pembayaran :</p>
                                             @if($order->pembayaran->count() == 0)
-                                            <p class="font-weight-bold text-warning">BELUM ADA BUKTI UPLOAD</p>
-                                                @else
+                                                <p class="font-weight-bold text-warning">BELUM ADA BUKTI UPLOAD</p>
+                                            @else
                                                 <div class="row">
-                                                <div class="col-md-3"></div>
-                                                <img class="col-md-4" src="/buktiBayar/{{ $pembayaran->file }}" alt="">
-                                                <div class="col-md-3"></div>
+                                                    <div class="col-md-3"></div>
+                                                    <img class="col-md-4" src="/buktiBayar/{{ $pembayaran->file }}"
+                                                         alt="">
+                                                    <div class="col-md-3"></div>
                                                 </div>
                                             @endif
                                         </div>

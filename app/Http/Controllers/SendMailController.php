@@ -33,23 +33,23 @@ class SendMailController extends Controller
 //            ->with('data', $data);
     }
 
-    public function konfirmasiPembayaran()
-    {
-        if (Auth::user() == null || Auth::user()->is_admin==0) {
-            return redirect()->back();
-        } elseif (Auth::user()->is_admin ==1 && !empty(Auth::user())) {
-            $tujuan = User::where('id',2)->first();
-            $data = ['name' => $tujuan->name, 'isi' => 'isi kontent ini tentang data yang sudah terbayar', 'total' => 'Rp.100.000', 'referensi' => 'sdfjh3023bdj', 'waktu pemesanan' => '11 maret hehe'];
+        public function konfirmasiPembayaran()
+        {
+            if (Auth::user() == null || Auth::user()->is_admin==0) {
+                return redirect()->back();
+            } elseif (Auth::user()->is_admin ==1 && !empty(Auth::user())) {
+                $tujuan = User::where('id',2)->first();
+                $data = ['name' => $tujuan->name, 'isi' => 'isi kontent ini tentang data yang sudah terbayar', 'total' => 'Rp.100.000', 'referensi' => 'sdfjh3023bdj', 'waktu pemesanan' => '11 maret hehe'];
 
-            Mail::send('emails.tagihan_pembayaran', $data, function ($message) use ($data, $tujuan) {
-                $message->to($tujuan->email , $tujuan->name);
-                $message->from('annasfloristjember@gmail.com', 'Admin Annas Florist');
-                $message->subject('Konfirmasi pembayaran Annas FLorist');
-            });
-            return redirect()->back()
-                ->with('status', 'Email konfirmasi pembayaran telah terkirim melalui email');
+                Mail::send('emails.tagihan_pembayaran', $data, function ($message) use ($data, $tujuan) {
+                    $message->to($tujuan->email , $tujuan->name);
+                    $message->from('annasfloristjember@gmail.com', 'Admin Annas Florist');
+                    $message->subject('Konfirmasi pembayaran Annas FLorist');
+                });
+                return redirect()->back()
+                    ->with('status', 'Email konfirmasi pembayaran telah terkirim melalui email');
+            }
         }
-    }
 
     public function pengirimanBarang()
     {
