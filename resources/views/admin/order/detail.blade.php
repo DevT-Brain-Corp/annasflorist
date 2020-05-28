@@ -130,7 +130,7 @@
                                                                         @csrf
                                                                         @method('PATCH')
                                                                         <input type="hidden" name="status"
-                                                                               value="dibatalkan">
+                                                                               value="batal">
                                                                         <button class="button btn-danger" type="submit">
                                                                             dibatalkan
                                                                         </button>
