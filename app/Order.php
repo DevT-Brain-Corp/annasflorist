@@ -35,6 +35,5 @@ class Order extends Model
     public function pembayaran()
     {
         return $this->hasMany('App\Pembayaran','order_id');
-
     }
 }
