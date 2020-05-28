@@ -21,9 +21,6 @@ Route::get('/homelama', function () {
 });
 Route::get('/cekongkir', 'RajaOngkirController@Kota');
 
-
-//Route::post('/getKota', 'BuyController@getKota');
-
 Route::post('/hitungTotal', 'RajaOngkirController@hitungTotal');
 
 Auth::routes();
@@ -48,8 +45,6 @@ Route::name('js.')->group(function () {
     Route::get('dynamic.js', 'JsController@dynamic')->name('dynamic');
 });
 
-//Route::post('/admin/order/{invoice}/update', 'OrderController@update');
-
 Route::post('/addCart', 'CartController@store');
 
 Route::post('/checkoutCart', 'CartController@checkoutCart');
@@ -60,9 +55,6 @@ Route::get('/testing', function () {
 });
 
 // Sales
-// Route::get('/sales/cart', function () {
-//     return view('product.sales.cart');
-// });
 
 Route::post('/removeCart', 'CartController@removeCart');
 
@@ -72,104 +64,81 @@ Route::get('/sales/cart2', function () {
     return view('product.sales.cart2');
 });
 
-// Route::get('/sales/buynow', function () {
-//     return view('product.sales.buynow');
-// });
+Route::get('/sales/buynow', 'BuyController@index');
 
+Route::get('/sales/buynow/{id}', 'BuyController@buyAtm');
 
-Route::get('/sales/buynow','BuyController@index');
-// Route::get('/sales/buynow', function () {
-//     return view('product.sales.buynow');
-// });
-// Route::get('/sales/buynow', function(){
-// 	return view('product.sales.buynow');
+Route::get('/sales/buynowbybarcode', function () {
+    return view('product.sales.buynowbybarcode');
+});
 
-// });
+Route::get('/sales/buynow/{id}/{invoice}', 'BuyController@bayar');
 
+Route::post('/unggahBukti', 'BuyController@buktiBayar');
 
-//    });
-
-    // Route::get('/sales/buynowbyatm/{id}', function () {
-    //     return view('product.sales.buynowbyatm');
-    // });
-
-    Route::get('/sales/buynow/{id}','BuyController@buyAtm');
-
-    Route::get('/sales/buynowbybarcode', function () {
-        return view('product.sales.buynowbybarcode');
-    });
-
-    // Route::get('/sales/totalpay', function () {
-    //     return view('product.sales.totalpay');
-    // });
-
-    Route::get('/sales/buynow/{id}/{invoice}','BuyController@bayar');
-
-    Route::post('/unggahBukti','BuyController@buktiBayar');
-
-    Route::get('/sales/riwayat', function () {
-        return view('product.sales.riwayatpembelian');
-    });
+Route::get('/sales/riwayat', function () {
+    return view('product.sales.riwayatpembelian');
+});
 // End Sales
 
 // rental
-    Route::get('/rental', function () {
-        return view('categories.rental');
-    });
+Route::get('/rental', function () {
+    return view('categories.rental');
+});
 
-    Route::get('/rental/index', function () {
-        return view('product.rental.index');
-    });
+Route::get('/rental/index', function () {
+    return view('product.rental.index');
+});
 
 
-    Route::get('/rental/detail', function () {
-        return view('product.rental.detail');
-    });
+Route::get('/rental/detail', function () {
+    return view('product.rental.detail');
+});
 
 
 // daily
-    Route::get('/daily', function () {
-        return view('product.daily.index');
-    });
+Route::get('/daily', function () {
+    return view('product.daily.index');
+});
 // end daily
 
 
-    Route::get('/rental/detail/aksesoris', function () {
-        return view('product.rental.aksesoris');
-    });
+Route::get('/rental/detail/aksesoris', function () {
+    return view('product.rental.aksesoris');
+});
 
 
 // user
-    Route::get('/user/read', function () {
-        return view('user.read');
-    });
+Route::get('/user/read', function () {
+    return view('user.read');
+});
 
 // workshop
 
-    Route::get('/workshop', function () {
-        return view('categories.workshop');
-    });
+Route::get('/workshop', function () {
+    return view('categories.workshop');
+});
 
-    Route::get('/user/update', function () {
-        return view('user.update');
-    });
+Route::get('/user/update', function () {
+    return view('user.update');
+});
 
 // end user
 
-    Route::get('/welcomenew', function () {
-        return view('welcomenew');
-    });
+Route::get('/welcomenew', function () {
+    return view('welcomenew');
+});
 
-    Route::get('/testing', function () {
-        return view('base.static.testing');
-    });
+Route::get('/testing', function () {
+    return view('base.static.testing');
+});
 
-    Route::get('/email/tagihan', 'SendMailController@tagihanPembayaran');
+Route::get('/email/tagihan', 'SendMailController@tagihanPembayaran');
 
-    Route::get('email/konfirmasi-pembayaran', 'SendMailController@konfirmasiPembayaran');
+Route::get('email/konfirmasi-pembayaran', 'SendMailController@konfirmasiPembayaran');
 
-    Route::get('email/pengiriman-barang', 'SendMailController@pengirimanBarang');
+Route::get('email/pengiriman-barang', 'SendMailController@pengirimanBarang');
 // End Debugging
-Route::get('/kotaTujuan','BuyController@cekKota');
+Route::get('/kotaTujuan', 'BuyController@cekKota');
 
-Route::post('/sales/buynow','BuyController@store');
+Route::post('/sales/buynow', 'BuyController@store');
