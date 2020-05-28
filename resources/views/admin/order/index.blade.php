@@ -57,7 +57,7 @@
                                                 @foreach($order->pembayaran as $index => $s)
                                                     @if($s->status == 'pending')
                                                         <td><p class="btn-round btn-warning text-center">Sudah dibayar</p></td>
-                                                    @elseif($s->status == 'tervalaidasi')
+                                                    @elseif($s->status == 'tervalidasi')
                                                         <td><p class="btn-round btn-warning text-center">tervalidasi</p></td>
 
                                                         @elseif($s->status == 'dikirim')
@@ -66,7 +66,7 @@
                                                         @elseif($s->status == 'selesai')
                                                             <td><p class="btn-round btn-warning text-center">selesai</p></td>
                                                     @elseif($s->status == 'batal')
-                                                        <td><p class="btn-round btn-warning text-center">batal</p></td>
+                                                        <td><p class="btn-round btn-danger text-center">batal</p></td>
 
                                                         @endif
                                                 @endforeach

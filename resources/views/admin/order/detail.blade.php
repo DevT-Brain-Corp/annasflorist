@@ -130,7 +130,7 @@
                                                                         @csrf
                                                                         @method('PATCH')
                                                                         <input type="hidden" name="status"
-                                                                               value="dibatalkan">
+                                                                               value="batal">
                                                                         <button class="button btn-danger" type="submit">
                                                                             dibatalkan
                                                                         </button>
@@ -166,7 +166,7 @@
                                                 <td>{{ $order->user->name }}</td>
                                                 <td>{{ $order->customer_phone }}</td>
                                                 <td>{{ $order->customer_address }}</td>
-                                                <td>{{ $order->subtotal }}</td>
+                                                <td>{{ $order->subtotal + $order->subtotal }}</td>
                                             </tr>
                                             </tbody>
 
