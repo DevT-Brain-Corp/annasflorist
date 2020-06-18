@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,14 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('admin.Article.index');
+        $data = Article::all();
+        if (empty($data)){
+            return view('admin.Article.index');
+
+        }else{
+            return view('admin.Article.index')
+                ->with('data',$data);
+        }
     }
 
     /**
@@ -22,20 +30,27 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.Article.create');
+        $dat = $request->dat;
+        return view('admin.Article.create')
+            ->with('dat', $dat);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        Article::create([
+            'jenis'=> $request->dat,
+            'title' => $request->title,
+            'deskripsi' => $request->deskripsi,
+        ]);
+        return redirect()->route('article.index');
     }
 
     /**
@@ -53,11 +68,13 @@ class ArticleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        $data = Article::where('id', $id)->first();
+        return view('admin.Article.edit')
+            ->with('data', $data);
     }
 
     /**

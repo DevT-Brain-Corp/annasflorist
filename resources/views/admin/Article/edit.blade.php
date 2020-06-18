@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Add Content Article</h1>
+            <h1>Edit Content Article</h1>
         </div>
 
         <div class="section-body">
@@ -14,10 +14,10 @@
                         @csrf
                         <div class="row">
                             <div class="col-12">
-                                <input type="hidden" name="dat" value="{{ $dat }}">
-                                @if($dat==1)
+                                <input type="hidden" name="dat" value="{{ $data->jenis }}">
+                                @if($data->jenis==1)
                                     <h4>Article : workshop</h4>
-                                @elseif($dat==2)
+                                @elseif($data->jenis==2)
                                     <h4>Article : dekorasi</h4>
                                 @else
                                     <h4>Article : daily</h4>
@@ -27,7 +27,7 @@
                             <div class="col-12">
                                 Title : <br>
                                 <input type="text" placeholder="Add title here" name="title"
-                                       class="card-input col-md-12" required>
+                                       class="card-input col-md-12" value="{{ $data->title }}" required>
                             </div>
 
                             <div class="col-12">
@@ -37,7 +37,7 @@
                                 {{--                            <div class="col-12">--}}
                                 <textarea name="deskripsi" id="description"
                                           class="summernote form-control col-md-12" style="width: 100%"
-                                          required></textarea>
+                                          required> {{ $data->deskripsi }}</textarea>
                                 {{--                            </div>--}}
                             </div>
                             <div class="col-12">

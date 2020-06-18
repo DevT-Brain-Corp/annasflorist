@@ -18,23 +18,49 @@
                             <tr>
                                 <td>#</td>
                                 <td>Title</td>
+                                <td>Category</td>
                                 <td>Pubish at</td>
                                 <td>action</td>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Hayolo</td>
-                                <td>11 nov 2020</td>
-                                <td>
-                                    <div class="row mr-2 ml-2">
-                                        <input type="submit" value="Edit"
-                                               class="btn btn-rounded btn-primary col-md-4 mr-2">
-                                        <input type="submit" value="Delete" class="btn btn-rounded btn-danger col-md-4">
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach($data as $i=>$datas)
+                                <tr>
+                                    <td>{{ $i+1 }}</td>
+                                    <td>{{ $datas->title }}</td>
+                                    <td>
+                                        @if($datas->jenis==1)
+                                            workshop
+                                        @elseif($datas->jenis==2)
+                                            dekorasi
+                                        @else
+                                            daily
+                                        @endif
+                                    </td>
+                                    <td>{{ date('d-m-Y', strtotime($datas->created_at)) }}</td>
+                                    <td>
+                                        <div class="row">
+                                            <a href="{{ route('article.edit', $datas->id) }}">
+                                                <div class=" mr-2 ml-2 col-md-4">
+
+                                                    <input type="submit" value="Edit"
+                                                           class="btn btn-rounded btn-primary  mr-2">
+                                                </div>
+                                            </a>
+                                            <form action="{{ route('article.destroy', $datas->id) }}" method="post">
+                                                @method('DELETE')
+                                                @csrf
+                                                <div class=" mr-2 ml-2 col-md-4">
+                                                    <input type="submit" value="Delete"
+                                                           class="btn btn-rounded btn-danger ">
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
 
                         </table>
@@ -58,11 +84,18 @@
                 <div class="modal-body">
                     tambah artikel pada kategori :
                     <div class="row">
-                        <a href="{{ route('article.create') }}">
+                        <form action="{{ route('article.create') }}" method="get">
+                            <input type="hidden" name="dat" value="1">
                             <button type="submit" class="btn btn-primary col-12 mt-2">workshop</button>
-                        </a>
-                        <button type="submit" class="btn btn-primary col-12 mt-2">dekorasi</button>
-                        <button type="submit" class="btn btn-primary col-12 mt-2">daily</button>
+                        </form>
+                        <form action="{{ route('article.create')  }}" method="get">
+                            <input type="hidden" name="dat" value="2">
+                            <button type="submit" class="btn btn-primary col-12 mt-2">dekorasi</button>
+                        </form>
+                        <form action="{{ route('article.create')  }}" method="get">
+                            <input type="hidden" name="dat" value="3">
+                            <button type="submit" class="btn btn-primary col-12 mt-2">daily</button>
+                        </form>
                     </div>
                 </div>
                 <div class="modal-footer">
