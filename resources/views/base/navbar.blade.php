@@ -35,7 +35,7 @@
                     @else
                         <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @endif
-                        <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
+                    <li><a href="{{url('/sales/cart')}}" class="iconsearch iconBeli"><i class="material-icons">shopping_cart</i></a></li>
                     @guest
                         <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
                     @else
