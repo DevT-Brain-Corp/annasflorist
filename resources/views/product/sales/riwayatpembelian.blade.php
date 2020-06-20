@@ -32,12 +32,20 @@
 
     <div id="belumdibayar" class="col s12">
       <div id="slimscrollpanel">
-        @include('product.sales.riwayatpembelian.belumdibayar')
-      </div>
+        @foreach($res['blmBayar'] as $blmBayar)
+        @foreach($blmBayar->orderDetail as $index => $produk)
+          @include('product.sales.riwayatpembelian.belumdibayar')
+        @endforeach
+        @endforeach
+        </div>
     </div>
     <div id="sudahdibayar" class="col s12">
       <div id="slimscrollpanel2">
+        @foreach($res['sdhBayar'] as $sdhBayar)
+        @foreach($sdhBayar->orderDetail as $index => $produk)
         @include('product.sales.riwayatpembelian.sudahdibayar')
+        @endforeach
+        @endforeach
       </div>
     </div>
     <div id="tervalidasi" class="col s12">

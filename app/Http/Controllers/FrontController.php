@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Order;
+use App\Pembayaran;
 use App\Pot;
 use App\Product;
 
@@ -26,7 +28,13 @@ class FrontController extends Controller
         }
 
     }
-
+    public function showRiwayat()
+    {
+        $pembayaranID = Pembayaran::select('order_id')->get();
+        $res['blmBayar'] = Order::whereNotIn('id', $pembayaranID)->get();
+        $res['sdhBayar'] = Order::whereIn('id', $pembayaranID)->get();
+        return view('product.sales.riwayatpembelian', compact('res'));
+    }
     public function showProduct($slug)
     {
         $product = Product::where('product_slug', $slug)->first();

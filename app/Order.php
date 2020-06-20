@@ -30,7 +30,7 @@ class Order extends Model
     }
     public function orderDetail()
     {
-        return $this->hasMany('App\OrderDetail','invoice');
+        return $this->hasMany('App\OrderDetail','invoice','invoice');
     }
     public function pembayaran()
     {

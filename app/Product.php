@@ -7,10 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $table = "products";
-
-    protected $fillable = [
-        'product_image', 'product_name', 'product_slug', 'product_description', 'product_price', 'product_stock', 'product_status', 'category_id'
-    ];
+    protected $guarded = [];
 
     public function getStatusLabelAttribute()
     {
@@ -25,9 +22,9 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function order()
+    public function orderDetail()
     {
-        return $this->hasMany(Order::class, 'order_id', 'id');
+        return $this->hasMany('App\OrderDetail');
     }
     public function cart()
     {
