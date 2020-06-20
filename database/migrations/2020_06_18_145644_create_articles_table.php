@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->integer('jenis');
             $table->string('title');
             $table->longText('deskripsi');
+            $table->string('foto_bg')->nullable();
             $table->timestamps();
         });
     }

@@ -80,20 +80,18 @@
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
     <li><a class="scroll" href="{{url('/category/sales')}}">Sales</a></li>
-    <li><a class="scroll" href="{{url('/category/souvenir')}}">Souvenir</a></li>
-    <li><a class="scroll" href="#Rental">Rental</a></li>
-    <li><a class="scroll" href="#Workshop">Workshop</a></li>
-    <li><a class="scroll" href="#Dekorasi">Dekorasi</a></li>
+    <li><a class="scroll" href="{{url('/workshop')}}">Workshop</a></li>
+    <li><a class="scroll" href="{{ url('/dekorasi') }}">Dekorasi</a></li>
+    <li><a class="scroll" href="{{ url('/daily') }}">Daily</a></li>
 </ul>
 <!-- End Dropdown -->
 
 <!-- Dropdown Mobile -->
 <ul id='dropdownmobile' class="dropdown-content">
     <li><a href="#">Sales</a></li>
-    <li><a href="#">Souvenir</a></li>
-    <li><a href="#">Rental</a></li>
     <li><a href="#">Workshop</a></li>
     <li><a href="#">Dekorasi</a></li>
+    <li><a href="#">Daily</a></li>
 </ul>
 <!-- End Dropdown Mobile -->
 
@@ -160,7 +158,7 @@
 <!-- End Dropdown Akun -->
 
 <!-- Dropdown Cart -->
-<ul id='dropdowncart' class='dropdown-content'><!-- 
+<ul id='dropdowncart' class='dropdown-content'><!--
   <li><a href="#!">Sales</a></li>
   <li><a href="#!">Rental</a></li> -->
 </ul>

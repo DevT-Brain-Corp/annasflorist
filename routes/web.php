@@ -116,9 +116,7 @@ Route::get('/user/read', function () {
 
 // workshop
 
-Route::get('/workshop', function () {
-    return view('categories.workshop');
-});
+Route::get('/workshop', 'FrontController@workshop');
 
 Route::get('/user/update', function () {
     return view('user.update');

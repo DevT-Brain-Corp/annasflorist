@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Category;
 use App\Pot;
 use App\Product;
@@ -48,5 +49,11 @@ class FrontController extends Controller
             ->with('pots', $pots)
             ->with('status', $status)
             ->with('');
+    }
+
+    public function workshop(){
+        $workshop = Article::where('jenis', 1)->paginate(6);
+        return view('categories.workshop.index')
+            ->with('workshop', $workshop);
     }
 }
