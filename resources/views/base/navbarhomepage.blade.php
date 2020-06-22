@@ -35,10 +35,10 @@
                         <li><a href="#" class="iconsearch"><i class="material-icons">notifications</i></a></li>
                     @endif
                     @guest
-                      <li><a href="#" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
-                      <li><a href="#modal1" class="modal-trigger iconsearch"><i class="material-icons">person_pin</i></a></li>
+                      <li><a href="" class="iconsearch"><i class="material-icons">shopping_cart</i></a></li>
+                      <li><a href="#modal1" class="modal-trigger iconsearch btnLogin"><i class="material-icons">person_pin</i></a></li>
                     @else
-                      <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdowncart'><i class="material-icons">shopping_cart</i></a></li>
+                      <li><a href="{{url('/sales/cart')}}" class="dropdown-trigger iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                       <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i></a></li>
                     @endguest
                 </ul>
@@ -92,6 +92,7 @@
     <li><a href="#">Workshop</a></li>
     <li><a href="#">Dekorasi</a></li>
     <li><a href="#">Daily</a></li>
+
 </ul>
 <!-- End Dropdown Mobile -->
 

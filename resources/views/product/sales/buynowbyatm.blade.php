@@ -4,6 +4,7 @@
 
 @section('content')
 <head>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="{{ asset('css/byatm.css') }}">
 </head>
 
@@ -57,7 +58,7 @@
       <p>Keterangan</p>
     </div>
     <div class="col s9 m4 l4 xl4 input-field">
-      <textarea id="textarea1" class="materialize-textarea"></textarea>
+      <textarea id="keterangan" class="materialize-textarea"></textarea>
     </div>
     <div class="col s6 m4 l4 xl3 offset-xl1">
       <p>Total Pembayaran</p>
@@ -85,10 +86,10 @@
       <img class="responsive-img" src="{{ asset('img/footer/user.png') }}" alt="user">
     </div>
     <div class="input-field col s10 m4 l3 xl3 nama">
-      <p class="fontmax992">Alvisi Aura Chandra</p>
+      <p class="fontmax992">{{$Order->customer_name}}</p>
     </div>
     <div class="input-field col s11 offset-s1 m7 l7 xl6 textarea">
-      <textarea disabled id="textarea1" class="materialize-textarea fontmax992">Jl.Danau Toba gang SDIT nomer 47a kelurahan Tegalgede, KAB. JEMBER - SUMBER SARI, JAWA TIMUR, ID 68121</textarea>
+    <textarea disabled id="textarea1" class="materialize-textarea fontmax992">{{$Order->customer_address}}</textarea>
       <label for="textarea1">Alamat</label>
     </div>
   </div>
@@ -132,7 +133,7 @@
       <p>* Silahkan dicek ulang semua data yang telah anda inputkan untuk mempermudah kami dalam proses pengiriman</p>
     </div>
     <div class="col s3 offset-s1 cekulang2">
-      <a class="waves-effect waves-light btn">Beli Sekarang</a>
+      <a invoice="{{$Order->invoice}}" orderID="{{$Order->id}}" class="btnBeli waves-effect waves-light btn">Beli Sekarang</a>
     </div>
   </div>
 </section>
@@ -141,5 +142,30 @@
 <!-- footer -->
 @include('base.footer')
 <!-- end footer -->
-
+<script>
+  $(document).ready(function(){
+    $(".btnBeli").click(function(){
+      var orderID = $(this).attr("orderID");
+      var invoice = $(this).attr("invoice");
+      var keterangan = $("#keterangan").val();
+      $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+      $.ajax({
+          url : '{{ url('/setujuBayar') }}',
+          type: "POST",
+          data: {
+              'orderID' : orderID,
+              'invoice' : invoice,
+              'keterangan' : keterangan,
+          },
+          success: function(e){
+            if(e=='ok'){
+              location.replace('/sales/buynow/' + orderID + '/' + invoice);
+            }
+          },
+      });
+      
+      
+    });
+  });
+</script>
 @endsection

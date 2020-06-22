@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Order;
 use App\OrderDetail;
+use App\Product;
+use App\Pot;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -129,6 +131,15 @@ class BuyController extends Controller
                 'product_id' => $cart->product_id,
                 'qty' => $cart->qty,
             ]);
+            $stoks = Product::whereId($cart->product_id)->first();
+            Product::whereId($cart->product_id)
+            ->update([
+                'product_stock' => ($stoks->product_stock - $cart->qty)
+            ]);
+            $pots = Pot::whereId($cart->pots_id)->first();
+            Pot::whereId($cart->pots_id)->update([
+                'pot_stock' => ($pots->pot_stock - $cart->qty)
+            ]);
         }
         Cart::where('user_id',Auth::user()->id)
             ->where('invoice',null)
@@ -206,7 +217,16 @@ class BuyController extends Controller
         }
         return response()->json($opti);
     }
-
+    public function setujuBayar(Request $request)
+    {
+        Order::whereId($request->orderID)
+          ->where('invoice',$request->invoice)
+          ->where('user_id',Auth::User()->id)
+          ->update([
+            'keterangan' => $request->keterangan,
+          ]);
+        return response()->json('ok');
+    }
     public function buyAtm($id)
     {
         $Order = Order::whereId($id)
