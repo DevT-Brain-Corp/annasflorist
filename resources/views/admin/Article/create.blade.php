@@ -31,6 +31,19 @@
                             </div>
 
                             <div class="col-12">
+                                Background photo : <br>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input name="photo" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
                                 <div class="form-group">
                                     <p>Deskripsi :</p>
                                 </div>

@@ -45,11 +45,30 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        Article::create([
-            'jenis'=> $request->dat,
-            'title' => $request->title,
-            'deskripsi' => $request->deskripsi,
-        ]);
+        $text = preg_replace('~[^\pL\d]+~u', '-', $request->title);
+        if ($request->hasFile('photo')){
+            $data = $request->input('photo');
+            $photo = $request->file('photo')->getClientOriginalName();
+            $destination = base_path() . '/public/article';
+            $request->file('photo')->move($destination, $photo);
+
+            Article::create([
+                'jenis'=> $request->dat,
+                'title' => $request->title,
+                'slug_title'=> $text,
+                'deskripsi' => $request->deskripsi,
+                'foto_bg'=> $request->photo,
+            ]);
+        }else{
+            Article::create([
+                'jenis'=> $request->dat,
+                'title' => $request->title,
+                'slug_title'=> $text,
+                'deskripsi' => $request->deskripsi,
+            ]);
+        }
+
+
         return redirect()->route('article.index');
     }
 

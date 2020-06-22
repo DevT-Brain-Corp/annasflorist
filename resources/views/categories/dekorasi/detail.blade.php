@@ -1,5 +1,5 @@
 @extends('base.materialize')
-@section('title', 'detail Worksop | Annas Florist')
+@section('title', 'detail Dekorasi | Annas Florist')
 
 @section('head')
     <link rel="stylesheet" href="{{ asset('css/daily/index.css') }}">

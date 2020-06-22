@@ -1,5 +1,5 @@
 @extends('base.materialize')
-@section('title', 'Worksop | Annas Florist')
+@section('title', 'Daily | Annas Florist')
 
 @section('head')
     <link rel="stylesheet" href="{{ asset('css/daily/index.css') }}">
@@ -19,8 +19,8 @@
             </div>
             <div class="feed1">
                 <div class="row news">
-                    @foreach($workshop as $wks)
-                        <a href="/workshop/{{ $wks->slug_title }}">
+                    @foreach($daily as $wks)
+                        <a href="/daily/{{ $wks->slug_title }}">
                             <div class="col s12">
                                 <div class="row">
                                     <div class="col xl4">
@@ -48,7 +48,7 @@
                     <div class="col s12 page">
                         <div>
                             <ul class="pagination" style="padding: 20px; margin: 10px">
-                                {{ $workshop->links() }}
+                                {{ $daily->links() }}
                                 {{--                                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>--}}
                                 {{--                                <li class="active"> </li>--}}
                                 {{--                                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>--}}

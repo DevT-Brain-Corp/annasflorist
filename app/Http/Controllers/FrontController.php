@@ -56,4 +56,28 @@ class FrontController extends Controller
         return view('categories.workshop.index')
             ->with('workshop', $workshop);
     }
+    public function detailWorkshop($slug_title){
+        $detail = Article::where('slug_title', $slug_title)->first();
+        return view('categories.workshop.detail')
+            ->with('detail', $detail);
+    }
+    public function dekorasi(){
+        $dekorasi = Article::where('jenis', 2)->paginate(6);
+        return view('categories.dekorasi.index')
+            ->with('dekorasi', $dekorasi);
+    }
+    public function detailDekorasi($slug_title){
+        $detail = Article::where('slug_title', $slug_title)->first();
+        return view('categories.dekorasi.detail')
+            ->with('detail', $detail);
+    }
+    public function daily(){
+        $daily = Article::where('jenis', 3)->paginate(6);
+        return view('categories.daily.index')-> with('daily', $daily);
+    }
+    public function detailDaily($slug_title){
+        $detail = Article::where('slug_title', $slug_title)->first();
+        return view('categories.daily.detail')
+            ->with('detail', $detail);
+    }
 }
