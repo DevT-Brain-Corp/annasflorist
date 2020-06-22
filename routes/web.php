@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'namespace' => 'Admin', 'prefix
     Route::resource('product', 'ProductController');
     Route::resource('order', 'OrderController');
     Route::resource('pot', 'PotController');
+    Route::resource('article','ArticleController');
 
 });
 
@@ -100,13 +101,6 @@ Route::get('/rental/detail', function () {
 });
 
 
-// daily
-Route::get('/daily', function () {
-    return view('product.daily.index');
-});
-// end daily
-
-
 Route::get('/rental/detail/aksesoris', function () {
     return view('product.rental.aksesoris');
 });
@@ -119,9 +113,17 @@ Route::get('/user/read', function () {
 
 // workshop
 
-Route::get('/workshop', function () {
-    return view('categories.workshop');
-});
+Route::get('/workshop', 'FrontController@workshop');
+
+Route::get('/workshop/{slug_title}', 'FrontController@detailWorkshop');
+
+Route::get('/dekorasi', 'FrontController@dekorasi');
+
+Route::get('/dekorasi/{slug_title}', 'FrontController@detailDekorasi');
+
+Route::get('/daily', 'FrontController@daily');
+
+Route::get('/daily/{slug_title}', 'FrontController@detailDaily');
 
 Route::get('/user/update', function () {
     return view('user.update');

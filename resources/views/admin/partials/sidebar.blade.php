@@ -13,5 +13,6 @@
       <li class="{{ Request::route()->getName() == 'product.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('product.index') }}"><i class="fa fa-box"></i> <span>Products</span></a></li>
       <li class="{{ Request::route()->getName() == 'order.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('order.index') }}"><i class="fa fa-shopping-cart"></i> <span>Orders</span></a></li>
       <li class="{{ Request::route()->getName() == 'pot.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('pot.index') }}"><i class="fa fa-leaf"></i> <span>Pots</span></a></li>
+      <li class="{{ Request::route()->getName() == 'article.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('article.index') }}"><i class="fa fa-leaf"></i> <span>Article</span></a></li>
   </ul>
 </aside>
