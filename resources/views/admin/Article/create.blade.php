@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header">
 
-                    <form action="{{ route('article.store') }}" method="post">
+                    <form action="{{ route('article.store') }}" method="post" enctype='multipart/form-data'>
                         @csrf
                         <div class="row">
                             <div class="col-12">
@@ -37,8 +37,8 @@
                                         <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                                     </div>
                                     <div class="custom-file">
-                                        <input name="photo" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        <input name="photo" type="file" class="custom-file-input"  id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+                                        <label class="custom-file-label" for="inputGroupFile01" >Choose file</label>
                                     </div>
                                 </div>
                             </div>
