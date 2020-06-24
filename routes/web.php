@@ -73,13 +73,17 @@ Route::get('/sales/buynowbybarcode', function () {
     return view('product.sales.buynowbybarcode');
 });
 
+Route::post('/setujuBayar','BuyController@setujuBayar');
+
 Route::get('/sales/buynow/{id}/{invoice}', 'BuyController@bayar');
 
 Route::post('/unggahBukti', 'BuyController@buktiBayar');
 
-Route::get('/sales/riwayat', function () {
-    return view('product.sales.riwayatpembelian');
-});
+// Route::get('/sales/riwayat', function () {
+//     return view('product.sales.riwayatpembelian');
+// });
+
+Route::get('/sales/riwayat','FrontController@showRiwayat');
 // End Sales
 
 // rental

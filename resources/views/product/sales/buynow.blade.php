@@ -90,14 +90,14 @@
     <div class="col s9 m9 l7 xl5">
       <div class="row">
         <div class="input-field col s12">
-            <!-- <select class="form-control" id="kota_tujuan" name="kota_tujuan" required="">
-            </select> -->
+            <select class="form-control" id="kota_tujuan" name="kota_tujuan" required="">
+            </select>
             <!-- UNTUK TESTING -->
-            <select class="form-control" name="kota_tujuan" required="">
+            {{-- <select class="form-control" name="kota_tujuan" required="">
               <option value="163">Kota A</option>
               <option value="162">Kota B</option>
               <option value="161">Kota C</option>
-            </select>
+            </select> --}}
         </div>
 
       </div>

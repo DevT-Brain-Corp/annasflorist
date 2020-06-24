@@ -11,11 +11,11 @@ class OrderDetail extends Model
 
     public function product()
     {
-        return $this->belongsTo('App\Product','product_id');
+        return $this->belongsTo('App\Product');
     }
     public function order()
     {
-        return $this->belongsTo('App\Order','invoice');
+        return $this->belongsTo('App\Order','invoice','invoice');
     }
     public function pot(){
         return $this->belongsTo(Pot::class, 'pots_id');

@@ -10,13 +10,13 @@
                 <a href="#top" class="brand-logo scroll" style="margin-top: 11px; font-family: 'Righteous';">Annas Florist</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down fontrighteous">
-                    <li><a href="#top" class="iconsearch scroll">Home</a></li>
+                    <li><a href="{{url('/')}}" class="iconsearch scroll">Home</a></li>
                     <li><a href="#profil" class="iconsearch scroll">Profil</a></li>
                     <li><a class="dropdown-trigger iconsearch" href='#' data-target='dropdown1'>Kategori</a></li>
                     @if (Auth::check())
                       <li><a href="#" class="iconsearch">Notifikasi</a></li>
                     @endif
-                    <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdowncart'><i class="material-icons">shopping_cart</i></a></li>
+                    <li><a href="{{url('/sales/cart')}}" class="dropdown-trigger iconsearch"><i class="material-icons">shopping_cart</i></a></li>
                     <li><a href="#" class="dropdown-trigger iconsearch" data-target='dropdown1in'><i class="material-icons">person_pin</i></a></li>
                 </ul>
             </div>
@@ -44,11 +44,11 @@
 
 <!-- Dropdown -->
 <ul id='dropdown1' class="dropdown-content">
-  <li><a class="scroll" href="#sales">Sales</a></li>
-  <li><a class="scroll" href="#souvenir">Souvenir</a></li>
-  <li><a class="scroll" href="#workshop">Workshop</a></li>
-  <li><a class="scroll" href="#rental">Rental</a></li>
-  <li><a class="scroll" href="#dekorasi">Dekorasi</a></li>
+  <li><a class="scroll" href="{{url('/category/sales')}}">Sales</a></li>
+  <li><a class="scroll" href="{{url('/category/souvenir')}}">Souvenir</a></li>
+  <li><a class="scroll" href="{{url('/category/workshop')}}">Workshop</a></li>
+  <li><a class="scroll" href="{{url('/category/rental')}}">Rental</a></li>
+  <li><a class="scroll" href="{{url('/category/decoration')}}">Dekorasi</a></li>
 </ul>
 <!-- End Dropdown -->
 

@@ -29,7 +29,7 @@
                     <p>Apakah anda ingin melanjutkan mencari barang ? </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cari Barang</button>
+                    <button type="button" class="btn btn-secondary btnCariLgi">Cari Barang</button>
                     <a href="{{url('/sales/cart')}}" class="btn btn-primary">Checkout</a>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                                     <a href="#">Beli Sekarang</a>
                                 </div>
                                 <div class="masukkan">
-                                    <a id="btnKeranjang"><i class="large material-icons">shopping_cart</i>Masukkan
+                                    <a id="btnKeranjang" style="cursor: pointer"><i class="large material-icons">shopping_cart</i>Masukkan
                                         Keranjang</a>
                                 </div>
                             </div>
@@ -194,7 +194,12 @@
         $(".colsX").on('change', function (e) {
             colorID = e.target.value;
         });
-
+        $(".btnCariLgi").on('click', function(){
+            $('#modalCheckout').modal({
+                show: 'false'
+            });
+            $(".iconBeli").effect("shake");
+        });
         $("#btnKeranjang").on('click', function () {
 
             var qty = $("#qty").val();
