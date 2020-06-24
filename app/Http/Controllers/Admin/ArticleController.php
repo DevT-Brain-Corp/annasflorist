@@ -16,12 +16,12 @@ class ArticleController extends Controller
     public function index()
     {
         $data = Article::all();
-        if (empty($data)){
+        if (empty($data)) {
             return view('admin.Article.index');
 
-        }else{
+        } else {
             return view('admin.Article.index')
-                ->with('data',$data);
+                ->with('data', $data);
         }
     }
 
@@ -40,33 +40,23 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
         $text = preg_replace('~[^\pL\d]+~u', '-', $request->title);
-        if ($request->hasFile('photo')){
-            $data = $request->input('photo');
-            $photo = $request->file('photo')->getClientOriginalName();
-            $destination = base_path() . '/public/article';
-            $request->file('photo')->move($destination, $photo);
-
-            Article::create([
-                'jenis'=> $request->dat,
-                'title' => $request->title,
-                'slug_title'=> $text,
-                'deskripsi' => $request->deskripsi,
-                'foto_bg'=> $request->photo,
-            ]);
-        }else{
-            Article::create([
-                'jenis'=> $request->dat,
-                'title' => $request->title,
-                'slug_title'=> $text,
-                'deskripsi' => $request->deskripsi,
-            ]);
-        }
+        $data = $request->input('photo');
+        $photo = $request->file('photo')->getClientOriginalName();
+        $destination = base_path() . '/public/article';
+        $request->file('photo')->move($destination, $photo);
+        Article::create([
+            'jenis' => $request->dat,
+            'title' => $request->title,
+            'slug_title' => $text,
+            'deskripsi' => $request->deskripsi,
+            'foto_bg' => $photo,
+        ]);
 
 
         return redirect()->route('article.index');
@@ -75,7 +65,7 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -86,7 +76,7 @@ class ArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
@@ -99,8 +89,8 @@ class ArticleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -111,7 +101,7 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
