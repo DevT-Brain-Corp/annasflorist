@@ -32,7 +32,7 @@
             <p>Total Harga</p>
           </div>
           <div class="col s12">
-            <p>Rp.{{$blmBayar->subtotal}}</p>
+            <p>Rp.{{($blmBayar->hargaPkg * $produk->qty)}}</p>
           </div>
         </div>
       </div>

@@ -15,7 +15,8 @@
 Route::get('/', 'FrontController@showProductHome')->name('welcome');
 Route::get('/category/{slug}', 'FrontController@showCategory')->name('show.category');
 Route::get('/product/{slug}', 'FrontController@showProduct')->name('show.product');
-
+Route::post('/beli-product','BuyController@beliSekarang');
+Route::get('/produk/invoice/{invoice}','BuyController@invoice');
 Route::get('/homelama', function () {
     return view('welcomeold');    //awal homepage
 });
@@ -65,6 +66,8 @@ Route::get('/sales/cart2', function () {
 });
 
 Route::get('/sales/buynow', 'BuyController@index');
+
+Route::get('/sales/buynow/invoice/{invoice}', 'BuyController@invoice');
 
 Route::get('/sales/buynow/{id}', 'BuyController@buyAtm');
 

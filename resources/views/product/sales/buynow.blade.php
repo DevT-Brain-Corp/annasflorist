@@ -29,11 +29,13 @@
   <p class="title2">anda mempunyai <span id="showcart"></span> barang untuk dibayar</p>
   <!-- detail -->
   <div class="row">
+    
     <div id="detail" class="col s12">
       {{-- LOOp --}}
       <?php $totalPrice=0 ?>
       <?php $totalQty=0 ?>
       @foreach ($cart as $index => $cart)
+        
         <div id="row" class="row">
         <div class="col s6 m2 l2 xl2">
           <img class="responsive-img hoverable" src="{{ asset('storage') }}/{{ $cart->product->product_image }}" alt="">
@@ -81,8 +83,12 @@
 <form action="{{url('/sales/buynow')}}" method="POST">
 @csrf
 <div class="container alamat">
+<input type="hidden" value="" name="invoiceID">
   <div class="row">
     <div class="col s3 m2 l2 xl2">
+      @if(count($cart2) !== 0)
+      <input type="hidden" name="invoiceID" value="{{$cart2[0]->invoice}}">
+      @endif
       <p class="tipe3">Kota</p>
     </div>
     <input type="hidden" name="subtotal" value="{{$totalPrice}}">
