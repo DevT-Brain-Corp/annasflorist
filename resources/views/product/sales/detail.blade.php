@@ -117,7 +117,7 @@
                         @if(!$status==null)
                             <div class="masukkankeranjang right-align">
                                 <div class="beli">
-                                    <a href="#">Beli Sekarang</a>
+                                    <a class="btnBeli">Beli Sekarang</a>
                                 </div>
                                 <div class="masukkan">
                                     <a id="btnKeranjang" style="cursor: pointer"><i class="large material-icons">shopping_cart</i>Masukkan
@@ -223,6 +223,30 @@
                             $("#modalCheckout").modal('open');
                             // alert('berhasil');
                         }
+                    }
+
+                })
+            }
+        });
+        $(".btnBeli").on('click', function () {
+            var qty = $("#qty").val();
+            var productID = $("#productID").val();
+            if ($("#qty").val() != 0 || !colorID) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: "{{url('/beli-product')}}",
+                    data: {
+                        "qty": qty,
+                        "productID": productID,
+                        "colorID": colorID,
+                    },
+                    success: function (data) {
+                        window.location.href = '/produk/invoice/'+data;
                     }
 
                 })

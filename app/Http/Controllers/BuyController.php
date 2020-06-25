@@ -18,6 +18,43 @@ class BuyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function beliSekarang(Request $request)
+    {
+        $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $rand = substr(str_shuffle(str_repeat($pool, 5)), 0, 7);
+        Cart::create([
+            'invoice' => $rand,
+    		'user_id' => Auth::user()->id,
+            'product_id' => $request->productID,
+            'pots_id' => $request->colorID,
+    		'qty' => $request->qty,
+        ]);
+        
+        return response()->json($rand);
+    }
+
+
+    public function invoice($invoice)
+    {
+        $uid = Auth::user()->id;
+        if (!$uid) {
+          return redirect('/');
+        }
+        $cart = Cart::where('user_id',$uid)
+            ->where('invoice',$invoice)
+            ->get();
+        $cart2 = Cart::where('user_id',$uid)
+            ->where('invoice',$invoice)
+            ->get();
+        if(count($cart) == 0){
+            return view('errors.404');
+        }
+        $atm = \App\Atm::All();
+        
+
+
+        return view('product.sales.buynow', compact('cart','cart2', 'atm'));
+    }
     public function index()
     {
 
@@ -28,27 +65,14 @@ class BuyController extends Controller
         $cart = Cart::where('user_id',$uid)
             ->where('invoice',null)
             ->get();
+        $cart2 = Cart::where('user_id',$uid)
+            ->where('invoice',null)
+            ->get();
         $atm = \App\Atm::All();
-        // $curl = curl_init();
-        // curl_setopt_array($curl, array(
-        //     CURLOPT_URL => "http://api.rajaongkir.com/starter/city",
-        //     CURLOPT_RETURNTRANSFER => true,
-        //     CURLOPT_ENCODING => "",
-        //     CURLOPT_MAXREDIRS => 10,
-        //     CURLOPT_TIMEOUT => 30,
-        //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        //     CURLOPT_CUSTOMREQUEST => "GET",
-        //     CURLOPT_HTTPHEADER => array(
-        //         "key: 6456d855a8c92234aba3562aaf2164cf"
-        //     ),
-        // ));
-
-        // $response = curl_exec($curl);
-
-        // $data = json_decode($response, true);
+        
 
 
-        return view('product.sales.buynow', compact('cart', 'atm'));
+        return view('product.sales.buynow', compact('cart','cart2', 'atm'));
     }
 
     /**
@@ -56,10 +80,7 @@ class BuyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -109,8 +130,15 @@ class BuyController extends Controller
         }
 
         $hargaPkg = ($vl / $request->itungBerat) * (13/10);
+
+        $norms = '';
+        if(!$request->invoiceID){
+            $norms = $rand;
+        }else{
+            $norms = $request->invoiceID;
+        }
         $o = Order::create([
-            'invoice'           =>  $rand, 
+            'invoice'           =>  $norms, 
             'user_id'           =>  Auth::user()->id,
             'atm_id'            =>  $request->group1,
             'customer_name'     =>  $request->namaPenerima,
@@ -120,12 +148,20 @@ class BuyController extends Controller
             'pengirim'          =>  $kurir,
             'hargaPkg'          =>  $hargaPkg,
         ]);
-        $cart = Cart::where('user_id',Auth::user()->id)
+        $cart = [];
+        if(!$request->invoiceID){
+            $cart = Cart::where('user_id',Auth::user()->id)
                 ->where('invoice',null)
                 ->get();
+        }else{
+            $cart = Cart::where('user_id',Auth::user()->id)
+                ->where('invoice',$request->invoiceID)
+                ->get();
+        }
+        
         foreach ($cart as $cart) {
             OrderDetail::create([
-                'invoice' => $rand,
+                'invoice' => $norms,
                 'user_id'=> Auth::user()->id,
                 'pots_id' => $cart->pots_id,
                 'product_id' => $cart->product_id,
@@ -141,9 +177,16 @@ class BuyController extends Controller
                 'pot_stock' => ($pots->pot_stock - $cart->qty)
             ]);
         }
-        Cart::where('user_id',Auth::user()->id)
-            ->where('invoice',null)
-            ->delete();
+        if(!$request->invoiceID){
+            Cart::where('user_id',Auth::user()->id)
+                ->where('invoice',$request->invoiceID)
+                ->delete();
+        }else{
+            Cart::where('user_id',Auth::user()->id)
+                ->where('invoice',null)
+                ->delete();
+        }
+        
         return redirect('/sales/buynow/'.$o->id);
     }
 
@@ -261,6 +304,6 @@ class BuyController extends Controller
             'file' => $nama_file,
             'status' => 'pending',
         ]);
-        return 'ok';
+        return redirect('/sales/riwayat');
     }
 }
