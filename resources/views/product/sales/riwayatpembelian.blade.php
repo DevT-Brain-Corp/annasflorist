@@ -33,18 +33,18 @@
     <div id="belumdibayar" class="col s12">
       <div id="slimscrollpanel">
         @foreach($res['blmBayar'] as $blmBayar)
-        @foreach($blmBayar->orderDetail as $index => $produk)
+        <!-- @foreach($blmBayar->orderDetail as $index => $produk) -->
           @include('product.sales.riwayatpembelian.belumdibayar')
-        @endforeach
+        <!-- @endforeach -->
         @endforeach
         </div>
     </div>
     <div id="sudahdibayar" class="col s12">
       <div id="slimscrollpanel2">
         @foreach($res['sdhBayar'] as $sdhBayar)
-        @foreach($sdhBayar->orderDetail as $index => $produk)
+        <!-- @foreach($sdhBayar->orderDetail as $index => $produk) -->
         @include('product.sales.riwayatpembelian.sudahdibayar')
-        @endforeach
+        <!-- @endforeach -->
         @endforeach
       </div>
     </div>

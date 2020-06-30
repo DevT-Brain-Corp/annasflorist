@@ -8,11 +8,10 @@
       <div class="col s6 m3 l3 xl3">
         <div class="row texting2">
           <div class="col s12 a">
-            <p>{{$produk->product->product_name}}</p>
+            <p>{{$produk->invoice}}</p>
           </div>
           <div class="col s12">
             <p>{{$produk->qty}} Produk</p>
-            <p>Invoice : {{$produk->invoice}} </p>
           </div>
         </div>
       </div>
@@ -32,7 +31,7 @@
             <p>Total Harga</p>
           </div>
           <div class="col s12">
-            <p>Rp.{{$blmBayar->subtotal}}</p>
+            <p>Rp.{{($blmBayar->subtotal)}}</p>
           </div>
         </div>
       </div>

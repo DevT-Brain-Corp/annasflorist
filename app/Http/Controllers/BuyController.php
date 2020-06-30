@@ -130,7 +130,7 @@ class BuyController extends Controller
         }
 
         $hargaPkg = ($vl / $request->itungBerat) * (13/10);
-
+        $subtotal = $request->totalQTY + $vl;
         $norms = '';
         if(!$request->invoiceID){
             $norms = $rand;
@@ -144,7 +144,7 @@ class BuyController extends Controller
             'customer_name'     =>  $request->namaPenerima,
             'customer_phone'    =>  $request->nohp,
             'customer_address'  =>  $request->alamat,
-            'subtotal'          =>  $vl,
+            'subtotal'          =>  $subtotal,
             'pengirim'          =>  $kurir,
             'hargaPkg'          =>  $hargaPkg,
         ]);
