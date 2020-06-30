@@ -83,6 +83,7 @@
 <form action="{{url('/sales/buynow')}}" method="POST">
 @csrf
 <div class="container alamat">
+<input type="hidden" name="totalQTY" value="{{$totalPrice}}">
 <input type="hidden" value="" name="invoiceID">
   <div class="row">
     <div class="col s3 m2 l2 xl2">
